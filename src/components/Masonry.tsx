@@ -4,18 +4,48 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 
+/* -------------------------------------------------------
+   FIXED: SSR-SAFE useMedia()
+   ------------------------------------------------------- */
+const useMedia = (
+  queries: string[],
+  values: number[],
+  defaultValue: number
+): number => {
+  const isClient = typeof window !== "undefined";
 
-const useMedia = (queries: string[], values: number[], defaultValue: number): number => {
-  const get = () => values[queries.findIndex(q => matchMedia(q).matches)] ?? defaultValue;
-  const [value, setValue] = useState(get);
+  // Safe matchMedia wrapper
+  const match = (q: string) =>
+    isClient && typeof window.matchMedia !== "undefined"
+      ? window.matchMedia(q).matches
+      : false;
+
+  const getValue = () => {
+    const index = queries.findIndex((q) => match(q));
+    return typeof values[index] !== "undefined" ? values[index] : defaultValue;
+  };
+
+  const [value, setValue] = useState<number>(() => getValue());
+
   useEffect(() => {
-    const handler = () => setValue(get);
-    queries.forEach(q => matchMedia(q).addEventListener("change", handler));
-    return () => queries.forEach(q => matchMedia(q).removeEventListener("change", handler));
-  }, [queries]);
+    if (!isClient) return;
+
+    const handler = () => setValue(getValue());
+
+    const mqls = queries.map((q) => window.matchMedia(q));
+    mqls.forEach((mql) => mql.addEventListener("change", handler));
+
+    return () => {
+      mqls.forEach((mql) => mql.removeEventListener("change", handler));
+    };
+  }, [isClient, queries]);
+
   return value;
 };
 
+/* -------------------------------------------------------
+   useMeasure (unchanged)
+   ------------------------------------------------------- */
 const useMeasure = <T extends HTMLElement>() => {
   const ref = useRef<T | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -33,11 +63,14 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const;
 };
 
+/* -------------------------------------------------------
+   preloadImages (unchanged)
+   ------------------------------------------------------- */
 const preloadImages = async (urls: string[]): Promise<void> => {
   await Promise.all(
     urls.map(
-      src =>
-        new Promise<void>(resolve => {
+      (src) =>
+        new Promise<void>((resolve) => {
           const img = new Image();
           img.src = src;
           img.onload = img.onerror = () => resolve();
@@ -52,7 +85,6 @@ interface Item {
   url: string;
   height: number;
 }
-
 interface GridItem extends Item {
   x: number;
   y: number;
@@ -72,7 +104,7 @@ interface MasonryProps {
   colorShiftOnHover?: boolean;
   onItemClick?: (item: Item) => void;
   gap?: number;
-  animated?: boolean; // NEW
+  animated?: boolean;
 }
 
 const Masonry: React.FC<MasonryProps> = ({
@@ -87,15 +119,23 @@ const Masonry: React.FC<MasonryProps> = ({
   colorShiftOnHover = false,
   onItemClick,
   gap = 16,
-  animated = true // default true
+  animated = true
 }) => {
-  const columns = useMedia(["(min-width:1500px)", "(min-width:1000px)", "(min-width:600px)", "(min-width:400px)"], [5, 4, 3, 2], 1);
+  /* -------------------------------------------------------
+     FIXED useMedia now SSR-safe
+     ------------------------------------------------------- */
+  const columns = useMedia(
+    ["(min-width:1500px)", "(min-width:1000px)", "(min-width:600px)", "(min-width:400px)"],
+    [5, 4, 3, 2],
+    1
+  );
+
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
   const hasMounted = useRef(false);
 
   useEffect(() => {
-    preloadImages(items.map(i => i.img)).then(() => setImagesReady(true));
+    preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true));
   }, [items]);
 
   const grid = useMemo<GridItem[]>(() => {
@@ -104,7 +144,7 @@ const Masonry: React.FC<MasonryProps> = ({
     const totalGaps = (columns - 1) * gap;
     const columnWidth = (width - totalGaps) / columns;
 
-    return items.map(child => {
+    return items.map((child) => {
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = col * (columnWidth + gap);
       const height = child.height / 2;
@@ -121,13 +161,11 @@ const Masonry: React.FC<MasonryProps> = ({
       const selector = `[data-key="${item.id}"]`;
       const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
 
-      // 🔹 Skip all animations if animated = false
       if (!animated) {
         gsap.set(selector, { ...animProps, opacity: 1, filter: "none" });
         return;
       }
 
-      // initial mount animation
       if (!hasMounted.current) {
         gsap.fromTo(
           selector,
@@ -183,15 +221,15 @@ const Masonry: React.FC<MasonryProps> = ({
 
   return (
     <div ref={containerRef} className="relative w-full h-full">
-      {grid.map(item => (
+      {grid.map((item) => (
         <div
           key={item.id}
           data-key={item.id}
           className="absolute box-content cursor-pointer"
           style={{ willChange: "transform, width, height, opacity" }}
           onClick={() => onItemClick?.(item)}
-          onMouseEnter={e => handleMouseEnter(item.id, e.currentTarget)}
-          onMouseLeave={e => handleMouseLeave(item.id, e.currentTarget)}
+          onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
         >
           <div
             className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0_8px_30px_-8px_rgba(0,0,0,0.3)]"

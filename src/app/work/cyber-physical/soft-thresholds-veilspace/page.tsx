@@ -389,8 +389,8 @@ export default function SoftThresholdsVeilspacePage() {
     <h3 className="text-lg md:text-xl font-medium tracking-wide">
       Physical Setup
     </h3>
-    <p className="text-xs md:text-sm text-neutral-300 leading-relaxed">
-      <div>The physical setup of Soft Thresholds - Veilspace centers around a full-scale interactive 
+    <div className="text-xs md:text-sm text-neutral-300 leading-relaxed">
+      <p>The physical setup of Soft Thresholds - Veilspace centers around a full-scale interactive 
         structure designed for sensitivity, comfort, and architectural clarity. A Charles Ray 
         Eames-style RAR rocking chair forms the anchor of the experience. It was chosen not only for 
         its elegant, modernist form and white neutral tone but also for its functional relevance: unlike 
@@ -398,24 +398,24 @@ export default function SoftThresholdsVeilspacePage() {
         triggering the different spatial states. Two force-sensitive resistors (FSRs) are affixed with duct 
         tape to the seat and backrest, slightly offset from the center to better align with natural human 
         weight distribution. These are cushioned with soft insulation foam for both comfort and durability, 
-        then wrapped in a stretchable fabric cover to blend seamlessly with the chair’s surface.</div>
+        then wrapped in a stretchable fabric cover to blend seamlessly with the chair’s surface.</p>
         
-      <div className="mt-3"> Above the user, a 4.5-meter-long U-shaped steel tube (20mm diameter) is suspended to carry the 
+      <p className="mt-3"> Above the user, a 4.5-meter-long U-shaped steel tube (20mm diameter) is suspended to carry the 
           weight of a wide fabric curtain. This tube connects at both ends to a TV wall-mount via L-shaped 
           aluminum brackets, ensuring that the structural load is directed to the floor instead of stressing 
           the screen. A centrally positioned C-stand further supports the middle of the steel tube, distributing 
           the weight evenly across the system. However, due to the fabric needing to attach to a thinner 3mm steel 
           rod for movement, a vertical steel handle was fixed onto a wooden platform to allow the C-stand clamp to 
-          support this section without obstruction.</div>
+          support this section without obstruction.</p>
           
-        <div className="mt-3"> The fabric is secured at two points: whipstitched to the upper steel tube where it 
+        <p className="mt-3"> The fabric is secured at two points: whipstitched to the upper steel tube where it 
           remains stationary, and backstitched to a thinner steel rod at the bottom which moves vertically via stepper 
           motors. Initially, the sagging fabric made entry difficult, so a secondary 1mm U-shaped rod was sewn midway 
           across the fabric. Rings were added to redirect tension via pulley lines, helping maintain balance and alignment 
           during movement. Adjustments to pulley height at the central point further redistributed weight to ensure 
           smoother lifting. Altogether, this structure balances rigidity and lightness, using accessible components 
-          to enable dynamic transformation while protecting the integrity of the surrounding digital hardware.</div>
-    </p>
+          to enable dynamic transformation while protecting the integrity of the surrounding digital hardware.</p>
+    </div>
   </div>
 </section>
 
