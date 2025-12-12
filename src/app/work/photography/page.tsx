@@ -14,35 +14,68 @@ const PhotoLoader = dynamic(() => import("@/components/PhotoLoader"), {
 });
 
 // --- hook: preload URLs with a minimum delay ---
-function usePreloadWithMinDelay(urls: string[], deps: any[], minMs = 1000) {
+function usePreloadWithMinDelay(
+  urls: string[],
+  deps: any[],
+  minMs = 500,        // shorter minimum delay
+  preloadCount = 10,  // only preload the first N images
+  maxWaitMs = 4000    // hard cap so loader never blocks too long
+) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
-    const start = performance.now();
     setLoading(true);
+    const start = performance.now();
 
-    const promises = urls.map(
-      (src) =>
-        new Promise<void>((resolve) => {
-          const img = new Image();
-          img.src = src;
-          if (img.complete) return resolve();
-          img.onload = img.onerror = () => resolve();
-        })
+    // Only preload the first N images – enough to fill the top of the masonry
+    const toPreload = urls.slice(0, preloadCount);
+
+    // If nothing to preload, just do a tiny delay and finish
+    if (toPreload.length === 0) {
+      const id = window.setTimeout(() => {
+        if (!cancelled) setLoading(false);
+      }, minMs);
+      return () => window.clearTimeout(id);
+    }
+
+    const preloadPromise = Promise.all(
+      toPreload.map(
+        (src) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.src = src;
+            if (img.complete) return resolve();
+            img.onload = img.onerror = () => resolve();
+          })
+      )
     );
 
-    Promise.all(promises).then(() => {
+    // Hard timeout to avoid being stuck if network is slow
+    const hardTimeoutId = window.setTimeout(() => {
+      if (!cancelled) {
+        setLoading(false);
+      }
+    }, maxWaitMs);
+
+    preloadPromise.then(() => {
       const elapsed = performance.now() - start;
       const remaining = Math.max(0, minMs - elapsed);
-      const tid = window.setTimeout(() => {
-        if (!cancelled) setLoading(false);
+
+      const softTimeoutId = window.setTimeout(() => {
+        if (!cancelled) {
+          setLoading(false);
+        }
       }, remaining);
-      return () => window.clearTimeout(tid);
+
+      return () => {
+        window.clearTimeout(softTimeoutId);
+      };
     });
 
     return () => {
       cancelled = true;
+      window.clearTimeout(hardTimeoutId);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
@@ -197,11 +230,14 @@ export default function PhotographyWorkPage() {
   }, [tabIndex, eventIndex, portrait, landscape, EVENT_A, EVENT_B]);
 
   // loader that retriggers whenever currentItems group changes
-  const loading = usePreloadWithMinDelay(
-    currentItems.map((i) => i.img),
-    [tabIndex, eventIndex],
-    1000
-  );
+const loading = usePreloadWithMinDelay(
+  currentItems.map((i) => i.img),
+  [tabIndex, eventIndex],
+  500,   // min delay in ms
+  10,    // preload first 10 images only
+  4000   // max wait in ms
+);
+
 
   // lightbox state
   const [open, setOpen] = useState(false);

@@ -3,6 +3,13 @@
 import ArchProjectCards from "@/components/ArchProjectCards";
 
 const projects = [
+    {
+    title: "Awa Market Hall",
+    slug: "/work/architecture/awa-market-hall",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p1.jpg?raw=true",
+    year: "Project 2025 Jul - Oct",
+    caption: "Market / Co-working / Water",
+  },
   {
     title: "The Overlapping Intersection",
     slug: "/work/architecture/overlapping-intersection",
@@ -15,10 +22,10 @@ const projects = [
     slug: "/work/architecture/lumen-vestige",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Scene/p6.jpg?raw=true",
     year: "120 Hours 2025",
-    caption: "Community / Structure / Light",
+    caption: "Public / Pavilion / Light",
   },
   {
-    title: "The Forge Hub Forum of Voices",
+    title: "The Forge Hub & Forum of Voices",
     slug: "/work/architecture/forge-hub",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Scene/p5.jpg?raw=true",
     year: "Project 2024 Jul - Oct",

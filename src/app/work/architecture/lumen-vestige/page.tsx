@@ -1,7 +1,85 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Lightbox from "@/components/Lightbox";
+import { motion, useInView } from "framer-motion";
+
+function preloadImages(urls: string[]): Promise<void> {
+  return Promise.all(
+    urls.map(
+      (src) =>
+        new Promise<void>((resolve) => {
+          const img = new Image();
+          img.src = src;
+          if (img.complete) return resolve();
+          img.onload = img.onerror = () => resolve();
+        })
+    )
+  ).then(() => undefined);
+}
+
+interface SectionFadeOnScrollProps {
+  imageUrls?: string[];
+  className?: string;
+  children: React.ReactNode;
+}
+
+/**
+ * SectionFadeOnScroll
+ * - Starts loading its imageUrls ONLY when the section comes into view
+ * - Fades the whole section in after images are done loading
+ * - Animates once (stays visible after)
+ */
+function SectionFadeOnScroll({
+  imageUrls = [],
+  className = "",
+  children,
+}: SectionFadeOnScrollProps) {
+  const ref = useRef<HTMLElement | null>(null);
+  const inView = useInView(ref, {
+    once: true,
+    margin: "0px 0px -20% 0px",
+  });
+
+  const [loaded, setLoaded] = useState(imageUrls.length === 0);
+  const [hasAppeared, setHasAppeared] = useState(false);
+
+  // Start preloading when section enters view
+  useEffect(() => {
+    if (!inView || loaded || imageUrls.length === 0) return;
+    let cancelled = false;
+    (async () => {
+      await preloadImages(imageUrls);
+      if (!cancelled) {
+        setLoaded(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [inView, loaded, imageUrls]);
+
+  // Once both inView + loaded, mark as appeared (one-time)
+  useEffect(() => {
+    if (inView && loaded) {
+      setHasAppeared(true);
+    }
+  }, [inView, loaded]);
+
+  const visible = hasAppeared;
+
+  return (
+    <motion.section
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y: 16 }}
+      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.section>
+  );
+}
 
 export default function LumenVestigePage() {
   const [open, setOpen] = useState(false);
@@ -21,7 +99,7 @@ export default function LumenVestigePage() {
         {/* -------------------------------------------------- */}
         {/* HEADER / META                                      */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4 border-b border-neutral-400/40 pb-8 md:pb-10">
+        <SectionFadeOnScroll className="space-y-4 border-b border-neutral-400/40 pb-8 md:pb-10">
           <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
             Architecture / Pavilion Installation
           </p>
@@ -54,25 +132,25 @@ export default function LumenVestigePage() {
               Tullinløkka, Oslo, Norway
             </p>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* BIG IMAGE (hero)                                   */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-6">
+        <SectionFadeOnScroll className="space-y-6">
           <figure className="w-full">
             <button
               type="button"
               onClick={() =>
                 handleOpen(
-                  "PASTE_HERO_IMAGE_LINK",
+                  "https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p1.jpg?raw=true",
                   "Lumen Vestige – overall view"
                 )
               }
               className="block w-full cursor-zoom-in"
             >
               <img
-                src="PASTE_HERO_IMAGE_LINK"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p1.jpg?raw=true"
                 alt="Lumen Vestige – overall view"
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />
@@ -84,23 +162,23 @@ export default function LumenVestigePage() {
               Lumen Vestige explores the fading essence of childhood through shadow. Vintage toys, placed behind diffuser glass, cast enlarged silhouettes — adult-sized echoes of a distant past. Visitors step into this f leeting moment, briefly transported back to their childhood. Yet, the shadows remain untouchable, intangible — symbols of innocence slipping away. As daylight fades, the lightbox softly glows, revealing the toys in quiet presence, only for their forms to vanish again. This interplay of light and loss evokes nostalgia and longing, inviting reflection on time's passage, the fragility of memory, and the irreplaceable moments that drift beyond reach, forever lost in time.   
             </p>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* TWO LANDSCAPE IMAGES                               */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4">
+        <SectionFadeOnScroll className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("LANDSCAPE_1", "Landscape 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p2.jpg?raw=true", "Landscape 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="LANDSCAPE_1"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p2.jpg?raw=true"
                   alt="Landscape 1"
-                  className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
+                  className="w-full h-auto border border-neutral-400 bg-neutral-300 object-cover aspect-5/3"
                 />
               </button>
             </figure>
@@ -108,32 +186,32 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("LANDSCAPE_2", "Landscape 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p3.jpg?raw=true", "Landscape 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="LANDSCAPE_2"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p3.jpg?raw=true"
                   alt="Landscape 2"
-                  className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
+                  className="w-full h-auto border border-neutral-400 bg-neutral-300 object-cover aspect-5/3"
                 />
               </button>
             </figure>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* TWO PORTRAIT IMAGES                                */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4">
+        <SectionFadeOnScroll className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("PORTRAIT_1", "Portrait 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p4.jpg?raw=true", "Portrait 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="PORTRAIT_1"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p4.jpg?raw=true"
                   alt="Portrait 1"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -143,32 +221,32 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("PORTRAIT_2", "Portrait 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p5.jpg?raw=true", "Portrait 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="PORTRAIT_2"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p5.jpg?raw=true"
                   alt="Portrait 2"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
               </button>
             </figure>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* TWO PORTRAIT IMAGES (2nd pair)                     */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4">
+        <SectionFadeOnScroll className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("PORTRAIT_3", "Portrait 3")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p6.jpg?raw=true", "Portrait 3")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="PORTRAIT_3"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p6.jpg?raw=true"
                   alt="Portrait 3"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -178,18 +256,18 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("PORTRAIT_4", "Portrait 4")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p7.jpg?raw=true", "Portrait 4")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="PORTRAIT_4"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p7.jpg?raw=true"
                   alt="Portrait 4"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
               </button>
             </figure>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* DIVIDER                                            */}
@@ -199,7 +277,7 @@ export default function LumenVestigePage() {
         {/* -------------------------------------------------- */}
         {/* COMPETITION BOARDS                                 */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4">
+        <SectionFadeOnScroll className="space-y-4">
           <h2 className="text-base md:text-lg font-medium tracking-wide">
             Competition Boards
           </h2>
@@ -208,11 +286,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("BOARD_1", "Competition Board 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p8.jpg?raw=true", "Competition Board 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="BOARD_1"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p8.jpg?raw=true"
                   alt="Competition Board 1"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
                 />
@@ -222,23 +300,23 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("BOARD_2", "Competition Board 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p9.jpg?raw=true", "Competition Board 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="BOARD_2"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p9.jpg?raw=true"
                   alt="Competition Board 2"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
                 />
               </button>
             </figure>
           </div>
-        </section>
+        </SectionFadeOnScroll>
 
         {/* -------------------------------------------------- */}
         {/* SIX PARAGRAPHS                                     */}
         {/* -------------------------------------------------- */}
-        <section className="space-y-4 pb-16">
+        <SectionFadeOnScroll className="space-y-4 pb-16">
           <h2 className="text-base md:text-lg font-semibold tracking-wide">
             Reflection — Lumen Vestige
           </h2>
@@ -251,7 +329,7 @@ export default function LumenVestigePage() {
             <p>After refining our concept, I took the lead in organizing our team's tasks. I delegated the technical drawings—plans, sections, and detailing—to my teammates while I worked on visual communication. I created atmospheric renderings that showcased how light and shadow change throughout the day, and I produced an abstract yet clear top view that captured the movement and placement of the toy shadows.</p>
             <p>Looking back, this was one of the most meaningful group projects I've worked on. It reminded me of the power of story in design—and how architecture can bring forgotten feelings back into focus.</p>
           </div>
-        </section>
+        </SectionFadeOnScroll>
       </div>
 
       {/* Lightbox */}

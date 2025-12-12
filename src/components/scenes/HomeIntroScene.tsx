@@ -1,3 +1,4 @@
+// components/HomeIntroScene.tsx
 "use client";
 
 import Prism from "@/components/Prism";
@@ -20,10 +21,10 @@ export default function HomeIntroScene() {
         className="absolute inset-0"
         suspendWhenOffscreen
       />
- {/* Centered intro text overlay */}
+
+      {/* Centered intro text overlay */}
       <div className="absolute inset-0 flex items-center justify-center text-center">
         <div className="px-6">
-          {/* Fuzzy main title with soft shadow */}
           <div className="pointer-events-auto inline-block">
             <FuzzyText
               fontSize="clamp(2.25rem, 7.5vw, 4rem)"
@@ -41,8 +42,6 @@ export default function HomeIntroScene() {
             </FuzzyText>
           </div>
 
-                   {/* Tagline */}
-                   {/* Tagline */}
           <FuzzyText
             fontSize="clamp(1rem, 3vw, 1.25rem)"
             fontWeight={600}
@@ -57,8 +56,8 @@ export default function HomeIntroScene() {
           >
             Photography • Architecture • Cyber-Physical Design
           </FuzzyText>
+        </div>
       </div>
     </div>
-  </div>
   );
 }

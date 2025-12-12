@@ -85,7 +85,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
   return (
     <div
       ref={rootRef}
-      className={`font-mono text-white select-none ${className}`}
+      className={`font-mono text-cyan-100 select-none ${className}`}
       style={{
         maxWidth: 280, // keep your narrow info text block
         ...style,
