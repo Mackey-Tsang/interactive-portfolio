@@ -38,15 +38,15 @@ export default function HomeButton() {
     <button
       onClick={goHome}
       aria-label="Go to Home"
-      className="fixed left-1 top-1 z-50 touch-manipulation active:opacity-70"
+      className="fixed left-1 top-1 z-50 touch-manipulation active:opacity-70 "
       style={{ transformOrigin: "top left" }}
     >
-      <div className={`${scaleClass} transition-transform duration-300`}>
+      <div className={`${scaleClass} transition-transform duration-300 `}>
         <CircularText
           text="MACKEY*TSANG*PORTFOLIO*"
           onHover="goBonkers"
           spinDuration={20}
-          className="select-none"
+          className="select-none "
         />
       </div>
     </button>

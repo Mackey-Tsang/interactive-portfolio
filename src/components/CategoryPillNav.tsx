@@ -178,16 +178,16 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
     : 1 + ["Photography", "Architecture", "Cyber-Physical"].indexOf(category);
 
   return (
-    <div className="pointer-events-auto fixed inset-x-0 top-4 z-1000 flex items-center justify-center">
+    <div className="pointer-events-auto fixed inset-x-0 top-4 z-1000 flex items-center justify-center cursor-none">
       <nav
         aria-label="Primary"
-        className={`rounded-full px-2 py-1`}
+        className={`rounded-full px-2 py-1 cursor-none`}
         style={{ ...cssVars, background: "var(--base, #000)" }}
       >
         <ul
           ref={navItemsRef}
           role="menubar"
-          className="list-none flex items-stretch m-0 p-[3px] h-(--nav-h)"
+          className="list-none flex items-stretch m-0 p-[3px] h-(--nav-h) cursor-none"
           style={{ gap: "var(--pill-gap)" }}
         >
           {items.map((item, i) => {
@@ -203,22 +203,22 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
             const PillContent = (
               <>
                 <span
-                  className="hover-circle absolute left-1/2 bottom-0 rounded-full z-1 block pointer-events-none"
+                  className="hover-circle absolute left-1/2 bottom-0 rounded-full z-1 block pointer-events-none cursor-none" 
                   style={{ background: "var(--base, #000)", willChange: "transform" }}
                   aria-hidden="true"
                   ref={(el) => {
                     circleRefs.current[i] = el;
                   }}
                 />
-                <span className="label-stack relative inline-block leading-none z-2">
+                <span className="label-stack relative inline-block leading-none z-2 cursor-none">
                   <span
-                    className="pill-label relative z-2 inline-block leading-none"
+                    className="pill-label relative z-2 inline-block leading-none cursor-none"
                     style={{ willChange: "transform" }}
                   >
                     {item.label}
                   </span>
                   <span
-                    className="pill-label-hover absolute left-0 top-0 z-3 inline-block"
+                    className="pill-label-hover absolute left-0 top-0 z-3 inline-block cursor-none"
                     style={{ color: "var(--hover-text, #fff)", willChange: "transform, opacity" }}
                     aria-hidden="true"
                   >
@@ -227,7 +227,7 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
                 </span>
                 {isActive && (
                   <span
-                    className="absolute left-1/2 -bottom-1.5 -translate-x-1/2 w-3 h-3 rounded-full z-4"
+                    className="absolute left-1/2 -bottom-1.5 -translate-x-1/2 w-3 h-3 rounded-full z-4 cursor-none"
                     style={{ background: "var(--base, #000)" }}
                     aria-hidden="true"
                   />
@@ -236,10 +236,10 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
             );
 
             const basePillClasses =
-              "relative overflow-hidden inline-flex items-center justify-center no-underline rounded-full box-border font-semibold text-[14px] uppercase tracking-[0.2px] whitespace-nowrap cursor-pointer px-0";
+              "cursor-none relative overflow-hidden inline-flex items-center justify-center no-underline rounded-full box-border font-semibold text-[14px] uppercase tracking-[0.2px] whitespace-nowrap px-0";
 
             return (
-              <li key={`${item.label}-${i}`} role="none" className="flex h-full">
+              <li key={`${item.label}-${i}`} role="none" className="flex h-full cursor-none">
                 {/* Button (no <Link>) so we control router + state together */}
                 <button
                   role="menuitem"

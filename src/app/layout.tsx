@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import HomeButton from "@/components/HomeButton";
 import ReturnButton from "@/components/ReturnButton";
+import DotCursor from "@/components/DotCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
@@ -21,12 +22,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={`h-full bg-black text-white ${inter.variable}`}>
-        {/* Global Home button */}
+    <html lang="en">
+      <body className={`bg-black text-white ${inter.variable}`}>
+        <DotCursor opacity={0.8} />
+
         <HomeButton />
         <ReturnButton />
-        <main className="h-full">{children}</main>
+
+        <main>{children}</main>
       </body>
     </html>
   );

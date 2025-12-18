@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Lightbox from "@/components/Lightbox";
 import { motion, useInView } from "framer-motion";
 
+
 const HERO_RENDER =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p1.jpg?raw=true"; // TODO: replace with your real path
 
@@ -172,6 +173,9 @@ export default function AwaMarketHallPage() {
           <SectionFadeOnScroll>
             <div className="space-y-8">
               <div className="space-y-4 w-full">
+                <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
+            Architecture / Farmers' Market
+          </p>
                 <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
                   Awa Market Hall — Grey Lynn Waterfront
                 </h1>
@@ -713,19 +717,20 @@ export default function AwaMarketHallPage() {
 
 
           {/* 10 — Back to top button */}
-          <SectionFadeOnScroll>
-            <div className="flex justify-center pt-6">
-              <button
-                type="button"
-                onClick={() =>
-                  window.scrollTo({ top: 0, behavior: "smooth" })
-                }
-                className="inline-flex items-center gap-2 rounded-full border border-neutral-700 px-5 py-2 text-sm font-medium hover:bg-neutral-800 hover:text-neutral-100 transition-colors"
-              >
-                ↑ Back to top
-              </button>
-            </div>
-          </SectionFadeOnScroll>
+{/* 10 — Back to top button */}
+<SectionFadeOnScroll>
+  <div className="flex justify-center pt-6 pb-24">
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="inline-flex items-center gap-2  border border-neutral-700 px-5 py-2 text-sm font-medium hover:bg-neutral-800 hover:text-neutral-100"
+    >
+      ↑ Back to top
+    </button>
+  </div>
+</SectionFadeOnScroll>
+
+
         </div>
       </main>
 

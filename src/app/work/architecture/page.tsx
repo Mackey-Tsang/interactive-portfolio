@@ -31,14 +31,21 @@ const projects = [
     year: "Project 2024 Jul - Oct",
     caption: "Community / Structure / Light",
   },
+  {
+    title: "Inception - Architecture Media",
+    slug: "/work/architecture/inception",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p27.jpg?raw=true",
+    year: "Project 2023 Jul - Oct",
+    caption: "Drawing System / Model Making / Speculative Design",
+  },
 ];
 
 export default function ArchitectureWorkPage() {
   return (
-    <main className="mx-auto max-w p-6 bg-neutral-200 text-black">
+    <main className="mx-auto max-w p-6 bg-neutral-200 text-black cursor-none">
       <ArchProjectCards
         projects={projects}
-        className="max-w-6xl mx-auto px-0 py-12"  // <— match your current page width
+        className="max-w-5xl mx-auto px-0 py-12"  // <— match your current page width
       />
     </main>
   );

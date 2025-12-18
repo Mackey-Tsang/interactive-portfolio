@@ -96,7 +96,7 @@ export default function ReturnButton() {
       onClick={handleReturn}
       aria-label="Return"
       className="fixed right-4 top-4 z-50 rounded-full border border-white/30 bg-black/40 
-                 backdrop-blur p-2 text-white/90 hover:text-white transition"
+                 backdrop-blur p-2 text-white/90 hover:text-white transition "
     >
       <ArrowLeft size={18} strokeWidth={1.8} />
     </motion.button>

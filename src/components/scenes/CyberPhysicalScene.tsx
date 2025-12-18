@@ -6,6 +6,7 @@ import Waves from "@/components/Waves";
 import MathSwimmersPlus from "@/components/MathSwimmersPlus";
 import MathSwimmers from "@/components/MathSwimmers";
 import ScrambledText from "@/components/ScrambledText";
+import SciFiCursor from "@/components/SciFiCursor";
 import SciFiGlitchBackground from "@/components/SciFiGlitchBackground";
 
 const DESIGN_WIDTH = 1440;  // reference: your MacBook viewport width
@@ -52,8 +53,8 @@ export default function CyberPhysicalScene() {
   const SECONDARY_OFFSET_Y = -500; // slightly upwards from original -450
 
   return (
-    <div className="absolute inset-0 bg-black overflow-hidden">
-      {/* BACKGROUND WAVES */}
+    <div className="absolute inset-0 bg-black overflow-hidden disable-dot-cursor">
+       <SciFiCursor />
       <Waves
         lineColor="rgba(255,255,255,0.35)"
         backgroundColor="transparent"
@@ -71,8 +72,8 @@ export default function CyberPhysicalScene() {
 
       {/* SCI-FI GLITCHING HUD OVERLAY (behind swimmers, above waves) */}
       <SciFiGlitchBackground
-        intensity={0.7}
-        className="z-5 mix-blend-screen opacity-80"
+        intensity={0.5}
+        className="z-5 mix-blend-screen opacity-30"
       />
 
       {/* MAIN DIGITAL CREATURE — MathSwimmersPlus */}

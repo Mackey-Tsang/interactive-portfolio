@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -144,4 +142,21 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
 }
+
+/* Hide the white-dot cursor inside any element marked with .disable-dot-cursor */
+.disable-dot-cursor {
+  cursor: none !important;
+}
+
+.disable-dot-cursor .dot-cursor {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
 

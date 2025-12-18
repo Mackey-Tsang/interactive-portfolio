@@ -64,11 +64,11 @@ function ProjectCard({ project }: { project: Project }) {
   }, [project.cover]);
 
   return (
-    <Link href={project.slug} className="block group relative">
+    <Link href={project.slug} className="block group relative cursor-none">
       <div className="relative">
         {/* LOADER OVERLAY */}
         {!loaded && (
-          <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-20 rounded-[15px]">
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-20 rounded-[15px] ">
             <div className="h-10 w-10 rounded-full border-2 border-white/30 border-t-white animate-spin" />
           </div>
         )}
@@ -88,7 +88,7 @@ function ProjectCard({ project }: { project: Project }) {
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-            <div className="pointer-events-none flex items-end h-full w-full">
+            <div className="pointer-events-none flex items-end h-full w-full cursor-none">
               <div className="w-full bg-neutral-200 backdrop-blur text-black px-5 py-3 rounded-b-[15px]">
                 <div className="text-lg font-semibold leading-tight">
                   {project.title}

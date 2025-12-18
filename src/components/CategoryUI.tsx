@@ -29,12 +29,12 @@ export default function CategoryUI() {
   return (
     <>
       {/* -------- DESKTOP/TABLET CATEGORY STRIP -------- */}
-      <div className="pointer-events-auto fixed inset-x-0 top-4 hidden sm:flex items-center justify-center z-40">
-        <div className="rounded-full border border-neutral-700/40 bg-black/30 backdrop-blur px-2 py-1 flex gap-1">
+      <div className="pointer-events-auto fixed inset-x-0 top-4 hidden sm:flex items-center justify-center z-40 cursor-none">
+        <div className="rounded-full border border-neutral-700/40 bg-black/30 backdrop-blur px-2 py-1 flex gap-1 cursor-none">
           <motion.button
             whileTap={{ scale: 0.97 }}
             onClick={() => setHome(true)}
-            className={`px-3 py-1 rounded-full text-sm transition ${
+            className={`px-3 py-1 rounded-full text-sm transition cursor-none ${
               showHome ? "bg-white text-black" : "text-white/80 hover:text-white"
             }`}
           >
@@ -48,7 +48,7 @@ export default function CategoryUI() {
                 key={c}
                 onClick={() => setCategory(c)}
                 whileTap={{ scale: 0.97 }}
-                className={`px-3 py-1 rounded-full text-sm transition ${
+                className={`px-3 py-1 rounded-full text-sm transition cursor-none ${
                   active ? "bg-white text-black" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -61,7 +61,7 @@ export default function CategoryUI() {
 
       {/* -------- MOBILE MENU BUTTON -------- */}
       <button
-        className="sm:hidden fixed top-4 right-4 z-50 p-2 rounded-full bg-black/40 backdrop-blur border border-white/10"
+        className="sm:hidden fixed top-4 right-4 z-50 p-2 rounded-full bg-black/40 backdrop-blur border border-white/10 cursor-none"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label="Toggle menu"
       >
@@ -80,9 +80,9 @@ export default function CategoryUI() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="sm:hidden fixed top-16 inset-x-0 z-40 px-4"
+            className="sm:hidden fixed top-16 inset-x-0 z-40 px-4 cursor-none"
           >
-            <div className="rounded-xl bg-black/70 backdrop-blur-md border border-white/10 p-4 space-y-2">
+            <div className="rounded-xl bg-black/70 backdrop-blur-md border border-white/10 p-4 space-y-2 cursor-none">
 
               {/* HOME */}
               <button
@@ -90,7 +90,7 @@ export default function CategoryUI() {
                   setHome(true);
                   setMobileOpen(false);
                 }}
-                className={`w-full py-2 rounded-lg text-base ${
+                className={`w-full py-2 rounded-lg text-base cursor-none ${
                   showHome ? "bg-white text-black" : "text-white/80 hover:bg-white/10"
                 }`}
               >
@@ -107,7 +107,7 @@ export default function CategoryUI() {
                       setCategory(c);
                       setMobileOpen(false);
                     }}
-                    className={`w-full py-2 rounded-lg text-base ${
+                    className={`w-full py-2 rounded-lg text-base cursor-none ${
                       active ? "bg-white text-black" : "text-white/80 hover:bg-white/10"
                     }`}
                   >

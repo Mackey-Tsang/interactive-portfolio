@@ -39,13 +39,13 @@ export default function HomeCanvas() {
   }, [showHome, category]);
 
   return (
-    <div className="relative h-dvh w-full overflow-hidden">
+    <div className="relative h-dvh w-full overflow-hidden ">
       {/* --- SCENE LAYER --- */}
       {showHome ? (
         <HomeIntroScene />
       ) : isPhoto ? (
         // PHOTOGRAPHY: DOM layer
-        <div className="absolute inset-0 bg-black">
+        <div className="absolute inset-0 bg-black cursor-none!">
           <ColorBends
             className="absolute inset-0 z-0 pointer-events-none"
             colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
@@ -81,7 +81,7 @@ export default function HomeCanvas() {
         <CyberPhysicalScene />
       ) : (
         // OTHER CATEGORIES (e.g., Architecture): R3F Canvas
-        <Canvas className="absolute inset-0" camera={{ position: [0, 1.5, 4] }}>
+        <Canvas className="absolute inset-0 cursor-none!" camera={{ position: [0, 1.5, 4] }}>
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
@@ -93,12 +93,12 @@ export default function HomeCanvas() {
 
       {/* --- CTA --- */}
       {cta && (
-  <div className="pointer-events-auto absolute bottom-6 inset-x-0 flex items-center justify-center z-50">
+  <div className="pointer-events-auto absolute bottom-6 inset-x-0 flex items-center justify-center z-50 cursor-none!">
     <a
       href={cta.href}
       className={
         category === "Architecture"
-          ? "rounded-full px-4 py-2 border bg-white border-black text-black hover:bg-black hover:text-white transition"
+          ? "rounded-full px-4 py-2 border bg-white border-black text-black hover:bg-black hover:text-white transition cursor-none!"
           : // Photography + Cyber-Physical → transparent bg, solid white border/text
             "rounded-full px-4 py-2 border border-white text-white bg-transparent hover:border-white/80 transition"
       }
