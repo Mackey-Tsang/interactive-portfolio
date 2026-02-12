@@ -45,13 +45,13 @@ export default function HomeCanvas() {
         <HomeIntroScene />
       ) : isPhoto ? (
         // PHOTOGRAPHY: DOM layer
-        <div className="absolute inset-0 bg-black cursor-none!">
+        <div className="absolute inset-0 bg-black">
           <ColorBends
             className="absolute inset-0 z-0 pointer-events-none"
-            colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
+            colors={["#1B262C", "#2C3E50", "#455D7A", "#748CA3"]}
             rotation={30}
             speed={0.28}
-            scale={1.15}
+            scale={1}
             frequency={1.35}
             warpStrength={1.15}
             mouseInfluence={0.8}
@@ -62,17 +62,24 @@ export default function HomeCanvas() {
           />
           <div className="absolute inset-0 z-10 pointer-events-auto">
             <ImageTrail
-              variant={2}
+              variant={3}
               items={[
                 "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p1.jpg?raw=true",
                 "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p2.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p3.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p4.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Portrait/p25.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p18.jpg?raw=true",
                 "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p5.jpg?raw=true",
                 "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p6.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p7.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Portrait/p20.JPG?raw=true",
                 "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p8.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p15.JPG?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p23.JPG?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p20.JPG?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p19.JPG?raw=true",
+                
               ]}
+              imageSize={400} 
+              imageRatio={1.5}
             />
           </div>
         </div>
@@ -81,7 +88,7 @@ export default function HomeCanvas() {
         <CyberPhysicalScene />
       ) : (
         // OTHER CATEGORIES (e.g., Architecture): R3F Canvas
-        <Canvas className="absolute inset-0 cursor-none!" camera={{ position: [0, 1.5, 4] }}>
+        <Canvas className="absolute inset-0" camera={{ position: [0, 1.5, 4] }}>
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
@@ -93,12 +100,12 @@ export default function HomeCanvas() {
 
       {/* --- CTA --- */}
       {cta && (
-  <div className="pointer-events-auto absolute bottom-6 inset-x-0 flex items-center justify-center z-50 cursor-none!">
+  <div className="pointer-events-auto absolute bottom-6 inset-x-0 flex items-center justify-center z-50 ">
     <a
       href={cta.href}
       className={
         category === "Architecture"
-          ? "rounded-full px-4 py-2 border bg-white border-black text-black hover:bg-black hover:text-white transition cursor-none!"
+          ? "rounded-full px-4 py-2 border bg-white border-black text-black hover:bg-black hover:text-white transition"
           : // Photography + Cyber-Physical → transparent bg, solid white border/text
             "rounded-full px-4 py-2 border border-white text-white bg-transparent hover:border-white/80 transition"
       }

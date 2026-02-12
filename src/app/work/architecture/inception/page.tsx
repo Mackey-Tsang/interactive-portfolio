@@ -95,6 +95,7 @@ export default function InceptionArchitectureMediaPage() {
   const TRANSFORMED_SECTION = useMemo(
     () => [
       "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p39.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p39.jpg?raw=true"
     ],
     []
   );
@@ -335,6 +336,7 @@ export default function InceptionArchitectureMediaPage() {
               alt="Transformed Section"
               className={`block w-full h-full object-cover rotate-180`}
             />
+            
           </div>
         </button>
       ))}

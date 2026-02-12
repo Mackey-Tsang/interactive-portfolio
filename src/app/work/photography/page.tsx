@@ -314,7 +314,7 @@ const loading = usePreloadWithMinDelay(
               <Masonry
                 items={currentItems}
                 gap={18}
-                animated={false}
+                animated={true}
                 onItemClick={(it) => {
                   setActiveSrc(it.img);
                   setOpen(true);

@@ -1,11 +1,10 @@
-// src/components/Masonry.tsx
 "use client";
 
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 /* -------------------------------------------------------
-   FIXED: SSR-SAFE useMedia()
+   SSR-SAFE useMedia()
    ------------------------------------------------------- */
 const useMedia = (
   queries: string[],
@@ -14,7 +13,6 @@ const useMedia = (
 ): number => {
   const isClient = typeof window !== "undefined";
 
-  // Safe matchMedia wrapper
   const match = (q: string) =>
     isClient && typeof window.matchMedia !== "undefined"
       ? window.matchMedia(q).matches
@@ -31,14 +29,14 @@ const useMedia = (
     if (!isClient) return;
 
     const handler = () => setValue(getValue());
-
     const mqls = queries.map((q) => window.matchMedia(q));
     mqls.forEach((mql) => mql.addEventListener("change", handler));
 
     return () => {
       mqls.forEach((mql) => mql.removeEventListener("change", handler));
     };
-  }, [isClient, queries]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isClient, queries, values, defaultValue]); 
 
   return value;
 };
@@ -54,6 +52,7 @@ const useMeasure = <T extends HTMLElement>() => {
     if (!ref.current) return;
     const ro = new ResizeObserver(([entry]) => {
       const { width, height } = entry.contentRect;
+      // Optional: Wrap in requestAnimationFrame if resize is still heavy
       setSize({ width, height });
     });
     ro.observe(ref.current);
@@ -121,17 +120,19 @@ const Masonry: React.FC<MasonryProps> = ({
   gap = 16,
   animated = true
 }) => {
-  /* -------------------------------------------------------
-     FIXED useMedia now SSR-safe
-     ------------------------------------------------------- */
-  const columns = useMedia(
-    ["(min-width:1500px)", "(min-width:1000px)", "(min-width:600px)", "(min-width:400px)"],
-    [5, 4, 3, 2],
-    1
-  );
+  // 1. Memoize configs to prevent useMedia re-running on every render
+  const mediaQueries = useMemo(() => 
+    ["(min-width:1500px)", "(min-width:1000px)", "(min-width:600px)", "(min-width:400px)"], 
+  []);
+  const columnCounts = useMemo(() => [5, 4, 3, 2], []);
+
+  const columns = useMedia(mediaQueries, columnCounts, 1);
 
   const [containerRef, { width }] = useMeasure<HTMLDivElement>();
   const [imagesReady, setImagesReady] = useState(false);
+  
+  // Track previous width to detect resize events
+  const prevWidthRef = useRef(width);
   const hasMounted = useRef(false);
 
   useEffect(() => {
@@ -155,67 +156,91 @@ const Masonry: React.FC<MasonryProps> = ({
   }, [columns, items, width, gap]);
 
   useLayoutEffect(() => {
-    if (!imagesReady) return;
+    if (!imagesReady || grid.length === 0) return;
 
-    grid.forEach((item, index) => {
-      const selector = `[data-key="${item.id}"]`;
-      const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
+    // 2. Detect if this update is due to a resize
+    const isResizing = width !== prevWidthRef.current && prevWidthRef.current !== 0;
+    prevWidthRef.current = width;
 
-      if (!animated) {
-        gsap.set(selector, { ...animProps, opacity: 1, filter: "none" });
-        return;
-      }
+    // Create a context to easily clean up all animations
+    const ctx = gsap.context(() => {
+      grid.forEach((item, index) => {
+        const selector = `[data-key="${item.id}"]`;
+        const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
 
-      if (!hasMounted.current) {
-        gsap.fromTo(
-          selector,
-          {
-            opacity: 0,
-            x: item.x,
-            y: item.y + (animateFrom === "bottom" ? 80 : 0),
-            width: item.w,
-            height: item.h,
-            ...(blurToFocus && { filter: "blur(8px)" })
-          },
-          {
-            opacity: 1,
+        if (!animated) {
+          gsap.set(selector, { ...animProps, opacity: 1, filter: "none" });
+          return;
+        }
+
+        // 3. LOGIC FIX:
+        // If mounting: Animate in (Fade/Stagger)
+        // If resizing: Set instantly (No duration, keeps it snappy)
+        // If data changed: Animate to new position
+        
+        if (!hasMounted.current) {
+          // INITIAL MOUNT ANIMATION
+          gsap.fromTo(
+            selector,
+            {
+              opacity: 0,
+              x: item.x,
+              y: item.y + (animateFrom === "bottom" ? 80 : 0),
+              width: item.w,
+              height: item.h,
+              ...(blurToFocus && { filter: "blur(8px)" })
+            },
+            {
+              opacity: 1,
+              ...animProps,
+              ...(blurToFocus && { filter: "blur(0px)" }),
+              duration: 0.8,
+              ease: "power3.out",
+              delay: index * stagger
+            }
+          );
+        } else if (isResizing) {
+          // RESIZE: INSTANT UPDATE (Prevents lag)
+          gsap.set(selector, {
             ...animProps,
-            ...(blurToFocus && { filter: "blur(0px)" }),
-            duration: 0.8,
-            ease: "power3.out",
-            delay: index * stagger
-          }
-        );
-      } else {
-        gsap.to(selector, {
-          ...animProps,
-          duration,
-          ease,
-          overwrite: "auto"
-        });
-      }
-    });
+            overwrite: true // Ensure we kill any active tweens
+          });
+        } else {
+          // DATA CHANGE / FILTER: SMOOTH ANIMATION
+          gsap.to(selector, {
+            ...animProps,
+            duration,
+            ease,
+            overwrite: "auto"
+          });
+        }
+      });
+    }, containerRef); // Scope to container
 
     hasMounted.current = true;
-  }, [grid, imagesReady, animated, stagger, animateFrom, blurToFocus, duration, ease]);
+
+    // Cleanup GSAP context when grid changes
+    return () => ctx.revert();
+
+  }, [grid, imagesReady, animated, stagger, animateFrom, blurToFocus, duration, ease, width]);
 
   const handleMouseEnter = (id: string, el: HTMLElement) => {
     if (scaleOnHover) {
-      gsap.to(`[data-key="${id}"]`, { scale: hoverScale, duration: 0.25, ease: "power2.out" });
+      gsap.to(`[data-key="${id}"]`, { scale: hoverScale, duration: 0.25, ease: "power2.out", overwrite: true });
     }
     if (colorShiftOnHover) {
       const overlay = el.querySelector(".color-overlay") as HTMLElement;
-      if (overlay) gsap.to(overlay, { opacity: 0.3, duration: 0.25 });
+      if (overlay) gsap.to(overlay, { opacity: 0.3, duration: 0.25, overwrite: true });
     }
   };
 
   const handleMouseLeave = (id: string, el: HTMLElement) => {
     if (scaleOnHover) {
-      gsap.to(`[data-key="${id}"]`, { scale: 1, duration: 0.25, ease: "power2.out" });
+      gsap.to(`[data-key="${id}"]`, { scale: 1, duration: 0.25, ease: "power2.out", overwrite: true });
     }
     if (colorShiftOnHover) {
       const overlay = el.querySelector(".color-overlay") as HTMLElement;
-      if (overlay) gsap.to(overlay, { opacity: 0, duration: 0.25 });
+      if (overlay) gsap.to(overlay, { opacity: 0, duration: 0.25, overwrite: true });
     }
   };
 
@@ -226,7 +251,7 @@ const Masonry: React.FC<MasonryProps> = ({
           key={item.id}
           data-key={item.id}
           className="absolute box-content cursor-pointer"
-          style={{ willChange: "transform, width, height, opacity" }}
+          // Removed 'will-change' to save memory
           onClick={() => onItemClick?.(item)}
           onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
           onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}

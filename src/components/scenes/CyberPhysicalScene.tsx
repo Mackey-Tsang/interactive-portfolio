@@ -4,10 +4,9 @@
 import React, { useEffect, useState } from "react";
 import Waves from "@/components/Waves";
 import MathSwimmersPlus from "@/components/MathSwimmersPlus";
-import MathSwimmers from "@/components/MathSwimmers";
+import SwimmerHalo from "@/components/SwimmerHalo";
+// import MathSwimmers from "@/components/MathSwimmers";
 import ScrambledText from "@/components/ScrambledText";
-import SciFiCursor from "@/components/SciFiCursor";
-import SciFiGlitchBackground from "@/components/SciFiGlitchBackground";
 
 const DESIGN_WIDTH = 1440;  // reference: your MacBook viewport width
 const DESIGN_HEIGHT = 900;  // reference: your MacBook viewport height
@@ -54,7 +53,6 @@ export default function CyberPhysicalScene() {
 
   return (
     <div className="absolute inset-0 bg-black overflow-hidden disable-dot-cursor">
-       <SciFiCursor />
       <Waves
         lineColor="rgba(255,255,255,0.35)"
         backgroundColor="transparent"
@@ -70,20 +68,15 @@ export default function CyberPhysicalScene() {
         className="z-0"
       />
 
-      {/* SCI-FI GLITCHING HUD OVERLAY (behind swimmers, above waves) */}
-      <SciFiGlitchBackground
-        intensity={0.5}
-        className="z-5 mix-blend-screen opacity-30"
-      />
 
       {/* MAIN DIGITAL CREATURE — MathSwimmersPlus */}
       <MathSwimmersPlus
         className="z-10"
-        shapeVariant="vortex"
+        shapeVariant="ribbon"
         shapeParams={{
-          freqK: 0.1,
+          freqK: 10.1,
           wobbleK: 5,
-          wobbleKSpeed: 1.5,
+          wobbleKSpeed: 10.5,
           scaleQ: 1,
           swirlQ: 1.1,
           noiseQ: 0.15,
@@ -99,10 +92,10 @@ export default function CyberPhysicalScene() {
         domainHeight={su(400)}
         // original: 2 × 1.5 on MacBook; now scaled but identical at 1440×900
         scaleX={2 * uniformScale}
-        scaleY={1.5 * uniformScale}
+        scaleY={2 * uniformScale}
         // original: offsetX = -400, offsetY = 100 (now 60, slightly up)
-        offsetX={sx(MAIN_OFFSET_X)}
-        offsetY={sy(MAIN_OFFSET_Y)}
+        offsetX={-500}
+        offsetY={-50}
         color="rgba(100,255,255,0.1)"
         pointSize={1.4 * uniformScale}
         pointsPerFrame={9000}
@@ -111,7 +104,7 @@ export default function CyberPhysicalScene() {
         trailFade={0.04}
         jitter={0.25}
         halo={{
-          enabled: true,
+          enabled: false,
           color: "rgba(255,0,0,0.5)",
           alpha: 0.5,
           radius: su(200),
@@ -140,9 +133,17 @@ export default function CyberPhysicalScene() {
           drift: 7,
         }}
       />
+<SwimmerHalo 
+        color="rgba(255, 0, 0, 0.5)"
+        alpha={0.5}
+        radius={200}    // Replace with su(200) if you have that function
+        thickness={50}  // Replace with su(50)
+        feather={0.9}
+        composite="lighter"
+      />
 
       {/* SECONDARY SWIMMER — MathSwimmers */}
-      <MathSwimmers
+      {/* <MathSwimmers
         className="z-10"
         color="rgba(190,255,255,0.5)"
         pointSize={1.5 * uniformScale}
@@ -159,13 +160,12 @@ export default function CyberPhysicalScene() {
         offsetY={sy(SECONDARY_OFFSET_Y)}
         trailFade={0}
         jitter={0.25}
-      />
+      /> */}
 
       {/* LEFT TEXT BLOCK 1 */}
-      <div className="pointer-events-auto absolute left-6 md:left-12 top-64 md:top-72 z-20 opacity-90">
-        <div className="max-w-md md:max-w-lg backdrop-blur-sm bg-cyan-500/5 border border-cyan-400/20 shadow-[0_0_25px_rgba(0,255,255,0.25)] rounded-xl px-4 md:px-5 py-3 md:py-4">
-          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-300/70">
-            <span>CHANNEL L-01</span>
+      <div className="pointer-events-auto absolute left-6 md:left-12 top-64 md:top-72 z-20 opacity-70">
+        <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
+          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>ARCH / CY-PHY</span>
           </div>
           <ScrambledText
@@ -185,9 +185,9 @@ export default function CyberPhysicalScene() {
       </div>
 
       {/* LEFT TEXT BLOCK 2 */}
-      <div className="pointer-events-auto absolute left-6 md:left-12 top-[72vh] md:top-[68vh] z-20 opacity-90">
-        <div className="max-w-md md:max-w-lg backdrop-blur-sm bg-cyan-500/5 border border-cyan-400/20 shadow-[0_0_25px_rgba(0,255,255,0.25)] rounded-xl px-4 md:px-5 py-3 md:py-4">
-          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-300/70">
+      <div className="pointer-events-auto absolute left-6 md:left-12 top-[72vh] md:top-[68vh] z-20 opacity-70">
+        <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
+          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>CHANNEL L-02</span>
             <span>SYSTEM LOG</span>
           </div>
@@ -209,10 +209,9 @@ export default function CyberPhysicalScene() {
       </div>
 
       {/* RIGHT TEXT BLOCK 1 */}
-      <div className="pointer-events-auto absolute right-6 md:right-12 top-1/4 z-20 opacity-90">
-        <div className="max-w-md md:max-w-lg backdrop-blur-sm bg-cyan-500/5 border border-cyan-400/20 shadow-[0_0_25px_rgba(0,255,255,0.25)] rounded-xl px-4 md:px-5 py-3 md:py-4">
-          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-300/70">
-            <span>NODE R-01</span>
+      <div className="pointer-events-auto absolute right-6 md:right-12 top-1/4 z-20 opacity-70">
+        <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
+          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>INTERFACE / REACTIVITY</span>
           </div>
           <ScrambledText
@@ -233,10 +232,9 @@ export default function CyberPhysicalScene() {
       </div>
 
       {/* RIGHT TEXT BLOCK 2 */}
-      <div className="pointer-events-auto absolute right-6 md:right-12 top-[68vh] md:top-[63vh] z-20 opacity-90">
-        <div className="max-w-md md:max-w-lg backdrop-blur-sm bg-cyan-500/5 border border-cyan-400/20 shadow-[0_0_25px_rgba(0,255,255,0.25)] rounded-xl px-4 md:px-5 py-3 md:py-4">
-          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-300/70">
-            <span>NODE R-02</span>
+      <div className="pointer-events-auto absolute right-6 md:right-12 top-[68vh] md:top-[63vh] z-20 opacity-70">
+        <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
+          <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>HUMAN / ENV</span>
           </div>
           <ScrambledText

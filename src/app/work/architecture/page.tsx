@@ -42,7 +42,7 @@ const projects = [
 
 export default function ArchitectureWorkPage() {
   return (
-    <main className="mx-auto max-w p-6 bg-neutral-200 text-black cursor-none">
+    <main className="mx-auto max-w p-6 bg-neutral-200 text-black">
       <ArchProjectCards
         projects={projects}
         className="max-w-5xl mx-auto px-0 py-12"  // <— match your current page width

@@ -57,7 +57,7 @@ class ImageItem {
   }
 }
 
-/* ---------------- base trail class ---------------- */
+/* ---------------- optimized base trail class ---------------- */
 abstract class TrailBase {
   protected container: HTMLDivElement;
   protected images: ImageItem[];
@@ -67,13 +67,16 @@ abstract class TrailBase {
   protected activeImagesCount = 0;
   protected isIdle = true;
   protected threshold = 80;
+  
   protected mousePos = { x: 0, y: 0 };
   protected lastMousePos = { x: 0, y: 0 };
   protected cacheMousePos = { x: 0, y: 0 };
   protected raf = 0;
+  
+  protected containerRect: DOMRect; 
 
   private handlePointerMoveBound!: (e: MouseEvent | TouchEvent) => void;
-  private initRenderBound!: (e: MouseEvent | TouchEvent) => void;
+  private handleResizeBound!: () => void;
 
   constructor(container: HTMLDivElement) {
     this.container = container;
@@ -82,33 +85,37 @@ abstract class TrailBase {
     );
     this.imagesTotal = this.images.length;
 
-    this.handlePointerMoveBound = (ev: MouseEvent | TouchEvent) => {
-      const rect = this.container.getBoundingClientRect();
-      this.mousePos = getLocalPointerPos(ev, rect);
+    this.containerRect = this.container.getBoundingClientRect();
+
+    this.handleResizeBound = () => {
+      this.containerRect = this.container.getBoundingClientRect();
     };
+    window.addEventListener("resize", this.handleResizeBound);
+
+    this.handlePointerMoveBound = (ev: MouseEvent | TouchEvent) => {
+      this.mousePos = getLocalPointerPos(ev, this.containerRect);
+    };
+
     container.addEventListener("mousemove", this.handlePointerMoveBound);
     container.addEventListener("touchmove", this.handlePointerMoveBound, { passive: true });
 
-    this.initRenderBound = (ev: MouseEvent | TouchEvent) => {
-      const rect = this.container.getBoundingClientRect();
-      this.mousePos = getLocalPointerPos(ev, rect);
-      this.cacheMousePos = { ...this.mousePos };
-      this.raf = requestAnimationFrame(() => this.render());
-      container.removeEventListener("mousemove", this.initRenderBound as EventListener);
-      container.removeEventListener("touchmove", this.initRenderBound as EventListener);
-    };
-    container.addEventListener("mousemove", this.initRenderBound as EventListener);
-    container.addEventListener("touchmove", this.initRenderBound as EventListener, { passive: true });
+    this.startRenderLoop();
+  }
+
+  protected startRenderLoop() {
+    this.raf = requestAnimationFrame(() => this.render());
   }
 
   protected render() {
     const distance = getMouseDistance(this.mousePos, this.lastMousePos);
     this.cacheMousePos.x = lerp(this.cacheMousePos.x, this.mousePos.x, 0.1);
     this.cacheMousePos.y = lerp(this.cacheMousePos.y, this.mousePos.y, 0.1);
+    
     if (distance > this.threshold) {
       this.showNextImage();
       this.lastMousePos = { ...this.mousePos };
     }
+    
     if (this.isIdle && this.zIndexVal !== 1) this.zIndexVal = 1;
     this.raf = requestAnimationFrame(() => this.render());
   }
@@ -117,6 +124,7 @@ abstract class TrailBase {
     this.activeImagesCount++;
     this.isIdle = false;
   }
+  
   protected onImageDeactivated() {
     this.activeImagesCount--;
     if (this.activeImagesCount === 0) this.isIdle = true;
@@ -124,10 +132,9 @@ abstract class TrailBase {
 
   public destroy() {
     if (this.raf) cancelAnimationFrame(this.raf);
+    window.removeEventListener("resize", this.handleResizeBound);
     this.container.removeEventListener("mousemove", this.handlePointerMoveBound);
     this.container.removeEventListener("touchmove", this.handlePointerMoveBound);
-    this.container.removeEventListener("mousemove", this.initRenderBound as EventListener);
-    this.container.removeEventListener("touchmove", this.initRenderBound as EventListener);
     this.images.forEach((img) => img.destroy());
   }
 
@@ -216,9 +223,6 @@ class ImageTrailVariant2 extends TrailBase {
   }
 }
 
-/* You can keep adding the other variants (3–8) same as your example…
-   For brevity, we’ll map only 1 & 2 here. Add others if you want. */
-
 type ImageTrailConstructor = typeof ImageTrailVariant1 | typeof ImageTrailVariant2;
 
 const variantMap: Record<number, ImageTrailConstructor> = {
@@ -228,26 +232,35 @@ const variantMap: Record<number, ImageTrailConstructor> = {
 
 export interface ImageTrailProps {
   items: string[];
-  variant?: number; // 1 or 2 unless you paste the rest
+  variant?: number;
   className?: string;
+  imageSize?: number | string; // e.g. 280 or "200px"
+  imageRatio?: number | string; // e.g. 1.1 or "16/9"
 }
 
-export default function ImageTrail({ items, variant = 1, className = "" }: ImageTrailProps) {
+export default function ImageTrail({ 
+  items, 
+  variant = 1, 
+  className = "",
+  imageSize = 280, // Default width
+  imageRatio = 1.1 // Default aspect ratio
+}: ImageTrailProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<TrailBase | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
-    // init trail
+    
+    // Init trail
     const Cls = variantMap[variant] || variantMap[1];
     trailRef.current = new Cls(containerRef.current);
 
     return () => {
-      // cleanup listeners & raf
+      // Cleanup listeners & raf
       trailRef.current?.destroy();
       trailRef.current = null;
     };
-  }, [variant, items]);
+  }, [variant, items, imageSize, imageRatio]);
 
   return (
     <div
@@ -258,8 +271,12 @@ export default function ImageTrail({ items, variant = 1, className = "" }: Image
       {items.map((url, i) => (
         <div
           key={i}
-           className="content__img w-[280px] aspect-[1.1] rounded-[20px] absolute top-0 left-0 opacity-0 overflow-hidden will-change-[transform,filter]"
-          style={{ pointerEvents: "none" }}
+          className="content__img rounded-[2px] absolute top-0 left-0 opacity-0 overflow-hidden will-change-[transform,filter]"
+          style={{ 
+            pointerEvents: "none",
+            width: imageSize,
+            aspectRatio: imageRatio
+          }}
         >
           <div
             className="content__img-inner bg-center bg-cover w-[calc(100%+20px)] h-[calc(100%+20px)] absolute -top-2.5 -left-2.5"

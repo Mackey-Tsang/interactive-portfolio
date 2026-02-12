@@ -294,7 +294,7 @@ export default function SoftThresholdsVeilspacePage() {
           {/* Image right */}
           <div className="aspect-4/3 w-full overflow-hidden rounded-xl bg-neutral-900">
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Soft%20Thresholds%20%E2%80%93%20Veilspace/p20.JPG?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Soft%20Thresholds%20%E2%80%93%20Veilspace/p20.jpg?raw=true"
               alt="Digital twin / control interface"
               className="h-full w-full object-cover"
             />

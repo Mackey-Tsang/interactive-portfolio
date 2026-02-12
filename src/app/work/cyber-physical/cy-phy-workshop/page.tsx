@@ -83,11 +83,11 @@ export default function CyPhyWorkshopPage() {
                     Cyber-Physical / XR Installation
                   </p>
                   <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
-                    Engineering Tomorrow — XR Installation
+                    Engineering Tomorrow — Cy-Phy Workshop
                   </h1>
                   <p className="text-sm text-neutral-300 mb-4">
-                    A 4.5 m-tall Extended Reality installation developed in the
-                    Cy-Phy Workshop at arc/sec, translating engineering research
+                    An Extended Reality installation developed 
+                    by arc/sec Lab, translating engineering research
                     into spatial 3D animation for the{" "}
                     <span className="font-medium">
                       Engineering Tomorrow Showcase 2025
@@ -98,7 +98,7 @@ export default function CyPhyWorkshopPage() {
                   <div className="text-[11px] text-neutral-400 space-y-1">
                     <p>Role — Research Assistant, Engineering &amp; Design</p>
                     <p>Location — University of Auckland, Newmarket Campus</p>
-                    <p>Tools — Unity, Rhino, Blender, Projection Mapping, Shutter-Glass XR</p>
+                    <p>Tools — Unity, Rhino, Blender, Projection Mapping, 3D Shutter-Glass</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function CyPhyWorkshopPage() {
                   </h2>
                   <p className="text-sm text-neutral-300">
                     <span className="font-medium">Engineering Tomorrow</span> is a
-                    private-funded showcase hosted by the Faculty of Engineering
+                    showcase hosted by the Faculty of Engineering
                     &amp; Design. The event gathers research groups across the
                     University of Auckland to demonstrate future-focused
                     engineering and design innovations. Each group provided
@@ -123,10 +123,10 @@ export default function CyPhyWorkshopPage() {
                     a unified XR installation.
                   </p>
                   <p className="text-sm text-neutral-300">
-                    The Cy-Phy Workshop within{" "}
+                    The Cy-Phy Workshop designed by{" "}
                     <span className="font-medium">
-                      arc/sec — Lab for Cyber-Physical Architecture &amp;
-                      Interactive Systems
+                      arc/sec Lab focus on Cyber-Physical Design &amp;
+                      Interactive Systems,
                     </span>{" "}
                     developed a shared projection environment where these
                     disciplines could be read through motion, light, and spatial
@@ -203,7 +203,7 @@ export default function CyPhyWorkshopPage() {
               </div>
 
               {/* Participating labs list */}
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm text-neutral-300">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-sm text-neutral-300">
                 <div className="space-y-1">
                   <h3 className="text-[11px] font-semibold tracking-[0.18em] uppercase text-neutral-500">
                     Participating Labs
@@ -211,8 +211,8 @@ export default function CyPhyWorkshopPage() {
                   <ul className="space-y-1">
                     <li>UoA Formula SAE Team (F:SAE:47)</li>
                     <li>UoA Rocketry Club (UARC)</li>
-                    <li>arc/sec — Cyber-Physical Architecture</li>
-                    <li>CDAM — Creative Design &amp; Additive Manufacturing Lab</li>
+                    <li>arc/sec Lab — School of Architecture and Planning</li>
+                    <li>Creative Design &amp; Additive Manufacturing Lab (CDAM)</li>
                   </ul>
                 </div>
                 <div className="space-y-1">
@@ -238,10 +238,10 @@ export default function CyPhyWorkshopPage() {
               <div className="space-y-4 text-sm text-neutral-300">
                 <p>
                   The Cy-Phy Workshop developed a{" "}
-                  <span className="font-medium">4.5 m-tall projection tower</span>{" "}
+                  <span className="font-medium">4.5 m-tall projection structure</span>{" "}
                   combining fabric and steel scaffolding with real-time 3D
                   animation inside Unity. Shutter glasses introduced stereoscopic
-                  depth, turning the tower into a floating volumetric canvas where
+                  depth, turning the structure into a floating volumetric canvas where
                   motion, parallax, and light revealed each lab&apos;s engineering
                   focus.
                 </p>
@@ -253,7 +253,7 @@ export default function CyPhyWorkshopPage() {
                   into abstract spatial behaviour. Viewers read differences between
                   labs through changes in motion language—accelerations,
                   turbulence, aggregation, and dissolution across the height of
-                  the tower.
+                  the structure.
                 </p>
               </div>
 
@@ -302,7 +302,7 @@ export default function CyPhyWorkshopPage() {
                 Engineering, working closely with{" "}
                 <span className="font-medium">Assoc. Prof. Uwe Rieger</span> and{" "}
                 <span className="font-medium">Technologist Yinan Liu</span> in
-                arc/sec. The focus was to bridge engineering research content with
+                arc/sec Lab. The focus was to bridge engineering research content with
                 an XR installation that is legible to a wider audience.
               </p>
 
@@ -312,7 +312,7 @@ export default function CyPhyWorkshopPage() {
                     Content Collection &amp; Analysis
                   </h3>
                   <p>
-                    Synthesised technical information, prototypes, and aerodynamic
+                    Synthesised technical information, prototypes, and
                     data from each lab into clear visual references, mapping
                     mechanical behaviours into animation ideas.
                   </p>
@@ -333,7 +333,7 @@ export default function CyPhyWorkshopPage() {
                   </p>
                   <p>
                     Structured the projection layout to lock animations to the 4.5
-                    m fabric tower, ensuring alignment with its steel and textile
+                    m fabric structure, ensuring alignment with its steel and textile
                     frame.
                   </p>
                 </div>
@@ -350,8 +350,8 @@ export default function CyPhyWorkshopPage() {
               <p className="text-sm text-neutral-300">
                 Each lab&apos;s animation was developed as a dedicated Unity scene
                 within a shared spatial framework. The clips below show real-time
-                rendering for each sequence before projection mapping to the 4.5 m
-                tower.
+                rendering for each sequence before projection mapping to the
+                structure.
               </p>
 
               <div className="space-y-4">
