@@ -33,9 +33,9 @@ export default function HomeCanvas() {
 
   const cta = useMemo(() => {
     if (showHome) return null;
-    if (category === "Photography") return { href: "/work/photography", label: "View all photos" };
-    if (category === "Architecture") return { href: "/work/architecture", label: "View all projects" };
-    return { href: "/work/cyber-physical", label: "View all projects" };
+    if (category === "Photography") return { href: "/work/photography", label: "View Photos" };
+    if (category === "Architecture") return { href: "/work/architecture", label: "View Projects" };
+    return { href: "/work/cyber-physical", label: "View Projects" };
   }, [showHome, category]);
 
   return (
@@ -64,21 +64,21 @@ export default function HomeCanvas() {
             <ImageTrail
               variant={3}
               items={[
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p1.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p2.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Portrait/p25.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p18.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p5.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p6.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Portrait/p20.JPG?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p8.jpg?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p15.JPG?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p23.JPG?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p20.JPG?raw=true",
-                "https://github.com/Mackey-Tsang/photo-host/blob/main/Landscape/p19.JPG?raw=true",
-                
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p1.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p2.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Portrait/p25.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p18.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p5.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p6.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Portrait/p20.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p8.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p15.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p23.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p20.jpg?raw=true",
+                "https://github.com/Mackey-Tsang/photo-host/blob/main/Photography/Landscape/p19.jpg?raw=true",
+
               ]}
-              imageSize={400} 
+              imageSize={400}
               imageRatio={1.5}
             />
           </div>
@@ -103,12 +103,10 @@ export default function HomeCanvas() {
   <div className="pointer-events-auto absolute bottom-6 inset-x-0 flex items-center justify-center z-50 ">
     <a
       href={cta.href}
-      className={
-        category === "Architecture"
-          ? "rounded-full px-4 py-2 border bg-white border-black text-black hover:bg-black hover:text-white transition"
-          : // Photography + Cyber-Physical → transparent bg, solid white border/text
-            "rounded-full px-4 py-2 border border-white text-white bg-transparent hover:border-white/80 transition"
-      }
+      className="relative rounded-full bg-white px-4 py-2 font-mono text-black  
+      transition-colors duration-300 ease-linear before:absolute before:left-1/2 before:top-1/2 
+      before:-z-1 before:h-full before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:animate-ping 
+      before:rounded-full before:bg-gray-700 hover:bg-gray-400 hover:before:bg-white"
     >
       {cta.label}
     </a>

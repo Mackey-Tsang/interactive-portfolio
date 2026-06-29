@@ -176,10 +176,11 @@ export default function CyberPhysicalScene() {
           >
             Architecture doesn’t have to stay still. My cyber-physical
             explorations treat space as something that listens, responds,
-            and behaves. Through sensors, motion, and digital systems,
+            and behaves. 
+            {/* Through sensors, motion, and digital systems,
             these projects reveal how structure can become an active
             participant—shifting with the user, shaping experience, and
-            expressing a new kind of architectural intelligence.
+            expressing a new kind of architectural intelligence. */}
           </ScrambledText>
         </div>
       </div>
@@ -200,10 +201,11 @@ export default function CyberPhysicalScene() {
             This body of work experiments with the tension between physical
             mechanisms and digital logic. Each project investigates how
             movement, data, and interaction can become spatial tools—
-            transforming simple components into living systems. The aim
+            transforming simple components into living systems. 
+            {/* The aim
             is to push beyond static form, discovering how architecture
             can communicate through motion, behaviour, and real-time
-            responsiveness.
+            responsiveness. */}
           </ScrambledText>
         </div>
       </div>
@@ -222,11 +224,12 @@ export default function CyberPhysicalScene() {
           >
             In these studies, I explore how technology can extend
             architecture&apos;s ability to speak and react. By merging
-            code, fabrication, and mechanical design, I create prototypes
+            code, fabrication, and mechanical design. 
+            {/* I create prototypes
             that visualize invisible forces—rotation, pressure,
             proximity, and flow. These installations challenge how we
             think about structure, offering an experience where the
-            digital and the material evolve together.
+            digital and the material evolve together. */}
           </ScrambledText>
         </div>
       </div>
@@ -246,10 +249,11 @@ export default function CyberPhysicalScene() {
             Cyber-physical design offers a pathway to rethink the
             relationship between humans and environment. These works
             translate interaction into form, letting users influence
-            motion, geometry, and spatial atmosphere. The goal is to
+            motion, geometry, and spatial atmosphere. 
+            {/* The goal is to
             build systems that feel alive—where architecture becomes
             collaborative, expressive, and continuously unfolding with
-            every touch or movement.
+            every touch or movement. */}
           </ScrambledText>
         </div>
       </div>

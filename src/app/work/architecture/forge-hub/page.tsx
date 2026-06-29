@@ -102,59 +102,59 @@ export default function ForgeHubForumPage() {
   // TODO: replace all src placeholders with your real image URLs
   const threeOverviewImages = [
     {
-      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p27.webp?raw=true",
+      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p27.webp?raw=true",
       alt: "Street view of The Forge Hub and its stone base / timber column language.",
       caption: "John Burns & Company factory. Photographs taken by Whites Aviation, in Jun 1949",
     },
     {
-      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p2.webp?raw=true",
+      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p2.webp?raw=true",
       alt: "Internal lobby space with light-filled volume and structural expression.",
       caption: "Stanley Street, Pernell. Photographs taken by Whites Aviation, 18 July 1949",
     },
     {
-      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p32.webp?raw=true",
+      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p32.webp?raw=true",
       alt: "Forum of Voices circular lobby with timber structure and glass roof.",
       caption: "Window display in John Burns hardware store in Custom Street",
     },
   ];
 
   const forgeHubGridImages = [
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p3.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p4.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p8.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p9.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p10.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p1.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p11.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p12.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p15.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p16.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p22.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p23.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p24.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p25.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p13.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p14.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p3.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p4.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p8.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p9.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p10.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p1.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p11.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p12.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p15.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p16.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p22.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p23.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p24.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p25.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p13.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p14.jpg?raw=true",
   ];
 
   const forumGridImages = [
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p5.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p6.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p7.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p17.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p19.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p20.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p18.jpg?raw=true",
-    "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p21.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p5.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p6.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p7.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p17.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p19.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p20.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p18.jpg?raw=true",
+    "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p21.jpg?raw=true",
   ];
 
-  const forgePortrait1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p28.jpg?raw=true";
-  const forgePortrait2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p29.jpg?raw=true";
+  const forgePortrait1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p28.jpg?raw=true";
+  const forgePortrait2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p29.jpg?raw=true";
 
-  const forumPortrait1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p30.jpg?raw=true";
-  const forumPortrait2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p31.jpg?raw=true";
+  const forumPortrait1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p30.jpg?raw=true";
+  const forumPortrait2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p31.jpg?raw=true";
 
-  const tectonicImage = "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Forge%20Hub%20Forum%20of%20Voices/p26.png?raw=true";
+  const tectonicImage = "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p26.png?raw=true";
 
   return (
     <main className="min-h-dvh w-full bg-neutral-100 text-black">

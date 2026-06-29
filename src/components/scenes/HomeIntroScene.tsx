@@ -80,15 +80,16 @@ export default function HomeIntroScene() {
               <h3 className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-3 opacity-50">Experience</h3>
               <div className="space-y-3 text-xs font-light text-white/80 leading-tight">
                 
-                <div className="group"><p className="font-medium text-white mb-0.5">Digital Research Hub - UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Teaching Assistant — 2025-26</p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Digital Research Hub - UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Research & Teaching Assistant — 2025-Now</p></div>
                 <div className="group"><p className="font-medium text-white mb-0.5">Mechanical & Mechatronics Engineering - UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Research Assistant — 2025</p></div>
                 <div className="group"><p className="font-medium text-white mb-0.5">PhotoSoc UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Head of Marketing — 2024</p></div>
                 <div className="group"><p className="font-medium text-white mb-0.5">Pictureworks (Hong Kong)</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Photography & Sales Service Associate — 2023</p></div>
               </div>
             </div>
             <div>
-              <h3 className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-3 opacity-50">Awards</h3>
+              <h3 className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-3 opacity-50">Achievements</h3>
               <div className="space-y-3 text-xs font-light text-white/80 leading-tight">
+              <div><p className="font-medium text-white mb-0.5">Shortlisted - Architecture Competition</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Buildner Kinderspace #3</p></div>
               <div><p className="font-medium text-white mb-0.5">Summer Research Scholarship</p><p className="text-white/50 text-[10px] uppercase tracking-wider">University of Auckland 2025</p></div>
               <div><p className="font-medium text-white mb-0.5">Second Prize - National Finals</p><p className="text-white/50 text-[10px] uppercase tracking-wider">10th Cross-Strait Design Competition • Huacan Award 2025</p></div>
                 <div><p className="font-medium text-white mb-0.5">NCEA Design Scholarship</p><p className="text-white/50 text-[10px] uppercase tracking-wider">New Zealand 2022</p></div>

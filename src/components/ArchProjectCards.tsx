@@ -91,11 +91,11 @@ function ProjectCard({ project }: { project: Project }) {
           overlayContent={
             <div className="pointer-events-none flex items-end h-full w-full ">
               <div className="w-full bg-neutral-200 backdrop-blur text-black px-5 py-3 rounded-b-[15px]">
-                <div className="text-lg font-semibold leading-tight">
+                <div className="text-lg font-light leading-tight">
                   {project.title}
                 </div>
                 {project.year && (
-                  <div className="text-sm tracking-wide opacity-70 mt-1">
+                  <div className="text-sm tracking-wide font-thin opacity-100 mt-1">
                     {project.year}
                   </div>
                 )}

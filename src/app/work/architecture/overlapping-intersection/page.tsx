@@ -127,12 +127,12 @@ export default function OverlappingIntersectionPage() {
         <SectionFadeOnScroll
           className="space-y-6"
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p3.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p3.jpg?raw=true",
           ]}
         >
           <figure className="w-full">
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p3.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p3.jpg?raw=true"
               alt="The Overlapping Intersection - overall view"
               className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
             />
@@ -177,12 +177,12 @@ export default function OverlappingIntersectionPage() {
         {/* -------------------------------------------------- */}
         <SectionFadeOnScroll
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p7.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p7.jpg?raw=true",
           ]}
         >
           <figure className="w-full">
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p7.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p7.jpg?raw=true"
               alt="Axonometric view"
               className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
             />
@@ -194,12 +194,12 @@ export default function OverlappingIntersectionPage() {
         {/* -------------------------------------------------- */}
         <SectionFadeOnScroll
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p8.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p8.jpg?raw=true",
           ]}
         >
           <figure className="w-full">
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p8.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p8.jpg?raw=true"
               alt="Night view"
               className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
             />
@@ -212,14 +212,14 @@ export default function OverlappingIntersectionPage() {
         <SectionFadeOnScroll
           className="space-y-4"
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p4.jpg?raw=true",
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p6.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p4.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p6.jpg?raw=true",
           ]}
         >
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p4.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p4.jpg?raw=true"
                 alt=""
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />
@@ -227,7 +227,7 @@ export default function OverlappingIntersectionPage() {
 
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p6.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p6.jpg?raw=true"
                 alt=""
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />
@@ -241,14 +241,14 @@ export default function OverlappingIntersectionPage() {
         <SectionFadeOnScroll
           className="space-y-4"
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p5.jpg?raw=true",
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p9.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p5.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p9.jpg?raw=true",
           ]}
         >
           <div className="grid gap-4 md:grid-cols-2">
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p5.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p5.jpg?raw=true"
                 alt=""
                 className="aspect-2/3 object-[20%_50%] object-cover border border-neutral-400 bg-neutral-300"
               />
@@ -256,7 +256,7 @@ export default function OverlappingIntersectionPage() {
 
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p9.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p9.jpg?raw=true"
                 alt=""
                 className="aspect-2/3 w-full h-auto border border-neutral-400 bg-neutral-300 object-cover"
               />
@@ -270,12 +270,12 @@ export default function OverlappingIntersectionPage() {
         <SectionFadeOnScroll
           className="space-y-4"
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p10.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p10.jpg?raw=true",
           ]}
         >
           <figure>
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p10.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p10.jpg?raw=true"
               alt=""
               className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
             />
@@ -309,8 +309,8 @@ export default function OverlappingIntersectionPage() {
         <SectionFadeOnScroll
           className="space-y-4"
           imageUrls={[
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p1.jpg?raw=true",
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p2.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p1.jpg?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p2.jpg?raw=true",
           ]}
         >
           <h2 className="text-base md:text-lg font-medium tracking-wide">
@@ -320,7 +320,7 @@ export default function OverlappingIntersectionPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p1.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p1.jpg?raw=true"
                 alt=""
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />
@@ -328,7 +328,7 @@ export default function OverlappingIntersectionPage() {
 
             <figure>
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/The%20Overlapping%20Intersection/p2.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p2.jpg?raw=true"
                 alt=""
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />

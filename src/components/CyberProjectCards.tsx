@@ -10,7 +10,8 @@ type CyberProject = {
   title: string;
   year: string;
   cover: string;
-  variant?: "default" | "blue" | "yellow" | "pink";
+  type: string;
+  variant?: "default" | "blue" | "yellow" | "pink" | "green"  | "purple" | "cyan" | "orange" | "red" | "teal";
 };
 
 interface CyberProjectCardsProps {
@@ -82,9 +83,9 @@ function ProjectCard({ project }: { project: CyberProject }) {
           {/* Text overlay */}
           <div className="relative z-10 p-4 sm:p-5 flex flex-col gap-1 bg-linear-to-t from-black/90 via-black/50 to-transparent">
             <p className="text-xs uppercase tracking-[0.22em] text-neutral-300">
-              Cyber-Physical
+              {project.type}
             </p>
-            <h2 className="text-base sm:text-lg md:text-xl font-semibold tracking-wide text-white">
+            <h2 className="text-base sm:text-lg md:text-xl font-thin tracking-wide text-white">
               {project.title}
             </h2>
             <p className="text-xs sm:text-sm text-neutral-300/80">

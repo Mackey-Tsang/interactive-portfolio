@@ -143,14 +143,14 @@ export default function LumenVestigePage() {
               type="button"
               onClick={() =>
                 handleOpen(
-                  "https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p1.jpg?raw=true",
+                  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p1.jpg?raw=true",
                   "Lumen Vestige – overall view"
                 )
               }
               className="block w-full cursor-zoom-in"
             >
               <img
-                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p1.jpg?raw=true"
+                src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p1.jpg?raw=true"
                 alt="Lumen Vestige – overall view"
                 className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
               />
@@ -172,11 +172,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p2.jpg?raw=true", "Landscape 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p2.jpg?raw=true", "Landscape 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p2.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p2.jpg?raw=true"
                   alt="Landscape 1"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-cover aspect-5/3"
                 />
@@ -186,11 +186,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p3.jpg?raw=true", "Landscape 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p3.jpg?raw=true", "Landscape 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p3.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p3.jpg?raw=true"
                   alt="Landscape 2"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-cover aspect-5/3"
                 />
@@ -207,11 +207,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p4.jpg?raw=true", "Portrait 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p4.jpg?raw=true", "Portrait 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p4.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p4.jpg?raw=true"
                   alt="Portrait 1"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -221,11 +221,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p5.jpg?raw=true", "Portrait 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p5.jpg?raw=true", "Portrait 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p5.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p5.jpg?raw=true"
                   alt="Portrait 2"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -242,11 +242,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p6.jpg?raw=true", "Portrait 3")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p6.jpg?raw=true", "Portrait 3")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p6.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p6.jpg?raw=true"
                   alt="Portrait 3"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -256,11 +256,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p7.jpg?raw=true", "Portrait 4")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p7.jpg?raw=true", "Portrait 4")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p7.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p7.jpg?raw=true"
                   alt="Portrait 4"
                   className="aspect-2/3 object-cover border border-neutral-400 bg-neutral-300"
                 />
@@ -286,11 +286,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p8.jpg?raw=true", "Competition Board 1")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p8.jpg?raw=true", "Competition Board 1")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p8.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p8.jpg?raw=true"
                   alt="Competition Board 1"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
                 />
@@ -300,11 +300,11 @@ export default function LumenVestigePage() {
             <figure>
               <button
                 type="button"
-                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p9.jpg?raw=true", "Competition Board 2")}
+                onClick={() => handleOpen("https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p9.jpg?raw=true", "Competition Board 2")}
                 className="block w-full cursor-zoom-in"
               >
                 <img
-                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Lumen%20Vestige/p9.jpg?raw=true"
+                  src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Lumen%20Vestige/p9.jpg?raw=true"
                   alt="Competition Board 2"
                   className="w-full h-auto border border-neutral-400 bg-neutral-300 object-contain"
                 />

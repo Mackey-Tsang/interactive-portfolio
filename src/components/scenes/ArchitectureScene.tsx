@@ -79,7 +79,7 @@ function ImagesForBuffer() {
       {
         pos: [0, -height * 2 - height / 4, 0],
         scale: [width, height / 1.1, 1],
-        url: "/architecture/img7.jpg",
+        url: "/architecture/p7.jpg",
       },
     ],
     [height, width]
@@ -132,7 +132,7 @@ function TitlesForBuffer() {
         anchorY="middle"
         fontWeight={weight}
       >
-        Inception
+        Connection
       </Text>
 
       <Text

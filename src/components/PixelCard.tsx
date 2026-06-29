@@ -148,10 +148,52 @@ const VARIANTS = {
     colors: "#fecdd3,#fda4af,#e11d48",
     noFocus: true,
   },
+  green: {
+    activeColor: "#bbf7d0",
+    gap: 8,
+    speed: 30,
+    colors: "#bbf7d0,#86efac,#22c55e",
+    noFocus: false,
+  },
+  purple: {
+    activeColor: "#e9d5ff",
+    gap: 7,
+    speed: 40,
+    colors: "#e9d5ff,#c084fc,#a855f7",
+    noFocus: false,
+  },
+  cyan: {
+    activeColor: "#cffafe",
+    gap: 5,
+    speed: 35,
+    colors: "#cffafe,#67e8f9,#06b6d4",
+    noFocus: false,
+  },
+  orange: {
+    activeColor: "#fed7aa",
+    gap: 9,
+    speed: 45,
+    colors: "#fed7aa,#fdba74,#fb923c",
+    noFocus: false,
+  },
+  red: {
+    activeColor: "#fecaca",
+    gap: 4,
+    speed: 50,
+    colors: "#fecaca,#f87171,#ef4444",
+    noFocus: false,
+  },
+  teal: {
+    activeColor: "#99f6e4",
+    gap: 6,
+    speed: 30,
+    colors: "#99f6e4,#5eead4,#14b8a6",
+    noFocus: false,
+  },
 };
 
 interface PixelCardProps {
-  variant?: "default" | "blue" | "yellow" | "pink";
+  variant?: "default" | "blue" | "yellow" | "pink" | "green"  | "purple" | "cyan" | "orange" | "red" | "teal";
   gap?: number;
   speed?: number;
   colors?: string;

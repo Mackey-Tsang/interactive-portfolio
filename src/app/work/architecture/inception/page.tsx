@@ -19,37 +19,37 @@ export default function InceptionArchitectureMediaPage() {
   // ---------- IMAGE SETS ----------
   const DRAWING_IN_SCALE: ViewerImage[] = useMemo(
     () => [
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p29.jpg?raw=true", caption: "Elevation 1:20 @A3" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p32.png?raw=true", caption: "Floor Plan 1:100 @A3" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p30.png?raw=true", caption: "Plan 1:1 @A4" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p33.png?raw=true", caption: "Cross Section 1:2 @A4" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p31.png?raw=true", caption: "Section 1:100 @A3" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p29.jpg?raw=true", caption: "Elevation 1:20 @A3" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p32.jpg?raw=true", caption: "Floor Plan 1:100 @A3" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p30.jpg?raw=true", caption: "Plan 1:1 @A4" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p33.png?raw=true", caption: "Cross Section 1:2 @A4" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p31.jpg?raw=true", caption: "Section 1:100 @A3" },
     ],
     []
   );
 
   const MODELS_VIEWER: ViewerImage[] = useMemo(
     () => [
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p12.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p13.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p14.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p15.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p16.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p17.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p18.jpg?raw=true"},
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p19.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p12.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p13.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p14.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p15.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p16.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p17.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p18.jpg?raw=true"},
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p19.jpg?raw=true"},
     ],
     []
   );
 
   const ARTIFACTS_VIEWER: ViewerImage[] = useMemo(
     () => [
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p20.jpg?raw=true" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p7.JPG?raw=true" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p10.JPG?raw=true" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p11.JPG?raw=true" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p8.JPG?raw=true" },
-      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p9.JPG?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p20.jpg?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p7.JPG?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p10.JPG?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p11.JPG?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p8.JPG?raw=true" },
+      { src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p9.JPG?raw=true" },
     ],
     []
   );
@@ -57,52 +57,52 @@ export default function InceptionArchitectureMediaPage() {
   // grids
   const TRANSFORMED_FLOORPLAN = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p35.png?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p36.png?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p37.png?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p38.png?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p35.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p36.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p37.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p38.jpg?raw=true",
     ],
     []
   );
 
   const MODELS_GRID = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p4.JPG?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p5.JPG?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p1.JPG?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p6.JPG?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p4.JPG?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p5.JPG?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p1.JPG?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p6.JPG?raw=true",
     ],
     []
   );
 
   const ARTIFACTS_ROW_3 = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p23.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p24.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p25.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p23.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p24.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p25.jpg?raw=true",
     ],
     []
   );
 
   const ARTIFACTS_ROW_2 = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p21.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p22.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p21.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p22.jpg?raw=true",
     ],
     []
   );
 
   const TRANSFORMED_SECTION = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p39.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p39.jpg?raw=true"
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p39.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p39.jpg?raw=true"
     ],
     []
   );
 
   const INTERIOR_PERSPECTIVE = useMemo(
     () => ({
-      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p34.jpeg?raw=true",
+      src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p34.jpeg?raw=true",
       caption: "1:50 interior perspective drawing of the transformed section",
     }),
     []
@@ -110,17 +110,17 @@ export default function InceptionArchitectureMediaPage() {
 
   const ONE_TO_ONE_ELEVATION_PORTRAITS = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p26.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p27.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p26.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p27.jpg?raw=true",
     ],
     []
   );
 
   const ONE_TO_ONE_ELEVATION_SQUARES = useMemo(
     () => [
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p28.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p2.jpg?raw=true",
-      "https://github.com/Mackey-Tsang/photo-host/blob/main/Inception/p3.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p28.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p2.jpg?raw=true",
+      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p3.jpg?raw=true",
     ],
     []
   );

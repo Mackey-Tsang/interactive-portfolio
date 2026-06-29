@@ -5,63 +5,63 @@ import Lightbox from "@/components/Lightbox";
 import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
 
 const HERO_RENDER =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p1.jpg?raw=true"; // TODO: replace with your real path
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p1.jpg?raw=true"; // TODO: replace with your real path
 
 const MASTERPLAN_IMAGE =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p2.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p2.jpg?raw=true";
 const SECTION_IMAGE =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p4.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p4.jpg?raw=true";
 const LEGEND_IMAGE =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p3.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p3.jpg?raw=true";
 
 const FARMERS_MARKET_IMAGES = [
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p5.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p6.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p7.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p8.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p5.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p6.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p7.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p8.jpg?raw=true",
 ];
 
 const PROGRESS_IMAGES = [
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p10.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p11.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p12.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p13.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p14.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p15.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p16.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p17.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p18.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p19.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p20.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p10.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p11.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p12.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p13.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p14.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p15.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p16.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p17.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p18.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p19.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p20.jpg?raw=true",
 ];
 
 const SECOND_RENDER =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p21.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p21.jpg?raw=true";
 const FLOORPLAN_IMAGE =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p22.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p22.jpg?raw=true";
 
 const TRIPLE_16_9_IMAGES = [
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p24.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p25.jpg?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p26.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p24.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p25.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p26.jpg?raw=true",
 ];
 
 const SECTION_RENDER =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p23.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p23.jpg?raw=true";
 
 const GRID_IMAGES1 = [
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p28.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p27.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p29.JPG?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p28.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p27.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p29.jpg?raw=true",
 ];
 
 const GRID_IMAGES2 = [
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p30.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p35.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p32.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p33.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p34.JPG?raw=true",
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p31.JPG?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p30.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p35.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p32.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p33.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p34.jpg?raw=true",
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p31.jpg?raw=true",
 ];
 
 export default function AwaMarketHallPage() {
@@ -308,7 +308,7 @@ export default function AwaMarketHallPage() {
           <div className="w-[60%] mx-auto my-8 border-t border-neutral-700"></div>
 
           {/* 05 — Design development */}
-          <SectionFadeOnScroll imageUrls={["https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p9.jpg?raw=true", ...PROGRESS_IMAGES]}>
+          <SectionFadeOnScroll imageUrls={["https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true", ...PROGRESS_IMAGES]}>
             <div className="space-y-10">
               <div className="w-full">
                 <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
@@ -334,13 +334,13 @@ export default function AwaMarketHallPage() {
                   className="block w-full"
                   onClick={() =>
                     openLightbox(
-                      "https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p9.jpg?raw=true",
+                      "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true",
                       "Awa Market Hall — key interior/exterior render."
                     )
                   }
                 >
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Awa%20Market%20Hall/p9.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true"
                     alt="Awa Market Hall — key interior/exterior render."
                     className="block w-full aspect-video object-cover"
                   />
