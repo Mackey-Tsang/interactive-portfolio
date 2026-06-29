@@ -1,10 +1,8 @@
 // src/components/ReturnButton.tsx
 "use client";
 
-import { ArrowLeft } from "lucide-react";
 import { useCategory } from "@/store/useCategory";
 import { useRouter, usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
 export default function ReturnButton() {
@@ -13,13 +11,11 @@ export default function ReturnButton() {
   const { setCategory, setHome } = useCategory();
   const [visible, setVisible] = useState(false);
 
-  // Show only on /work and below
   useEffect(() => {
     setVisible(pathname.startsWith("/work"));
   }, [pathname]);
 
-  const { basePath, categoryName, isCategoryRoot, isProjectPage } = useMemo(() => {
-    // Identify which category we’re in (if any)
+  const { basePath, categoryName, isCategoryRoot, isProjectPage, color } = useMemo(() => {
     const isPhoto = pathname.startsWith("/work/photography");
     const isArch = pathname.startsWith("/work/architecture");
     const isCyber = pathname.startsWith("/work/cyber-physical");
@@ -40,15 +36,6 @@ export default function ReturnButton() {
       ? "/work/cyber-physical"
       : "/work";
 
-    // Depth: /work/<category> = 3 segments
-    const segments = pathname.split("/").filter(Boolean); // e.g. ["work","architecture","forge-hub"]
-    const isCategoryRoot =
-      segments.length === 2 && segments[0] === "work" && !!categoryName?.length
-        ? false // (rare case) /work only
-        : segments.length === 2 && segments[0] === "work" && !categoryName
-        ? true
-        : segments.length === 2; // keep generic
-    // Better: explicit checks for our categories
     const isRoot =
       pathname === "/work/architecture" ||
       pathname === "/work/cyber-physical" ||
@@ -57,48 +44,110 @@ export default function ReturnButton() {
     const isProjectPage =
       categoryName != null && pathname.startsWith(basePath + "/");
 
+    // Architecture = light theme → black button; everything else = dark theme → white
+    const color = isArch ? "#000000" : "#ffffff";
+
     return {
       basePath,
       categoryName,
       isCategoryRoot: isRoot,
       isProjectPage,
+      color,
     };
   }, [pathname]);
 
   if (!visible) return null;
 
   const handleReturn = () => {
-    // If we’re inside a project detail page, go back to the category listing
     if (isProjectPage) {
       router.push(basePath);
       return;
     }
 
-    // If we’re at a category index, jump back to Home scene with that category selected
     if (isCategoryRoot && categoryName) {
       setCategory(categoryName as "Photography" | "Architecture" | "Cyber-Physical");
-      setHome(false); // show scene, not HomeIntro
+      setHome(false);
       router.push("/");
       return;
     }
 
-    // Fallback: browser back if we’re somewhere else under /work
     if (typeof window !== "undefined" && window.history.length > 1) {
       router.back();
     } else {
-      router.push("/"); // safe fallback
+      router.push("/");
     }
   };
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.9 }}
-      onClick={handleReturn}
-      aria-label="Return"
-      className="fixed right-4 top-4 z-50 rounded-full border border-white/30 bg-black/40 
-                 backdrop-blur p-2 text-white/90 hover:text-white transition "
-    >
-      <ArrowLeft size={18} strokeWidth={1.8} />
-    </motion.button>
+    <>
+      <style>{`
+        .return-cta {
+          border: none;
+          background: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+        .return-cta svg {
+          transform: translateX(6px);
+          transition: all 0.3s ease;
+          flex-shrink: 0;
+        }
+        .return-cta:hover svg {
+          transform: translateX(0);
+        }
+        .return-cta:active svg {
+          transform: scale(0.9);
+        }
+        .return-cta-label {
+          letter-spacing: 4px;
+          font-size: 14px;
+          padding-left: 15px;
+          text-transform: uppercase;
+          position: relative;
+          padding-bottom: 3px;
+        }
+        .return-cta-label:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 1px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--return-color);
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        .return-cta:hover .return-cta-label:after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      `}</style>
+
+      <button
+        className="return-cta fixed right-4 top-4 z-50"
+        style={{ "--return-color": color } as React.CSSProperties}
+        onClick={handleReturn}
+        aria-label="Return"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 46 16"
+          width="46"
+          height="16"
+          fill="none"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <line x1="42" y1="8" x2="2" y2="8" />
+          <polyline points="8 14 2 8 8 2" />
+        </svg>
+
+        <span className="return-cta-label" style={{ color }}>Return</span>
+      </button>
+    </>
   );
 }
