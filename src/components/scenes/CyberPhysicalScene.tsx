@@ -4,7 +4,6 @@
 import React, { useEffect, useState } from "react";
 import Waves from "@/components/Waves";
 import MathSwimmersPlus from "@/components/MathSwimmersPlus";
-import SwimmerHalo from "@/components/SwimmerHalo";
 // import MathSwimmers from "@/components/MathSwimmers";
 import ScrambledText from "@/components/ScrambledText";
 
@@ -104,13 +103,14 @@ export default function CyberPhysicalScene() {
         trailFade={0.04}
         jitter={0.25}
         halo={{
-          enabled: false,
+          enabled: true,
           color: "rgba(255,0,0,0.5)",
           alpha: 0.5,
           radius: su(200),
           thickness: su(50),
           feather: 0.9,
           composite: "lighter",
+          offsetY: -100, 
         }}
         sparks={{
           enabled: true,
@@ -132,14 +132,6 @@ export default function CyberPhysicalScene() {
           orbitSpeed: 1.7,
           drift: 7,
         }}
-      />
-<SwimmerHalo 
-        color="rgba(255, 0, 0, 0.5)"
-        alpha={0.5}
-        radius={200}    // Replace with su(200) if you have that function
-        thickness={50}  // Replace with su(50)
-        feather={0.9}
-        composite="lighter"
       />
 
       {/* SECONDARY SWIMMER — MathSwimmers */}
@@ -189,8 +181,7 @@ export default function CyberPhysicalScene() {
       <div className="pointer-events-auto absolute left-6 md:left-12 top-[72vh] md:top-[68vh] z-20 opacity-70">
         <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
           <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
-            <span>CHANNEL L-02</span>
-            <span>SYSTEM LOG</span>
+            <span>Digital / Fabrication</span>
           </div>
           <ScrambledText
             duration={1.3}

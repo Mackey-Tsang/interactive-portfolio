@@ -48,9 +48,9 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
   // Our four pills (Home + 3 categories)
   const items: PillNavItem[] = [
     { label: "Home", isHome: true, ariaLabel: "Home" },
-    { label: "Photography", category: "Photography", ariaLabel: "Photography" },
-    { label: "Architecture", category: "Architecture", ariaLabel: "Architecture" },
     { label: "Cyber-Physical", category: "Cyber-Physical", ariaLabel: "Cyber-Physical" },
+    { label: "Architecture", category: "Architecture", ariaLabel: "Architecture" },
+    { label: "Photography", category: "Photography", ariaLabel: "Photography" },
   ];
 
   // GSAP layout + timelines
@@ -175,7 +175,7 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
 
   const activeIndex = showHome
     ? 0
-    : 1 + ["Photography", "Architecture", "Cyber-Physical"].indexOf(category);
+    : 1 + ["Cyber-Physical", "Architecture", "Photography"].indexOf(category);
 
   return (
     <div className="pointer-events-auto fixed inset-x-0 top-4 z-1000 flex items-center justify-center ">

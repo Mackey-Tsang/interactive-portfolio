@@ -6,7 +6,7 @@ import { useCategory, Category } from "@/store/useCategory";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
-const cats: Category[] = ["Photography", "Architecture", "Cyber-Physical"];
+const cats: Category[] = ["Cyber-Physical", "Architecture", "Photography"];
 
 export default function CategoryUI() {
   const { category, setCategory, next, prev, showHome, setHome } = useCategory();
@@ -17,9 +17,9 @@ export default function CategoryUI() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === "d") next();
       if (e.key === "ArrowLeft"  || e.key === "a") prev();
-      if (e.key === "1") setCategory("Photography");
+      if (e.key === "1") setCategory("Cyber-Physical");
       if (e.key === "2") setCategory("Architecture");
-      if (e.key === "3") setCategory("Cyber-Physical");
+      if (e.key === "3") setCategory("Photography");
       if (e.key.toLowerCase() === "h" || e.key === "0") setHome(true);
     };
     window.addEventListener("keydown", onKey);

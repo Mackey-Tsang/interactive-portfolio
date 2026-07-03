@@ -37,6 +37,8 @@ type HaloOpts = {
   thickness?: number;
   feather?: number;
   composite?: GlobalCompositeOperation;
+  offsetX?: number;
+  offsetY?: number;
 };
 
 type SparkOpts = {
@@ -468,10 +470,12 @@ export default function MathSwimmersPlus({
         ctx.save();
         const cx =
           pathSamplesRef.current.reduce((s, p) => s + p.x, 0) /
-          pathSamplesRef.current.length;
+          pathSamplesRef.current.length +
+          (halo.offsetX ?? 0);
         const cy =
           pathSamplesRef.current.reduce((s, p) => s + p.y, 0) /
-          pathSamplesRef.current.length;
+          pathSamplesRef.current.length +
+          (halo.offsetY ?? 0);
         const radius = halo.radius ?? 80;
         const thickness = halo.thickness ?? 28;
         const feather = Math.max(0, Math.min(1, halo.feather ?? 0.8));
