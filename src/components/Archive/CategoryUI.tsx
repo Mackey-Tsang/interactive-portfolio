@@ -38,7 +38,7 @@ export default function CategoryUI() {
               showHome ? "bg-white text-black" : "text-white/80 hover:text-white"
             }`}
           >
-            Home
+            About
           </motion.button>
 
           {cats.map((c) => {

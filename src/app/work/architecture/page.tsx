@@ -41,7 +41,7 @@ const projects = [
   {
     title: "The Forge Hub & Forum of Voices",
     slug: "/work/architecture/forge-hub",
-    cover: "/architecture/p5.jpg",
+    cover: "/architecture/forgehub.jpg",
     year: "Project 2024 Jul - Oct",
     caption: "Community / Structure / Light",
   },

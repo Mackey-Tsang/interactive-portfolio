@@ -20,6 +20,9 @@ export default function SoftThresholdsVeilspacePage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
             Soft Thresholds - Veilspace
           </h1>
+          <p className="text-1xl tracking-[0.25em] text-neutral-100">
+            Second Prize, The 10th Cross-Strait Emerging Design Competition (Huacan Award), 2025
+          </p>
           <p className="max-w-1xl text-sm md:text-base text-neutral-200 leading-relaxed">
             Soft Thresholds - Veilspace is a 1:1 interactive architectural installation that 
             explores how space can emotionally respond to the presence of a user. It blends 

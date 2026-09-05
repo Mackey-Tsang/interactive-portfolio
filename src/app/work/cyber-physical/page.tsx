@@ -23,7 +23,7 @@ const PROJECTS = [
   {
     slug: "lumibloom",
     title: "LumiBloom",
-    type: "Cyber-Physical Fabrication",
+    type: "Cyber-Physical Device",
     year: "2026",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/4.jpg?raw=true",
     variant: "pink" as const,
@@ -47,7 +47,7 @@ const PROJECTS = [
   {
     slug: "reactive-material-pavilion",
     title: "Reactive Material Pavilion",
-    type: "Interactive Device",
+    type: "Digital Twins",
     year: "2025",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Reactive%20Material%20Pavilion/0.jpg?raw=true",
     variant: "pink" as const,

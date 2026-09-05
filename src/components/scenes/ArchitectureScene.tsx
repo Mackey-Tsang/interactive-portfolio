@@ -3,6 +3,7 @@
 import * as THREE from "three";
 import { Suspense, useMemo, useRef, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
+import { useRouter } from "next/navigation";
 import {
   Preload,
   ScrollControls,
@@ -22,9 +23,10 @@ const rr = (d: ReturnType<typeof useScroll>, s: number, l: number) =>
 // ---------------------------------------------------------
 // Image tiles
 // ---------------------------------------------------------
-function ImageTile({ c = new THREE.Color(), ...props }: any) {
+function ImageTile({ c = new THREE.Color(), href, ...props }: any) {
   const ref = useRef<any>(null);
   const [hovered, hover] = useState(false);
+  const router = useRouter();
 
   useFrame(() => {
     const mat = ref.current?.material;
@@ -35,8 +37,20 @@ function ImageTile({ c = new THREE.Color(), ...props }: any) {
   return (
     <DreiImage
       ref={ref}
-      onPointerOver={() => hover(true)}
-      onPointerOut={() => hover(false)}
+      onPointerOver={(e: any) => {
+        e.stopPropagation();
+        hover(true);
+        if (href) document.body.style.cursor = "pointer";
+      }}
+      onPointerOut={(e: any) => {
+        e.stopPropagation();
+        hover(false);
+        if (href) document.body.style.cursor = "auto";
+      }}
+      onClick={(e: any) => {
+        e.stopPropagation();
+        if (href) router.push(href);
+      }}
       toneMapped={false}
       {...props}
     />
@@ -68,19 +82,17 @@ function ImagesForBuffer() {
     ch[6].material.zoom = 1 + (1 - rr(scroll, 2 / 3, 1 / 3)) / 3;
   });
 
+  // Fill in `href` per tile with that project's page — left blank (no click)
+  // until you wire each one up.
   const items = useMemo(
     () => [
-      { pos: [-2, 0, 0],                     scale: [4, height, 1],          url: "/architecture/p1.jpg" },
-      { pos: [2, 0, 3],                      scale: 3,                       url: "/architecture/p2.jpg" },
-      { pos: [-2.05, -height, 6],            scale: [2, 3, 1],               url: "/architecture/p3.jpg" },
-      { pos: [-0.4, -height, 9],             scale: [1, 2, 1],               url: "/architecture/p4.jpg" },
-      { pos: [1.3, -height, 10.5],           scale: [1.5, 4, 1],             url: "/architecture/p5.jpg" },
-      { pos: [0, -height * 1.5, 7.5],        scale: [1.5, 3, 1],             url: "/architecture/p6.jpg" },
-      {
-        pos: [0, -height * 2 - height / 4, 0],
-        scale: [width, height / 1.1, 1],
-        url: "/architecture/p7.jpg",
-      },
+      { pos: [-2, 0, 0],                     scale: [4, height, 1],          url: "/architecture/p1.jpg", href: "./work/architecture/third-place" },
+      { pos: [2, 0, 3],                      scale: 3,                       url: "/architecture/p2.jpg", href: "./work/architecture/inception" },
+      { pos: [-3.05, -height, 0],            scale: [2.5, 4.5, 1],               url: "/architecture/p3.jpg", href: "./work/architecture/forge-hub" },
+      { pos: [2.4, -height*1.5, 1],             scale: [5, 2, 1],               url: "/architecture/p4.jpg", href: "./work/architecture/overlapping-intersection" },
+      { pos: [1.9, -height* .8, -2],           scale: [7.5, 3.5, 1],             url: "/architecture/p5.jpg", href: "./work/architecture/kinderspace" },
+      { pos: [-1.3, -height * 1.4, 1],        scale: [1.5, 3.3, 1],             url: "/architecture/p6.jpg", href: "./work/architecture/lumen-vestige" },
+      { pos: [0, -height * 2 - height / 4, 0], scale: [width, height / 1.1, 1], url: "/architecture/p7.jpg", href: "./work/architecture/awa-market-hall",},
     ],
     [height, width]
   );
@@ -88,7 +100,13 @@ function ImagesForBuffer() {
   return (
     <group ref={group}>
       {items.map((it, i) => (
-        <ImageTile key={i} position={it.pos} scale={it.scale as any} url={it.url} />
+        <ImageTile
+          key={i}
+          position={it.pos}
+          scale={it.scale as any}
+          url={it.url}
+          href={it.href || undefined}
+        />
       ))}
     </group>
   );
@@ -116,7 +134,7 @@ function TitlesForBuffer() {
       <Text
         position={toPos}
         fontSize={toSize}
-        color="black"
+        color="white"
         anchorX="left"
         anchorY="middle"
         fontWeight={weight}
@@ -127,7 +145,7 @@ function TitlesForBuffer() {
       <Text
         position={bePos}
         fontSize={beSize}
-        color="black"
+        color="white"
         anchorX="center"
         anchorY="middle"
         fontWeight={weight}
@@ -138,7 +156,7 @@ function TitlesForBuffer() {
       <Text
         position={homePos}
         fontSize={homeSize}
-        color="black"
+        color="white"
         anchorX="left"
         anchorY="middle"
         fontWeight={weight}
@@ -176,7 +194,7 @@ export default function ArchitectureScene() {
         <FluidGlassCursor
           planeZ={15}
           scale={glassScale}
-          clearColor="#ffffff"
+          clearColor="#000000"
           childrenForBuffer={
             <>
               <Scroll>

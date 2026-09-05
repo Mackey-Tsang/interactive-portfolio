@@ -1,151 +1,188 @@
 // src/components/CategoryPillNav.tsx
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import Link from "next/link";
+import React, { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { gsap } from "gsap";
+import {
+  motion,
+  stagger,
+  useAnimate,
+  type AnimationOptions,
+} from "framer-motion";
 import { useCategory, type Category } from "@/store/useCategory";
 
 type PillNavItem = {
   label: string;
-  href?: string;        // optional (we use router programmatically)
   ariaLabel?: string;
-  category?: Category;  // for scene switching
-  isHome?: boolean;     // special: home pill
+  category?: Category; // for scene switching
+  isHome?: boolean; // special: home pill
 };
 
 type PillNavProps = {
   className?: string;
-  ease?: string;
-  baseColor?: string;
-  pillColor?: string;
-  hoveredPillTextColor?: string;
-  pillTextColor?: string;
+  textColor?: string; // resting text color
+  activeColor?: string; // color for the active item
+  fromWeight?: number; // resting font-weight (variable font "wght")
+  toWeight?: number; // hovered / active font-weight
+  staggerDuration?: number; // ms between each letter's animation start
   initialLoadAnimation?: boolean;
 };
 
+// Bundled variable font so the weight morph works without extra setup.
+// Inter exposes `wght` 100–900. Unique family name avoids colliding with
+// any other "Inter" already loaded on the page.
+const INTER_VARIABLE_FONT_FACE = `
+@font-face {
+  font-family: "InterVariableNav";
+  src: url("https://rsms.me/inter/font-files/InterVariable.woff2?v=4.0") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+`;
+const VARIABLE_FONT_STACK =
+  '"InterVariableNav", "Inter Variable", "Inter", system-ui, sans-serif';
+
+const srOnlyStyle: React.CSSProperties = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  padding: 0,
+  margin: -1,
+  overflow: "hidden",
+  clip: "rect(0,0,0,0)",
+  whiteSpace: "nowrap",
+  borderWidth: 0,
+};
+
+/**
+ * Renders `label` as individual letters whose `wght` (font-variation-settings)
+ * morphs on hover, staggered letter-by-letter — Weight Hover, adapted from
+ * Originkit's VariableFontHoverByLetter. `isActive` keeps the label parked
+ * at `toWeight` (bold) instead of resting at `fromWeight` (thin).
+ */
+function LetterWeightLabel({
+  label,
+  fromWeight,
+  toWeight,
+  isActive,
+  staggerDuration = 30,
+  staggerFrom = "random",
+}: {
+  label: string;
+  fromWeight: number;
+  toWeight: number;
+  isActive?: boolean;
+  staggerDuration?: number;
+  staggerFrom?: "first" | "last" | "center" | "random";
+}) {
+  const [scope, animate] = useAnimate();
+  const fromSettings = `'wght' ${fromWeight}`;
+  const toSettings = `'wght' ${toWeight}`;
+  const staggerSec = Math.max(0, staggerDuration) / 1000;
+
+  // Shuffled per-letter order for the "random" stagger variant — stable
+  // per label, re-shuffled only if the label itself changes.
+  const shuffledIndices = useMemo(() => {
+    if (staggerFrom !== "random") return null;
+    const indices = Array.from({ length: label.length }, (_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    return indices;
+  }, [label, staggerFrom]);
+
+  const transition: AnimationOptions = useMemo(
+    () => ({ type: "spring", duration: 0.5, bounce: 0.2 }),
+    []
+  );
+
+  const mergeStagger = (base: AnimationOptions): AnimationOptions => {
+    if (staggerFrom === "random" && shuffledIndices) {
+      const indices = shuffledIndices;
+      return {
+        ...base,
+        delay: (i: number) => staggerSec * (indices[i] ?? 0),
+      } as AnimationOptions;
+    }
+    return {
+      ...base,
+      delay: stagger(staggerSec, { from: staggerFrom as "first" | "last" | "center" }),
+    } as AnimationOptions;
+  };
+
+  const runTo = (target: string) =>
+    animate(".letter", { fontVariationSettings: target }, mergeStagger(transition));
+
+  // The active page is indicated by the underline alone, so letters always
+  // rest at fromWeight — no bold lock, no hover morph while active. This
+  // re-runs on every isActive flip (not just mount) so a pill that was
+  // mid-hover when clicked (mouse never actually left it) gets forced back
+  // to resting weight instead of staying stuck bold once it's no longer
+  // the current page.
+  useEffect(() => {
+    runTo(fromSettings);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isActive, fromSettings]);
+
+  return (
+    <span
+      ref={scope}
+      className="inline-flex"
+      onMouseEnter={() => !isActive && runTo(toSettings)}
+      onMouseLeave={() => !isActive && runTo(fromSettings)}
+    >
+      <span style={srOnlyStyle}>{label}</span>
+      {label.split("").map((ch, i) => (
+        <motion.span
+          key={i}
+          className="letter"
+          aria-hidden
+          style={{
+            display: "inline-block",
+            whiteSpace: "pre",
+            fontVariationSettings: fromSettings,
+          }}
+        >
+          {ch}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 const CategoryPillNav: React.FC<PillNavProps> = ({
   className = "",
-  ease = "power3.out",
-  baseColor = "#fff",
-  pillColor = "#060010",
-  hoveredPillTextColor = "#060010",
-  pillTextColor,
+  textColor = "#ffffff",
+  activeColor = "#ffffff",
+  fromWeight = 300,
+  toWeight = 650,
+  staggerDuration = 30,
   initialLoadAnimation = true,
 }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { category, setCategory, setHome, showHome } = useCategory();
 
-  const resolvedPillTextColor = pillTextColor ?? baseColor;
-  const circleRefs = useRef<Array<HTMLSpanElement | null>>([]);
-  const tlRefs = useRef<Array<gsap.core.Timeline | null>>([]);
-  const activeTweenRefs = useRef<Array<gsap.core.Tween | null>>([]);
-  // `navItemsRef` should reference the <ul> element, so use HTMLUListElement
-  const navItemsRef = useRef<HTMLUListElement | null>(null);
+  const [mounted, setMounted] = useState(!initialLoadAnimation);
+  useEffect(() => {
+    if (!initialLoadAnimation) return;
+    const id = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, [initialLoadAnimation]);
 
-  // Our four pills (Home + 3 categories)
+  // Our four items (Home + 3 categories)
   const items: PillNavItem[] = [
-    { label: "Home", isHome: true, ariaLabel: "Home" },
+    { label: "About", isHome: true, ariaLabel: "About" },
     { label: "Cyber-Physical", category: "Cyber-Physical", ariaLabel: "Cyber-Physical" },
     { label: "Architecture", category: "Architecture", ariaLabel: "Architecture" },
     { label: "Photography", category: "Photography", ariaLabel: "Photography" },
   ];
 
-  // GSAP layout + timelines
-  useEffect(() => {
-    const layout = () => {
-      circleRefs.current.forEach((circle) => {
-        if (!circle?.parentElement) return;
-
-        const pill = circle.parentElement as HTMLElement;
-        const rect = pill.getBoundingClientRect();
-        const { width: w, height: h } = rect;
-        const R = ((w * w) / 4 + h * h) / (2 * h);
-        const D = Math.ceil(2 * R) + 2;
-        const delta = Math.ceil(R - Math.sqrt(Math.max(0, R * R - (w * w) / 4))) + 1;
-        const originY = D - delta;
-
-        circle.style.width = `${D}px`;
-        circle.style.height = `${D}px`;
-        circle.style.bottom = `-${delta}px`;
-
-        gsap.set(circle, {
-          xPercent: -50,
-          scale: 0,
-          transformOrigin: `50% ${originY}px`,
-        });
-
-        const label = pill.querySelector<HTMLElement>(".pill-label");
-        const white = pill.querySelector<HTMLElement>(".pill-label-hover");
-
-        if (label) gsap.set(label, { y: 0 });
-        if (white) gsap.set(white, { y: h + 12, opacity: 0 });
-
-        const index = circleRefs.current.indexOf(circle);
-        if (index === -1) return;
-
-        tlRefs.current[index]?.kill();
-        const tl = gsap.timeline({ paused: true });
-
-        tl.to(
-          circle,
-          { scale: 1.2, xPercent: -50, duration: 0.6, ease, overwrite: "auto" },
-          0
-        );
-        if (label) {
-          tl.to(label, { y: -(h + 8), duration: 0.6, ease, overwrite: "auto" }, 0);
-        }
-        if (white) {
-          gsap.set(white, { y: Math.ceil(h + 100), opacity: 0 });
-          tl.to(white, { y: 0, opacity: 1, duration: 0.6, ease, overwrite: "auto" }, 0);
-        }
-
-        tlRefs.current[index] = tl;
-      });
-    };
-
-    layout();
-    const onResize = () => layout();
-    window.addEventListener("resize", onResize);
-
-    if ((document as any).fonts?.ready) {
-      (document as any).fonts.ready.then(layout).catch(() => {});
-    }
-
-    if (initialLoadAnimation && navItemsRef.current) {
-      gsap.fromTo(
-        navItemsRef.current,
-        { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 0.4, ease }
-      );
-    }
-
-    return () => window.removeEventListener("resize", onResize);
-  }, [ease, initialLoadAnimation, items.length]);
-
-  const handleEnter = (i: number) => {
-    const tl = tlRefs.current[i];
-    if (!tl) return;
-    activeTweenRefs.current[i]?.kill();
-    activeTweenRefs.current[i] = tl.tweenTo(tl.duration(), {
-      duration: 0.2,
-      ease,
-      overwrite: "auto",
-    });
-  };
-
-  const handleLeave = (i: number) => {
-    const tl = tlRefs.current[i];
-    if (!tl) return;
-    activeTweenRefs.current[i]?.kill();
-    activeTweenRefs.current[i] = tl.tweenTo(0, {
-      duration: 0.2,
-      ease,
-      overwrite: "auto",
-    });
-  };
+  const activeIndex = showHome
+    ? 0
+    : 1 + ["Cyber-Physical", "Architecture", "Photography"].indexOf(category);
 
   // Clicking behavior:
   // - Home: setHome(true) and route to "/"
@@ -163,94 +200,46 @@ const CategoryPillNav: React.FC<PillNavProps> = ({
     }
   };
 
-  const cssVars = {
-    ["--base" as any]: baseColor,
-    ["--pill-bg" as any]: pillColor,
-    ["--hover-text" as any]: hoveredPillTextColor,
-    ["--pill-text" as any]: resolvedPillTextColor,
-    ["--nav-h" as any]: "42px",
-    ["--pill-pad-x" as any]: "18px",
-    ["--pill-gap" as any]: "3px",
-  } as React.CSSProperties;
-
-  const activeIndex = showHome
-    ? 0
-    : 1 + ["Cyber-Physical", "Architecture", "Photography"].indexOf(category);
-
   return (
-    <div className="pointer-events-auto fixed inset-x-0 top-4 z-1000 flex items-center justify-center ">
+    <div
+      className={`pointer-events-none fixed inset-x-0 top-6 z-1000 flex items-center justify-center ${className}`}
+    >
+      <style>{INTER_VARIABLE_FONT_FACE}</style>
       <nav
         aria-label="Primary"
-        className={`rounded-full px-2 py-1 `}
-        style={{ ...cssVars, background: "var(--base, #000)" }}
+        className={`pointer-events-auto flex items-center gap-8 transition-all duration-500 ease-out ${
+          mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+        }`}
       >
-        <ul
-          ref={navItemsRef}
-          role="menubar"
-          className="list-none flex items-stretch m-0 p-[3px] h-(--nav-h) "
-          style={{ gap: "var(--pill-gap)" }}
-        >
+        <ul role="menubar" className="m-0 flex list-none items-center gap-8 p-0">
           {items.map((item, i) => {
             const isActive = i === activeIndex;
-            const pillStyle: React.CSSProperties = {
-              background: "var(--pill-bg, #fff)",
-              color: "var(--pill-text, var(--base, #000))",
-              paddingLeft: "var(--pill-pad-x)",
-              paddingRight: "var(--pill-pad-x)",
-              height: "100%",
-            };
-
-            const PillContent = (
-              <>
-                <span
-                  className="hover-circle absolute left-1/2 bottom-0 rounded-full z-1 block pointer-events-none " 
-                  style={{ background: "var(--base, #000)", willChange: "transform" }}
-                  aria-hidden="true"
-                  ref={(el) => {
-                    circleRefs.current[i] = el;
-                  }}
-                />
-                <span className="label-stack relative inline-block leading-none z-2 ">
-                  <span
-                    className="pill-label relative z-2 inline-block leading-none "
-                    style={{ willChange: "transform" }}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className="pill-label-hover absolute left-0 top-0 z-3 inline-block "
-                    style={{ color: "var(--hover-text, #fff)", willChange: "transform, opacity" }}
-                    aria-hidden="true"
-                  >
-                    {item.label}
-                  </span>
-                </span>
-                {isActive && (
-                  <span
-                    className="absolute left-1/2 -bottom-1.5 -translate-x-1/2 w-3 h-3 rounded-full z-4 "
-                    style={{ background: "var(--base, #000)" }}
-                    aria-hidden="true"
-                  />
-                )}
-              </>
-            );
-
-            const basePillClasses =
-              " relative overflow-hidden inline-flex items-center justify-center no-underline rounded-full box-border font-semibold text-[14px] uppercase tracking-[0.2px] whitespace-nowrap px-0";
-
             return (
-              <li key={`${item.label}-${i}`} role="none" className="flex h-full ">
-                {/* Button (no <Link>) so we control router + state together */}
+              <li key={`${item.label}-${i}`} role="none">
                 <button
                   role="menuitem"
                   aria-label={item.ariaLabel || item.label}
-                  className={basePillClasses}
-                  style={pillStyle}
-                  onMouseEnter={() => handleEnter(i)}
-                  onMouseLeave={() => handleLeave(i)}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => onClickItem(item)}
+                  className="relative cursor-pointer bg-transparent px-0.5 py-1 text-[13px] tracking-[0.3px] whitespace-nowrap outline-none"
+                  style={{
+                    color: isActive ? activeColor : textColor,
+                    fontFamily: VARIABLE_FONT_STACK,
+                  }}
                 >
-                  {PillContent}
+                  <LetterWeightLabel
+                    label={item.label}
+                    fromWeight={fromWeight}
+                    toWeight={toWeight}
+                    isActive={isActive}
+                    staggerDuration={staggerDuration}
+                  />
+                  {isActive && (
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute left-0 -bottom-0.5 h-px w-full bg-current"
+                    />
+                  )}
                 </button>
               </li>
             );

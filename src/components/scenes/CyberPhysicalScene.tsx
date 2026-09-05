@@ -6,9 +6,52 @@ import Waves from "@/components/Waves";
 import MathSwimmersPlus from "@/components/MathSwimmersPlus";
 // import MathSwimmers from "@/components/MathSwimmers";
 import ScrambledText from "@/components/ScrambledText";
+import FeaturedProjectPager, { type FeaturedProject } from "@/components/FeaturedProjectPager";
 
 const DESIGN_WIDTH = 1440;  // reference: your MacBook viewport width
 const DESIGN_HEIGHT = 900;  // reference: your MacBook viewport height
+
+// Fill in your real featured projects here — 6 keeps the "circular" wheel
+// feeling full (3 visible + 3 on the hidden back half), but any count works,
+// the wheel math just wraps by however many you give it.
+const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    name: "Soft Thresholds - Veilspace",
+    type: "1:1 Installation",
+    year: 2025,
+    description: "Interactive architectural installation that explores how space can emotionally respond to the presence of a user. It blends physical materials, sensors, and digital visuals to create a quiet retreat. This is a protective threshold between self and the public realm.",
+    software: ["Award-Winning", "Unity", "Arduino"],
+    href: "/work/cyber-physical/soft-thresholds-veilspace",
+    image: "./cyber-physical/p1.jpg",
+  },
+  {
+    name: "Cy-Phy Workshop",
+    type: "XR Installation",
+    year: 2025,
+    description: "An Extended Reality installation developed by arc/sec Lab, translating engineering research into spatial 3D animation for the Engineering Tomorrow Showcase 2025 at the Faculty of Engineering & Design, University of Auckland.",
+    software: ["Unity", "Blender", "Rhino"],
+    href: "/work/cyber-physical/cy-phy-workshop",
+    image: "./cyber-physical/p2.jpg",
+  },
+  {
+    name: "Reactive Material Pavilion",
+    type: "Digital Twins",
+    year: 2025,
+    description: "Explores the fusion of mechanical design, spatial transformation, and interactive technology through a dynamic shelter system that responds to both physical movement and digital input.",
+    software: ["Unity", "Arduino", "Rhino"],
+    href: "/work/cyber-physical/reactive-material-pavilion",
+    image: "./cyber-physical/p3.jpg",
+  },
+  {
+    name: "LumiBloom",
+    type: "Cyber-Physical Device",
+    year: 2026,
+    description: "A light-reactive kinetic sculpture that merges digital fabrication with embedded electronics.",
+    software: ["Arduino", "3D Printing"],
+    href: "/work/cyber-physical/lumibloom",
+    image: "./cyber-physical/p4.jpg",
+  },
+];
 
 export default function CyberPhysicalScene() {
   const [viewport, setViewport] = useState({
@@ -93,8 +136,8 @@ export default function CyberPhysicalScene() {
         scaleX={2 * uniformScale}
         scaleY={2 * uniformScale}
         // original: offsetX = -400, offsetY = 100 (now 60, slightly up)
-        offsetX={-500}
-        offsetY={-50}
+        offsetX={-750}
+        offsetY={-90}
         color="rgba(100,255,255,0.1)"
         pointSize={1.4 * uniformScale}
         pointsPerFrame={9000}
@@ -110,7 +153,7 @@ export default function CyberPhysicalScene() {
           thickness: su(50),
           feather: 0.9,
           composite: "lighter",
-          offsetY: -100, 
+          offsetY: -100,
         }}
         sparks={{
           enabled: true,
@@ -154,8 +197,11 @@ export default function CyberPhysicalScene() {
         jitter={0.25}
       /> */}
 
+      {/* RIGHT — featured projects, full-card paging */}
+      <FeaturedProjectPager projects={FEATURED_PROJECTS} transition="melt" morphDuration={0.9} />
+
       {/* LEFT TEXT BLOCK 1 */}
-      <div className="pointer-events-auto absolute left-6 md:left-12 top-64 md:top-72 z-20 opacity-70">
+      {/* <div className="pointer-events-auto absolute left-6 md:left-12 top-64 md:top-72 z-20 opacity-70">
         <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
           <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>ARCH / CY-PHY</span>
@@ -168,17 +214,17 @@ export default function CyberPhysicalScene() {
           >
             Architecture doesn’t have to stay still. My cyber-physical
             explorations treat space as something that listens, responds,
-            and behaves. 
-            {/* Through sensors, motion, and digital systems,
+            and behaves.
+            Through sensors, motion, and digital systems,
             these projects reveal how structure can become an active
             participant—shifting with the user, shaping experience, and
-            expressing a new kind of architectural intelligence. */}
+            expressing a new kind of architectural intelligence.
           </ScrambledText>
         </div>
-      </div>
+      </div> */}
 
       {/* LEFT TEXT BLOCK 2 */}
-      <div className="pointer-events-auto absolute left-6 md:left-12 top-[72vh] md:top-[68vh] z-20 opacity-70">
+      {/* <div className="pointer-events-auto absolute left-6 md:left-12 top-[72vh] md:top-[68vh] z-20 opacity-70">
         <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
           <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>Digital / Fabrication</span>
@@ -192,17 +238,17 @@ export default function CyberPhysicalScene() {
             This body of work experiments with the tension between physical
             mechanisms and digital logic. Each project investigates how
             movement, data, and interaction can become spatial tools—
-            transforming simple components into living systems. 
-            {/* The aim
+            transforming simple components into living systems.
+            The aim
             is to push beyond static form, discovering how architecture
             can communicate through motion, behaviour, and real-time
-            responsiveness. */}
+            responsiveness.
           </ScrambledText>
         </div>
-      </div>
+      </div> */}
 
       {/* RIGHT TEXT BLOCK 1 */}
-      <div className="pointer-events-auto absolute right-6 md:right-12 top-1/4 z-20 opacity-70">
+      {/* <div className="pointer-events-auto absolute right-6 md:right-12 top-1/4 z-20 opacity-70">
         <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
           <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>INTERFACE / REACTIVITY</span>
@@ -215,18 +261,18 @@ export default function CyberPhysicalScene() {
           >
             In these studies, I explore how technology can extend
             architecture&apos;s ability to speak and react. By merging
-            code, fabrication, and mechanical design. 
-            {/* I create prototypes
+            code, fabrication, and mechanical design.
+            I create prototypes
             that visualize invisible forces—rotation, pressure,
             proximity, and flow. These installations challenge how we
             think about structure, offering an experience where the
-            digital and the material evolve together. */}
+            digital and the material evolve together.
           </ScrambledText>
         </div>
-      </div>
+      </div> */}
 
       {/* RIGHT TEXT BLOCK 2 */}
-      <div className="pointer-events-auto absolute right-6 md:right-12 top-[68vh] md:top-[63vh] z-20 opacity-70">
+      {/* <div className="pointer-events-auto absolute right-6 md:right-12 top-[68vh] md:top-[63vh] z-20 opacity-70">
         <div className="max-w-md md:max-w-lg backdrop-blur-sm  rounded-xl px-4 md:px-5 py-3 md:py-4">
           <div className="flex items-center justify-between mb-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-cyan-200/90">
             <span>HUMAN / ENV</span>
@@ -240,14 +286,14 @@ export default function CyberPhysicalScene() {
             Cyber-physical design offers a pathway to rethink the
             relationship between humans and environment. These works
             translate interaction into form, letting users influence
-            motion, geometry, and spatial atmosphere. 
-            {/* The goal is to
+            motion, geometry, and spatial atmosphere.
+            The goal is to
             build systems that feel alive—where architecture becomes
             collaborative, expressive, and continuously unfolding with
-            every touch or movement. */}
+            every touch or movement.
           </ScrambledText>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
