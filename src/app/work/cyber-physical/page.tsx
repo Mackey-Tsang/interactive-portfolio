@@ -4,6 +4,14 @@
 import CyberProjectCards from "@/components/CyberProjectCards";
 
 const PROJECTS = [
+    {
+    slug: "non-planar-printing",
+    title: "Non-Planar FDM Printing Research",
+    type: "Digital Fabrication",
+    year: "2026",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/8.jpg?raw=true",
+    variant: "green" as const,
+  },
   {
     slug: "sediment-ring",
     title: "Sediment Ring",

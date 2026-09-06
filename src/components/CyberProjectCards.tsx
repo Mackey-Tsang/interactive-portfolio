@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import PixelCard from "./PixelCard";
 import CyberLoader from "./CyberLoader";
@@ -34,6 +34,7 @@ function ProjectCard({ project }: { project: CyberProject }) {
   const [isReady, setIsReady] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [minTimePassed, setMinTimePassed] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
 
   // Enforce minimum loader duration of 2 seconds
   useEffect(() => {
@@ -41,6 +42,20 @@ function ProjectCard({ project }: { project: CyberProject }) {
       setMinTimePassed(true);
     }, 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // A cached image (very common on client-side navigation — e.g. you've
+  // already loaded this same cover elsewhere this session, or it's just a
+  // normal HTTP cache hit) can finish loading before the onLoad handler
+  // below ever gets attached, so that event never fires and the loader
+  // spins forever. Checking img.complete right after mount catches an
+  // already-cached image immediately; onLoad still covers a genuinely
+  // fresh network load.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setImgLoaded(true);
+    }
   }, []);
 
   // Only show content when both image is loaded AND min time has passed
@@ -61,7 +76,7 @@ function ProjectCard({ project }: { project: CyberProject }) {
           <div className="absolute inset-0 bg-neutral-900">
             {!isReady && (
               <div className="absolute inset-0 flex items-center justify-center z-10 overflow-hidden">
-                {/* Removed the scale transformation here. 
+                {/* Removed the scale transformation here.
                    The new CSS bar loader is sized correctly by default.
                 */}
                 <div>
@@ -71,12 +86,19 @@ function ProjectCard({ project }: { project: CyberProject }) {
             )}
 
             <img
+              ref={imgRef}
               src={project.cover}
               alt={project.title}
               className={`h-full w-full object-cover transition duration-700 ${
                 isReady ? "opacity-100 group-hover:opacity-70" : "opacity-0"
               }`}
               onLoad={() => setImgLoaded(true)}
+              onError={() =>
+                console.error(
+                  `[CyberProjectCards] Failed to load cover image for "${project.title}" at "${project.cover}". ` +
+                    `Check the URL is reachable and correctly cased.`
+                )
+              }
             />
           </div>
 

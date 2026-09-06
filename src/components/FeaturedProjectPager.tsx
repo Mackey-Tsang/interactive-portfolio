@@ -83,6 +83,17 @@ export default function FeaturedProjectPager({
   const [infoVisible, setInfoVisible] = useState(true);
   const [cardOffset, setCardOffset] = useState(0);
 
+  // Hover/press state for the image box's "Uiverse card" style feedback —
+  // scales up slightly on hover, dips down + tilts on press, border
+  // brightens on hover. Kept as plain state (not CSS :hover) so it composes
+  // cleanly with the existing cardOffset paging transform below.
+  const [isCardHovered, setIsCardHovered] = useState(false);
+  const [isCardPressed, setIsCardPressed] = useState(false);
+
+  // Position (relative to the image box) of the custom "Scroll" cursor
+  // indicator — null while the pointer isn't over the image at all.
+  const [cursorPos, setCursorPos] = useState<{ x: number; y: number } | null>(null);
+
   const morphRef = useRef<MorphSliderHandle>(null);
   const gestureRef = useRef<HTMLDivElement>(null);
   const busyRef = useRef(false);
@@ -195,15 +206,26 @@ export default function FeaturedProjectPager({
       className={`absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3 select-none ${className}`}
     >
       <div className="flex items-center gap-4 md:gap-5">
-        {/* IMAGE BOX — the morph shader lives here, driven externally via goTo() */}
+        {/* IMAGE BOX — the morph shader lives here, driven externally via goTo().
+            Hover/press feedback adapted from a Uiverse.io card style: scales up
+            on hover, dips + tilts on press, border brightens on hover — all
+            composed with the existing paging dip (cardOffset) in one transform. */}
         <div
-          className="overflow-hidden shadow-2xl shadow-black/50 transition-transform duration-300 ease-out"
+          onMouseEnter={() => setIsCardHovered(true)}
+          onMouseLeave={() => {
+            setIsCardHovered(false);
+            setIsCardPressed(false);
+          }}
+          onMouseDown={() => setIsCardPressed(true)}
+          onMouseUp={() => setIsCardPressed(false)}
+          className="overflow-hidden shadow-2xl shadow-black/50 transition-all duration-500 ease-out"
           style={{
             width,
-            transform: `translateY(${cardOffset}px)`,
+            transform: `translateY(${cardOffset}px) scale(${isCardPressed ? 0.95 : isCardHovered ? 1.05 : 1}) rotateZ(${isCardPressed ? 1.7 : 0}deg)`,
             borderRadius: `${imageRadius}px`,
             opacity: imageOpacity,
             backgroundColor: "#0c0c0e",
+            border: `1px solid ${isCardHovered ? "#000000" : "rgba(255, 255, 255, 0.25)"}`,
           }}
         >
           <div className="relative w-full" style={{ height: imageHeight }}>
@@ -232,11 +254,35 @@ export default function FeaturedProjectPager({
                 }}
               />
             )}
-            {/* Gesture layer for vertical drag — image only, not the info panel below */}
+            {/* Gesture layer for vertical drag — image only, not the info panel below.
+                Native cursor is hidden (cursor-none); a custom "Scroll" + double-chevron
+                indicator follows the pointer instead (rendered below), since no built-in
+                CSS cursor can carry both an icon and a text label. */}
             <div
               ref={gestureRef}
-              className="absolute inset-0 z-10 cursor-grab touch-none active:cursor-grabbing"
+              className="absolute inset-0 z-10 cursor-none touch-none"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+              }}
+              onMouseLeave={() => setCursorPos(null)}
             />
+            {/* Custom hover cursor — "Scroll" label above a two-line downward chevron,
+                offset from the real pointer position so it doesn't sit under the cursor. */}
+            {cursorPos && (
+              <div
+                className="pointer-events-none absolute z-20 flex flex-col items-center gap-1"
+                style={{ left: cursorPos.x, top: cursorPos.y, transform: "translate(14px, 10px)" }}
+              >
+                <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                  Scroll
+                </span>
+                <svg width="12" height="17" viewBox="0 0 12 17" fill="none" className="drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                  <path d="M2 1.5 L6 5.5 L10 1.5" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M2 9.5 L6 13.5 L10 9.5" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" opacity="0.55" />
+                </svg>
+              </div>
+            )}
           </div>
         </div>
 
@@ -290,7 +336,7 @@ export default function FeaturedProjectPager({
           {displayedProject.name}
         </h3>
         {displayedProject.software.length > 0 && (
-          <p className="mt-0.5 mb-2 font-mono text-[11px] uppercase tracking-widest text-cyan-200/60">
+          <p className="mt-0.5 mb-2 font-mono text-[11px] uppercase tracking-[0.1em] text-cyan-200/60">
             {displayedProject.software.join(" · ")}
           </p>
         )}

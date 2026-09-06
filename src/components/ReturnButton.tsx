@@ -60,7 +60,16 @@ export default function ReturnButton() {
 
   const handleReturn = () => {
     if (isProjectPage) {
-      router.push(basePath);
+      // Projects can now be opened from places other than the category list
+      // (e.g. a link from a 3D scene), so "Return" should go back to wherever
+      // the user actually came from — falling back to the category page only
+      // when there's no real browser history to go back to (e.g. a direct
+      // link or a fresh page load).
+      if (typeof window !== "undefined" && window.history.length > 1) {
+        router.back();
+      } else {
+        router.push(basePath);
+      }
       return;
     }
 

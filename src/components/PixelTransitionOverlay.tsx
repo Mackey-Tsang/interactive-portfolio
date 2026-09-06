@@ -63,6 +63,14 @@ type PixelTransitionOverlayProps = {
   /** How much extra opacity (0–1) is added at the exact cursor position, fading
    *  to 0 at hoverRadius away. */
   hoverOpacityBoost?: number;
+
+  /** When true at the moment `transitionKey` changes, that change is applied
+   *  immediately (onCovered fires right away) with NO cover/particle
+   *  animation. For programmatic syncs that shouldn't visually transition —
+   *  e.g. a parent re-aligning its displayed scene with the store right
+   *  after mounting/navigating here, which isn't a real user-driven scene
+   *  swap even though the key technically changed. */
+  instant?: boolean;
 };
 
 type Particle = {
@@ -129,6 +137,7 @@ export default function PixelTransitionOverlay({
   hoverRadius = 1000,
   hoverBlend = 5,
   hoverOpacityBoost = .8,
+  instant = false,
 }: PixelTransitionOverlayProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const wipeRef = useRef<HTMLDivElement | null>(null);
@@ -141,6 +150,11 @@ export default function PixelTransitionOverlay({
   const depthRef = useRef({ centerX: 0, centerY: 0, maxR: 0 });
   const spriteRef = useRef<HTMLCanvasElement | null>(null);
   const mouseRef = useRef({ x: -9999, y: -9999 });
+  // Mirrors the `instant` prop into a ref, read inside the transition effect
+  // below — kept in sync every render (not via a useEffect) so its value at
+  // the moment `transitionKey` changes is always current, not one render stale.
+  const instantRef = useRef(instant);
+  instantRef.current = instant;
 
   // Track viewport size for particle spawning + canvas resolution.
   useEffect(() => {
@@ -264,6 +278,16 @@ export default function PixelTransitionOverlay({
     if (!ctx) return;
 
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
+
+    if (instantRef.current) {
+      // Silent sync — apply immediately, no cover/particle animation.
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      wipe.style.opacity = "0";
+      coveredFiredRef.current = true;
+      onCovered();
+      return;
+    }
+
     coveredFiredRef.current = false;
     startRef.current = null;
     spriteRef.current = createGlowSprite(particleColor);

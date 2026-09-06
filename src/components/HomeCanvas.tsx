@@ -1,7 +1,7 @@
 // HomeCanvas.tsx
 "use client";
 
-import React, { Suspense, useEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Canvas } from "@react-three/fiber";
 import { useCategory } from "@/store/useCategory";
@@ -26,6 +26,18 @@ export default function HomeCanvas() {
   // What's actually rendered — only updates once the pixel overlay has
   // fully covered the screen, so the swap happens while hidden.
   const [displayedKey, setDisplayedKey] = useState(targetKey);
+
+  // Real scene-swap transitions should only play for a category/home change
+  // that happens while the user is already sitting on this page (clicking
+  // CategoryPillNav). Arriving here fresh from a /work or project page also
+  // changes `targetKey` (the category store still reflects wherever the user
+  // was), but that's not a scene swap the user asked to *see* — it's just
+  // this component catching up to state that was already set before the
+  // navigation. So for a short window right after mount, any change is
+  // applied instantly with no cover/particle animation; only afterwards can
+  // a change trigger the real pixel transition.
+  const SETTLE_WINDOW_MS = 200;
+  const mountedAtRef = useRef<number>(Date.now());
 
   const showHomeDisplayed = displayedKey === "home";
   const isPhoto = !showHomeDisplayed && displayedKey === "Photography";
@@ -55,6 +67,7 @@ export default function HomeCanvas() {
       <PixelTransitionOverlay
         transitionKey={targetKey}
         onCovered={() => setDisplayedKey(targetKey)}
+        instant={Date.now() - mountedAtRef.current < SETTLE_WINDOW_MS}
       />
 
       {/* --- SCENE LAYER (renders `displayedKey`, one step behind the store) --- */}
