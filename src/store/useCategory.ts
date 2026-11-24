@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export type Category = "Cyber-Physical" | "Architecture" | "Photography";
+export type Category = "Creative" | "Architecture" | "Photography";
 
 type State = {
   // category mode
@@ -15,7 +15,7 @@ type State = {
   setHome: (show: boolean) => void;
 };
 
-const order: Category[] = ["Cyber-Physical", "Architecture", "Photography"];
+const order: Category[] = ["Creative", "Architecture", "Photography"];
 
 export const useCategory = create<State>((set, get) => ({
   category: "Photography",

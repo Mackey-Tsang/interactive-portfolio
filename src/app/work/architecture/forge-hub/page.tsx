@@ -166,11 +166,11 @@ export default function ForgeHubForumPage() {
           <SectionFadeOnScroll>
             <section className="space-y-8">
               <header className="space-y-3">
-                <p className="text-[11px] uppercase tracking-[0.22em] text-black">
-                  Tectonic / Community Centre / Auckland
+                <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
+                  COURSE: ARCHDES 201 / Bachelor of Architecture Year 2 Semester 2
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-                  Breif: The Constructed
+                  Brief: The Constructed
                 </h1>
                 <p className="text-sm text-black">
                   The Constructed focuses on material assembly, design detailing, and fabrication. I was encouraged to explore materiality, compliance issues, and architectonics, developing skills to create innovative and context-sensitive architectural solutions.

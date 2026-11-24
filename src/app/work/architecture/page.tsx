@@ -4,24 +4,31 @@ import ArchProjectCards from "@/components/ArchProjectCards";
 
 const projects = [
   {
+    title: "Tū Rākau - Stand as Timber",
+    slug: "/work/architecture/stand-as-timber",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/3.jpg?raw=true",
+    year: "Studio Project 2026 Jul - Oct",
+    caption: "Papakāinga / Apartment Tower/ Mass Timber",
+  },
+  {
     title: "The Third Place",
     slug: "/work/architecture/third-place",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/3.jpg?raw=true",
-    year: "Project 2026 Mar - Jun",
+    year: "Studio Project 2026 Mar - Jun",
     caption: "Youth / Playful / CBD",
   },
   {
     title: "Puzzle Block",
     slug: "/work/architecture/kinderspace",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Kinderspace/0.jpg?raw=true",
-    year: "Project 2025 Nov - Jan",
+    year: "Buildner Kinderspace #3 2025",
     caption: "Kinderspace / Playful / Urban",
   },
   {
     title: "Awa Market Hall",
     slug: "/work/architecture/awa-market-hall",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p1.jpg?raw=true",
-    year: "Project 2025 Jul - Oct",
+    year: "Studio Project 2025 Jul - Oct",
     caption: "Market / Co-working / Water",
   },
   {
@@ -42,15 +49,15 @@ const projects = [
     title: "The Forge Hub & Forum of Voices",
     slug: "/work/architecture/forge-hub",
     cover: "/architecture/forgehub.jpg",
-    year: "Project 2024 Jul - Oct",
+    year: "Studio Project 2024 Jul - Oct",
     caption: "Community / Structure / Light",
   },
   {
     title: "Inception - Architecture Media",
     slug: "/work/architecture/inception",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Inception/p27.jpg?raw=true",
-    year: "Project 2023 Jul - Oct",
-    caption: "Drawing System / Model Making / Speculative Design",
+    year: "Studio Project 2023 Jul - Oct",
+    caption: "Architecture Media / Model Making / Drawing System",
   },
 ];
 

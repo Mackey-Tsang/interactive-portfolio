@@ -15,7 +15,7 @@ import StarfieldButton from "@/components/StarfieldButton";
 const HomeIntroScene = dynamic(() => import("@/components/scenes/HomeIntroScene"), { ssr: false });
 const PhotographyScene = dynamic(() => import("@/components/scenes/PhotographyScene"), { ssr: false });
 const ArchitectureScene = dynamic(() => import("@/components/scenes/ArchitectureScene"), { ssr: false });
-const CyberPhysicalScene = dynamic(() => import("@/components/scenes/CyberPhysicalScene"), { ssr: false });
+const CreativeScene = dynamic(() => import("@/components/scenes/CreativeScene"), { ssr: false });
 
 export default function HomeCanvas() {
   const { category, showHome } = useCategory();
@@ -41,14 +41,14 @@ export default function HomeCanvas() {
 
   const showHomeDisplayed = displayedKey === "home";
   const isPhoto = !showHomeDisplayed && displayedKey === "Photography";
-  const isCyber = !showHomeDisplayed && displayedKey === "Cyber-Physical";
+  const isCreative = !showHomeDisplayed && displayedKey === "Creative";
 
   const Scene = useMemo(() => {
     switch (displayedKey) {
       case "Architecture":
         return ArchitectureScene;
-      case "Cyber-Physical":
-        return CyberPhysicalScene; // still useful for dynamic import
+      case "Creative":
+        return CreativeScene; // still useful for dynamic import
       default:
         return PhotographyScene;
     }
@@ -58,7 +58,7 @@ export default function HomeCanvas() {
     if (showHomeDisplayed) return null;
     if (displayedKey === "Photography") return { href: "/work/photography", label: "All Photos" };
     if (displayedKey === "Architecture") return { href: "/work/architecture", label: "All Projects" };
-    return { href: "/work/cyber-physical", label: "All Projects" };
+    return { href: "/work/creative", label: "All Projects" };
   }, [showHomeDisplayed, displayedKey]);
 
   return (
@@ -113,9 +113,9 @@ export default function HomeCanvas() {
             />
           </div>
         </div>
-      ) : isCyber ? (
-        // CYBER-PHYSICAL: DOM layer (no R3F Canvas here)
-        <CyberPhysicalScene />
+      ) : isCreative ? (
+        // CREATIVE: DOM layer (no R3F Canvas here)
+        <CreativeScene />
       ) : (
         // OTHER CATEGORIES (e.g., Architecture): R3F Canvas
         <Canvas className="absolute inset-0" camera={{ position: [0, 1.5, 4] }}>

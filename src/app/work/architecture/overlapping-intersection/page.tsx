@@ -89,18 +89,13 @@ export default function OverlappingIntersectionPage() {
         {/* -------------------------------------------------- */}
         <SectionFadeOnScroll className="space-y-4 border-b border-neutral-400/40 pb-8 md:pb-10">
           <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-            Architecture / Temporary Installation
+            The Young Designers Open Call (reSITE) 2025
           </p>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
             The Overlapping Intersection
           </h1>
 
-          <div className="space-y-1 text-xs md:text-sm text-neutral-700">
-            <p className="font-medium">
-              The Young Designers Open Call (reSITE) 2025
-            </p>
-          </div>
 
           <div className="mt-3 space-y-1 text-xs md:text-sm text-neutral-600">
             <p>
@@ -112,10 +107,10 @@ export default function OverlappingIntersectionPage() {
               Manifesto Market Andel, Prague, Czechia
             </p>
             <p>
-              <span className="font-medium text-black">Task:&nbsp;</span>
+              <span className="font-medium text-black">Brief:&nbsp;</span>
               To design a temporary installation that provides shade, enables
               smooth circulation, responds to the site's atmosphere, and
-              fosters community interaction during summer—within a limited
+              fosters community interaction during summer, within a limited
               budget of CZK 500,000.
             </p>
           </div>

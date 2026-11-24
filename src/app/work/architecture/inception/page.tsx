@@ -143,8 +143,8 @@ export default function InceptionArchitectureMediaPage() {
         <SectionFadeOnScroll>
           <section className="space-y-8">
             <header className="space-y-3">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-black">
-              Drawing System / Model Making / Speculative Design
+            <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
+              COURSE: ARCHDRC 104 / Bachelor of Architecture Year 1 Semester 2
             </p>
             <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
               Inception - Architecture Media

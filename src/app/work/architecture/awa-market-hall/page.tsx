@@ -85,15 +85,15 @@ export default function AwaMarketHallPage() {
     <>
       <main className="min-h-dvh w-full bg-neutral-100 text-neutral-900">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-6">
-          {/* 01 — Title + Brief + Hero Image */}
+          {/* 01 - Title + Brief + Hero Image */}
           <SectionFadeOnScroll imageUrls={[HERO_RENDER]}>
             <div className="space-y-8">
               <div className="space-y-4 w-full">
                 <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-                  Architecture / Farmers' Market
+                  COURSE: ARCHDES 301 / Bachelor of Architecture Year 3 Semester 2
                 </p>
                 <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-                  Awa Market Hall — Grey Lynn Waterfront
+                  Awa Market Hall - Grey Lynn Waterfront
                 </h1>
                 <p className="text-sm sm:text-base leading-relaxed">
                   Awa Market Hall sits at the threshold between the post-tsunami
@@ -130,7 +130,7 @@ export default function AwaMarketHallPage() {
             </div>
           </SectionFadeOnScroll>
 
-          {/* 02 — Intro section */}
+          {/* 02 - Intro section */}
           <SectionFadeOnScroll>
             <div className="space-y-6 w-full">
               <h2 className="text-xl font-semibold tracking-tight">
@@ -159,14 +159,14 @@ export default function AwaMarketHallPage() {
             <div className="w-full border-t border-neutral-500 my-6" />
           </SectionFadeOnScroll>
 
-          {/* 03 — Masterplan + Section + Legend layout */}
+          {/* 03 - Masterplan + Section + Legend layout */}
           <SectionFadeOnScroll imageUrls={[MASTERPLAN_IMAGE, SECTION_IMAGE, LEGEND_IMAGE]}>
             <div className="space-y-10">
               <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.1fr)] items-start">
                 <div className="space-y-6">
                   <div className="space-y-3 w-full">
                     <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-                      Site Position — Awa Edge in the Grey Lynn Masterplan
+                      Site Position - Awa Edge in the Grey Lynn Masterplan
                     </h2>
                     <p className="text-sm sm:text-base leading-relaxed">
                       Within the broader Grey Lynn masterplan, Awa Market Hall
@@ -235,10 +235,10 @@ export default function AwaMarketHallPage() {
           </SectionFadeOnScroll>
 
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700"></div>
+            <div className="w-full border-t border-neutral-500 my-6" />
           </SectionFadeOnScroll>
 
-          {/* 04 — NZ Farmers Market context */}
+          {/* 04 - NZ Farmers Market context */}
           <SectionFadeOnScroll imageUrls={FARMERS_MARKET_IMAGES}>
             <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
               <div className="space-y-6">
@@ -297,7 +297,7 @@ export default function AwaMarketHallPage() {
                 </p>
                 <p className="text-sm sm:text-base leading-relaxed">
                   This project explores how a permanent market hall can preserve that
-                  looseness — keeping the energy of local producers and weekend crowds —
+                  looseness - keeping the energy of local producers and weekend crowds -
                   while elevating resilience, comfort, and climatic performance along a
                   changing waterfront edge.
                 </p>
@@ -305,14 +305,16 @@ export default function AwaMarketHallPage() {
             </div>
           </SectionFadeOnScroll>
 
-          <div className="w-[60%] mx-auto my-8 border-t border-neutral-700"></div>
+          <SectionFadeOnScroll>
+            <div className="w-full border-t border-neutral-500 my-6" />
+          </SectionFadeOnScroll>
 
-          {/* 05 — Design development */}
+          {/* 05 - Design development */}
           <SectionFadeOnScroll imageUrls={["https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true", ...PROGRESS_IMAGES]}>
             <div className="space-y-10">
               <div className="w-full">
                 <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
-                  Design Development — Awa Market Hall
+                  Design Development - Awa Market Hall
                 </h2>
                 <p className="mt-3 text-sm sm:text-base leading-relaxed">
                   The market hall evolved through a sequence of roof, structural grid, and
@@ -335,13 +337,13 @@ export default function AwaMarketHallPage() {
                   onClick={() =>
                     openLightbox(
                       "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true",
-                      "Awa Market Hall — key interior/exterior render."
+                      "Awa Market Hall - key interior/exterior render."
                     )
                   }
                 >
                   <img
                     src="https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p9.jpg?raw=true"
-                    alt="Awa Market Hall — key interior/exterior render."
+                    alt="Awa Market Hall - key interior/exterior render."
                     className="block w-full aspect-video object-cover"
                   />
                 </button>
@@ -386,7 +388,7 @@ export default function AwaMarketHallPage() {
             </div>
           </SectionFadeOnScroll>
 
-          {/* 07 — Final Design Divider */}
+          {/* 07 - Final Design Divider */}
           <SectionFadeOnScroll>
             <section className="mt-10">
               <div className="flex items-center gap-4 text-[11px] tracking-[0.25em] uppercase text-neutral-500">
@@ -397,7 +399,7 @@ export default function AwaMarketHallPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 08 — Render + Floorplan + 3x16:9 + Section */}
+          {/* 08 - Render + Floorplan + 3x16:9 + Section */}
           <SectionFadeOnScroll imageUrls={[SECOND_RENDER, FLOORPLAN_IMAGE, ...TRIPLE_16_9_IMAGES, SECTION_RENDER]}>
             <div className="space-y-10">
               <button
@@ -449,7 +451,7 @@ export default function AwaMarketHallPage() {
             </div>
           </SectionFadeOnScroll>
 
-          {/* 0Y — Detail Grid 1 */}
+          {/* 0Y - Detail Grid 1 */}
           <SectionFadeOnScroll imageUrls={GRID_IMAGES1}>
             <section className="space-y-6">
               <div className="mx-auto w-full max-w-7xl space-y-4">
@@ -477,7 +479,7 @@ export default function AwaMarketHallPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 0Z — Detail Grid 2 */}
+          {/* 0Z - Detail Grid 2 */}
           <SectionFadeOnScroll imageUrls={GRID_IMAGES2}>
             <section className="space-y-6">
               <div className="mx-auto w-full max-w-7xl">
@@ -494,7 +496,7 @@ export default function AwaMarketHallPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 10 — Back to top */}
+          {/* 10 - Back to top */}
           <SectionFadeOnScroll>
             <div className="flex justify-center pt-6 pb-24">
               <button

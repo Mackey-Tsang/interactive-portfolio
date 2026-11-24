@@ -5,7 +5,7 @@ import Link from "next/link";
 import PixelCard from "./PixelCard";
 import CyberLoader from "./CyberLoader";
 
-type CyberProject = {
+type CreativeProject = {
   slug: string;
   title: string;
   year: string;
@@ -14,11 +14,11 @@ type CyberProject = {
   variant?: "default" | "blue" | "yellow" | "pink" | "green"  | "purple" | "cyan" | "orange" | "red" | "teal";
 };
 
-interface CyberProjectCardsProps {
-  projects: CyberProject[];
+interface CreativeProjectCardsProps {
+  projects: CreativeProject[];
 }
 
-export default function CyberProjectCards({ projects }: CyberProjectCardsProps) {
+export default function CreativeProjectCards({ projects }: CreativeProjectCardsProps) {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 pt-10 pb-16">
       <div className="grid gap-6 md:gap-8 md:grid-cols-2">
@@ -30,7 +30,7 @@ export default function CyberProjectCards({ projects }: CyberProjectCardsProps) 
   );
 }
 
-function ProjectCard({ project }: { project: CyberProject }) {
+function ProjectCard({ project }: { project: CreativeProject }) {
   const [isReady, setIsReady] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [minTimePassed, setMinTimePassed] = useState(false);
@@ -66,7 +66,7 @@ function ProjectCard({ project }: { project: CyberProject }) {
   }, [imgLoaded, minTimePassed]);
 
   return (
-    <Link href={`/work/cyber-physical/${project.slug}`} className="block">
+    <Link href={`/work/creative/${project.slug}`} className="block">
       <PixelCard
         variant={project.variant ?? "default"}
         className="group h-[260px] sm:h-80 md:h-[400px] lg:h-[600px] w-full"
@@ -95,7 +95,7 @@ function ProjectCard({ project }: { project: CyberProject }) {
               onLoad={() => setImgLoaded(true)}
               onError={() =>
                 console.error(
-                  `[CyberProjectCards] Failed to load cover image for "${project.title}" at "${project.cover}". ` +
+                  `[CreativeProjectCards] Failed to load cover image for "${project.title}" at "${project.cover}". ` +
                     `Check the URL is reachable and correctly cased.`
                 )
               }

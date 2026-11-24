@@ -8,27 +8,27 @@ import LightboxVideo from "@/components/LightboxVideo";
 const UNITY_SCREENRECORDINGS = [
   {
     key: "fsae",
-    label: "UoA Formula SAE Team (F:SAE:47) — Unity Screen Recording",
-    src: "/media/cy-phy/unity-fsae-screenrecord.mp4",
+    label: "UoA Formula SAE Team (F:SAE:47) - Unity Screen Recording",
+    src: "/media/cy-phy-workshop-I/unity-fsae-screenrecord.mp4",
   },
   {
     key: "uarc",
-    label: "UoA Rocketry Club (UARC) — Unity Screen Recording",
-    src: "/media/cy-phy/unity-uarc-screenrecord.mp4",
+    label: "UoA Rocketry Club (UARC) - Unity Screen Recording",
+    src: "/media/cy-phy-workshop-I/unity-uarc-screenrecord.mp4",
   },
   {
     key: "cdam-prosthetics",
-    label: "CDAM + Prosthetics — Unity Screen Recording",
-    src: "/media/cy-phy/unity-cdam-prosthetics-screenrecord.mp4",
+    label: "CDAM + Prosthetics - Unity Screen Recording",
+    src: "/media/cy-phy-workshop-I/unity-cdam-prosthetics-screenrecord.mp4",
   },
   {
     key: "cammd",
-    label: "CAMMD — Unity Screen Recording",
+    label: "CAMMD - Unity Screen Recording",
     src: "/media/cy-phy/unity-cammd-screenrecord.mp4",
   },
   {
     key: "dtrg",
-    label: "Drone Technology Research Group (DTRG) — Unity Screen Recording",
+    label: "Drone Technology Research Group (DTRG) - Unity Screen Recording",
     src: "/media/cy-phy/unity-dtrg-screenrecord.mp4",
   },
 ];
@@ -62,7 +62,7 @@ export default function CyPhyWorkshopPage() {
     <>
       <main className="min-h-dvh bg-black text-neutral-100">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-24">
-          {/* 01 — Hero: portrait image + overlapping title block */}
+          {/* 01 - Hero: portrait image + overlapping title block */}
           <SectionFadeOnScroll>
             <section className="relative grid lg:grid-cols-[minmax(0,3fr)_minmax(0,3fr)] items-center">
               {/* Portrait hero image (exhibition) */}
@@ -70,7 +70,7 @@ export default function CyPhyWorkshopPage() {
                 <div className="relative h-auto overflow-hidden bg-neutral-900 ring-1 ring-white/5">
                   <img
                     src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true"
-                    alt="Engineering Tomorrow XR installation — portrait view of the 4.5 m fabric tower."
+                    alt="Engineering Tomorrow XR installation - portrait view of the 4.5 m fabric tower."
                     className="object-cover w-full"
                   />
                 </div>
@@ -82,8 +82,11 @@ export default function CyPhyWorkshopPage() {
                   <p className="text-[11px] uppercase tracking-[0.22em] text-neutral-400 mb-3">
                     Cyber-Physical / XR Installation
                   </p>
+                  <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+                    Engineering Tomorrow 2025
+                  </h1>
                   <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
-                    Engineering Tomorrow — Cy-Phy Workshop
+                    Cy-Phy Workshop I
                   </h1>
                   <p className="text-sm text-neutral-300 mb-4">
                     An Extended Reality installation developed 
@@ -96,22 +99,22 @@ export default function CyPhyWorkshopPage() {
                     Auckland.
                   </p>
                   <div className="text-[11px] text-neutral-400 space-y-1">
-                    <p>Role — Research Assistant, Engineering &amp; Design</p>
-                    <p>Location — University of Auckland, Newmarket Campus</p>
-                    <p>Tools — Unity, Rhino, Blender, Projection Mapping, 3D Shutter-Glass</p>
+                    <p>Role - Research Assistant, Engineering &amp; Design</p>
+                    <p>Location - University of Auckland, Newmarket Campus</p>
+                    <p>Tools - Unity, Rhino, Blender, Projection Mapping, 3D Shutter-Glass</p>
                   </div>
                 </div>
               </div>
             </section>
           </SectionFadeOnScroll>
 
-          {/* 02 — Project Context & Participating Labs */}
+          {/* 02 - Project Context & Participating Labs */}
           <SectionFadeOnScroll>
             <section className="space-y-10">
               <div className="grid gap-10 lg:grid-cols-[3fr,2fr] items-start">
                 <div className="space-y-4">
                   <h2 className="text-xl font-semibold tracking-tight">
-                    Project Context — Engineering Tomorrow Showcase 2025
+                    Project Context - Engineering Tomorrow Showcase 2025
                   </h2>
                   <p className="text-sm text-neutral-300">
                     <span className="font-medium">Engineering Tomorrow</span> is a
@@ -138,7 +141,7 @@ export default function CyPhyWorkshopPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <LightboxVideo
                     src="/media/cy-phy/showcase-fsae-portrait.mp4"
-                    label="F:SAE:47 — XR projection on tower"
+                    label="F:SAE:47 - XR projection on tower"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
@@ -154,7 +157,7 @@ export default function CyPhyWorkshopPage() {
 
                   <LightboxVideo
                     src="/media/cy-phy/showcase-uarc-portrait.mp4"
-                    label="Rocketry Club — launch and smoke sequence"
+                    label="Rocketry Club - launch and smoke sequence"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
@@ -170,7 +173,7 @@ export default function CyPhyWorkshopPage() {
 
                   <LightboxVideo
                     src="/media/cy-phy/showcase-cdam-prosthetics-portrait.mp4"
-                    label="CDAM + Prosthetics — assembly and lattice patterns"
+                    label="CDAM + Prosthetics - assembly and lattice patterns"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
@@ -186,7 +189,7 @@ export default function CyPhyWorkshopPage() {
 
                   <LightboxVideo
                     src="/media/cy-phy/showcase-dtrg-portrait.mp4"
-                    label="DTRG — drone paths and swarm behaviour"
+                    label="DTRG - drone paths and swarm behaviour"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
@@ -211,7 +214,7 @@ export default function CyPhyWorkshopPage() {
                   <ul className="space-y-1">
                     <li>UoA Formula SAE Team (F:SAE:47)</li>
                     <li>UoA Rocketry Club (UARC)</li>
-                    <li>arc/sec Lab — School of Architecture and Planning</li>
+                    <li>arc/sec Lab - School of Architecture and Planning</li>
                     <li>Creative Design &amp; Additive Manufacturing Lab (CDAM)</li>
                   </ul>
                 </div>
@@ -221,7 +224,7 @@ export default function CyPhyWorkshopPage() {
                   </h3>
                   <ul className="space-y-1">
                     <li>3D Printed Orthotics &amp; Prosthetics Group</li>
-                    <li>CAMMD — Centre of Advanced Materials, Manufacturing &amp; Design</li>
+                    <li>CAMMD - Centre of Advanced Materials, Manufacturing &amp; Design</li>
                     <li>Drone Technology Research Group (DTRG)</li>
                   </ul>
                 </div>
@@ -229,11 +232,11 @@ export default function CyPhyWorkshopPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 03 — The XR Installation: 2x2 portrait images */}
+          {/* 03 - The XR Installation: 2x2 portrait images */}
           <SectionFadeOnScroll>
             <section className="space-y-8">
               <h2 className="text-xl font-semibold tracking-tight">
-                The XR Installation — Concept &amp; Structure
+                The XR Installation - Concept &amp; Structure
               </h2>
               <div className="space-y-4 text-sm text-neutral-300">
                 <p>
@@ -291,11 +294,11 @@ export default function CyPhyWorkshopPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 04 — My Role (text only now) */}
+          {/* 04 - My Role (text only now) */}
           <SectionFadeOnScroll>
             <section className="space-y-6">
               <h2 className="text-xl font-semibold tracking-tight">
-                My Role — Research Assistant, Engineering &amp; Design
+                My Role - Research Assistant, Engineering &amp; Design
               </h2>
               <p className="text-sm text-neutral-300">
                 The role sits under the Department of Mechanical &amp; Mechatronics
@@ -341,11 +344,11 @@ export default function CyPhyWorkshopPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 05 — Unity Screen Recordings: landscape player with Next/Prev */}
+          {/* 05 - Unity Screen Recordings: landscape player with Next/Prev */}
           <SectionFadeOnScroll>
             <section className="space-y-6">
               <h2 className="text-xl font-semibold tracking-tight">
-                Unity Production — Screen Recordings
+                Unity Production - Screen Recordings
               </h2>
               <p className="text-sm text-neutral-300">
                 Each lab&apos;s animation was developed as a dedicated Unity scene
@@ -367,7 +370,7 @@ export default function CyPhyWorkshopPage() {
 
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <p className="text-xs text-neutral-400">
-                    {currentUnityIndex + 1} / {UNITY_SCREENRECORDINGS.length} —{" "}
+                    {currentUnityIndex + 1} / {UNITY_SCREENRECORDINGS.length} -{" "}
                     {currentUnityClip.label}
                   </p>
                   <div className="flex gap-2">
@@ -391,11 +394,11 @@ export default function CyPhyWorkshopPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 06 — VFX Screenshots row (with Lightbox + captions) */}
+          {/* 06 - VFX Screenshots row (with Lightbox + captions) */}
           <SectionFadeOnScroll>
             <section className="space-y-6">
               <h2 className="text-xl font-semibold tracking-tight">
-                VFX Systems — Visual Language by Lab
+                VFX Systems - Visual Language by Lab
               </h2>
               <p className="text-sm text-neutral-300">
                 A set of custom VFX graphs and particle systems were developed to
@@ -413,20 +416,20 @@ export default function CyPhyWorkshopPage() {
         onClick={() =>
           openLightbox(
             "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20aerodynamic.png?raw=true",
-            "VFX graph — aerodynamic flow field for FSAE."
+            "VFX graph - aerodynamic flow field for FSAE."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
             src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20aerodynamic.png?raw=true"
-            alt="VFX graph — aerodynamic flow field for FSAE."
+            alt="VFX graph - aerodynamic flow field for FSAE."
             className="object-cover w-full h-full"
           />
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        F:SAE:47 — aerodynamic flow field
+        F:SAE:47 - aerodynamic flow field
       </figcaption>
     </figure>
 
@@ -451,7 +454,7 @@ export default function CyPhyWorkshopPage() {
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        CDAM + Prosthetics — particles gather
+        CDAM + Prosthetics - particles gather
       </figcaption>
     </figure>
 
@@ -476,7 +479,7 @@ export default function CyPhyWorkshopPage() {
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        UARC — exhaust + smoke
+        UARC - exhaust + smoke
       </figcaption>
     </figure>
 
@@ -501,7 +504,7 @@ export default function CyPhyWorkshopPage() {
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        CAMMD — surfboard aerodynamic test
+        CAMMD - surfboard aerodynamic test
       </figcaption>
     </figure>
 
@@ -526,7 +529,7 @@ export default function CyPhyWorkshopPage() {
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        CAMMD — bubble flow simulation
+        CAMMD - bubble flow simulation
       </figcaption>
     </figure>
 
@@ -551,7 +554,7 @@ export default function CyPhyWorkshopPage() {
         </div>
       </button>
       <figcaption className="mt-2 text-[11px] text-neutral-400">
-        CAMMD — material trail tests
+        CAMMD - material trail tests
       </figcaption>
     </figure>
   </div>
@@ -560,11 +563,11 @@ export default function CyPhyWorkshopPage() {
             </section>
           </SectionFadeOnScroll>
 
-          {/* 07 — Outcome & Reflection */}
+          {/* 07 - Outcome & Reflection */}
           <SectionFadeOnScroll>
             <section className="space-y-8">
               <h2 className="text-xl font-semibold tracking-tight">
-                Outcome — Spatialised 3D Animation
+                Outcome - Spatialised 3D Animation
               </h2>
               <p className="text-sm text-neutral-300">
                 The installation resulted in a{" "}

@@ -55,6 +55,10 @@ const SWIPE_STEP_PX = 70; // vertical drag distance per project step
 const WHEEL_STEP = 60; // accumulated wheel delta per project step
 const NUDGE_PX = 14; // how far the whole card dips in the travel direction
 const TEXT_SWAP_MS = 260; // how long the info panel takes to crossfade
+// A press that moves less than this (px) before release is treated as a
+// click (open the project) rather than a drag (page the slider) — matches
+// the browser's own small-movement tolerance for firing a native click.
+const CLICK_MOVE_TOLERANCE_PX = 6;
 
 export default function FeaturedProjectPager({
   projects,
@@ -97,6 +101,10 @@ export default function FeaturedProjectPager({
   const morphRef = useRef<MorphSliderHandle>(null);
   const gestureRef = useRef<HTMLDivElement>(null);
   const busyRef = useRef(false);
+
+  // Tracks whether the current press ever moved past the click tolerance —
+  // read on pointerup to decide "open the project" vs. "that was a drag".
+  const draggedRef = useRef(false);
 
   const displayedProject = projects[displayedIndex];
 
@@ -142,22 +150,31 @@ export default function FeaturedProjectPager({
 
   // Vertical drag — scoped to the image box only (via gestureRef), so the
   // info panel below stays completely normal (selectable text, a plain
-  // clickable button) with no z-index tricks needed.
+  // clickable button) with no z-index tricks needed. Also tracks whether
+  // this press ever moved past CLICK_MOVE_TOLERANCE_PX, so the click
+  // handler below can tell a real drag apart from a tap meant to open the
+  // project.
   useEffect(() => {
     const el = gestureRef.current;
     if (!el) return;
     let dragging = false;
     let baselineY = 0;
+    let startY = 0;
 
     const onDown = (e: PointerEvent) => {
       dragging = true;
       baselineY = e.clientY;
+      startY = e.clientY;
+      draggedRef.current = false;
       try {
         el.setPointerCapture(e.pointerId);
       } catch {}
     };
     const onMove = (e: PointerEvent) => {
       if (!dragging) return;
+      if (Math.abs(e.clientY - startY) > CLICK_MOVE_TOLERANCE_PX) {
+        draggedRef.current = true;
+      }
       const delta = e.clientY - baselineY;
       if (Math.abs(delta) >= SWIPE_STEP_PX) {
         advanceBy(delta < 0 ? 1 : -1); // dragged up -> next, dragged down -> prev
@@ -257,15 +274,30 @@ export default function FeaturedProjectPager({
             {/* Gesture layer for vertical drag — image only, not the info panel below.
                 Native cursor is hidden (cursor-none); a custom "Scroll" + double-chevron
                 indicator follows the pointer instead (rendered below), since no built-in
-                CSS cursor can carry both an icon and a text label. */}
+                CSS cursor can carry both an icon and a text label. Also doubles as a
+                click target that opens the project — guarded by draggedRef so a real
+                vertical drag (used to page the slider) never also triggers navigation. */}
             <div
               ref={gestureRef}
+              role="link"
+              tabIndex={0}
+              aria-label={`Open ${displayedProject.name}`}
               className="absolute inset-0 z-10 cursor-none touch-none"
               onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
               }}
               onMouseLeave={() => setCursorPos(null)}
+              onClick={() => {
+                if (draggedRef.current) return; // real drag just happened — don't navigate
+                router.push(displayedProject.href);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  router.push(displayedProject.href);
+                }
+              }}
             />
             {/* Custom hover cursor — "Scroll" label above a two-line downward chevron,
                 offset from the real pointer position so it doesn't sit under the cursor. */}
@@ -336,7 +368,7 @@ export default function FeaturedProjectPager({
           {displayedProject.name}
         </h3>
         {displayedProject.software.length > 0 && (
-          <p className="mt-0.5 mb-2 font-mono text-[11px] uppercase tracking-[0.1em] text-cyan-200/60">
+          <p className="mt-0.5 mb-2 font-mono text-[11px] uppercase tracking-widest text-cyan-200/60">
             {displayedProject.software.join(" · ")}
           </p>
         )}

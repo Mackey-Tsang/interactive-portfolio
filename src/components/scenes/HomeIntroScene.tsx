@@ -233,7 +233,7 @@ export default function HomeIntroScene() {
                   clamp() note below for how to tune this further). */}
               <FuzzyText fontSize="clamp(3.4rem, 11vw, 3.5rem)" fontWeight={800} color="#ffffff" baseIntensity={0.1} hoverIntensity={0.6} enableHover style={{ filter: "drop-shadow(0 0 15px rgba(0,255,255,0.3))", letterSpacing: "-0.02em", }}>Mackey Tsang</FuzzyText>
             </div>
-            <FuzzyText fontSize="clamp(0.8rem, 2vw, 1rem)" fontWeight={500} color="rgba(255,255,255,0.9)" baseIntensity={0.1} hoverIntensity={0.4} enableHover>Cyber-Physical Design • Architecture • Photography</FuzzyText>
+            <FuzzyText fontSize="clamp(0.8rem, 2vw, 1rem)" fontWeight={500} color="rgba(255,255,255,0.9)" baseIntensity={0.1} hoverIntensity={0.4} enableHover>Creative Design • Architecture • Photography</FuzzyText>
             {/* <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-cyan-50 animate-pulse">Double Click to Warp Reality</p> */}
           </div>
         </div>
@@ -246,7 +246,7 @@ export default function HomeIntroScene() {
             <p className="text-xs text-neutral-500 uppercase tracking-widest">Digital Portfolio 2026</p>
           </div>
           <div className="md:col-span-8 text-neutral-400 text-s leading-relaxed max-w-3xl font-light">
-            <p>This interactive archive, built with TypeScript and Tailwind,  is a unified gateway to my work in photography, architecture, and cyber-physical design. Each section is custom-engineered with its own visual logic, reflecting a different chapter of my design journey, from raw material to digital interaction. By merging real-time motion with a systems-driven approach, this platform mirrors how I think and build: through material logic, technical precision, and immersive experience.</p>
+            <p>This interactive archive, built with TypeScript and Tailwind,  is a unified gateway to my work in photography, architecture, and creative design. Each section is custom-engineered with its own visual logic, reflecting a different chapter of my design journey, from raw material to digital interaction. By merging real-time motion with a systems-driven approach, this platform mirrors how I think and build: through material logic, technical precision, and immersive experience.</p>
           </div>
         </div>
       </section>

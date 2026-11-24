@@ -108,7 +108,7 @@ export default function PuzzleBlockPage() {
         {/* -------------------------------------------------- */}
         <SectionFadeOnScroll className="space-y-4 border-b border-neutral-400/40 pb-8 md:pb-10">
           <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-            Architecture / Competition / Kindergarten
+            Kinderspace #3 — Architecture for Children&apos;s Development
           </p>
 
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
@@ -116,9 +116,6 @@ export default function PuzzleBlockPage() {
           </h1>
 
           <div className="space-y-1 text-xs md:text-sm text-neutral-700">
-            <p className="font-medium">
-              Kinderspace #3 — Architecture for Children&apos;s Development
-            </p>
             <p>
               <a
                 href="https://architecturecompetitions.com/kinderspace3/"
@@ -139,7 +136,7 @@ export default function PuzzleBlockPage() {
                 Vicky Huang, Junbo (Bob) Chen, Chun Yu (Jacky) Liu
             </p>
             <p>
-              <span className="font-medium text-black">Task:&nbsp;</span>
+              <span className="font-medium text-black">Brief:&nbsp;</span>
               Design a kindergarten supporting early childhood development through
               scale, materiality, sensory experience, and the relationship between
               indoor and outdoor environments.
@@ -163,7 +160,7 @@ export default function PuzzleBlockPage() {
               <MagnifierImage
                 src={board.src}
                 alt={board.alt}
-                zoom={0.2}
+                zoom={0.6}
                 lensWidth={500}
                 lensHeight={380}
               />

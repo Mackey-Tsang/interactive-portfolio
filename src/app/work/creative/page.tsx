@@ -1,10 +1,18 @@
 // src/app/work/cyber-physical/page.tsx
 "use client";
 
-import CyberProjectCards from "@/components/CyberProjectCards";
+import CreativeProjectCards from "@/components/CreativeProjectCards";
 
 const PROJECTS = [
-    {
+  {
+    slug: "cy-phy-workshop-ii",
+    title: "Cy-Phy Workshop II",
+    type: "XR Installation",
+    year: "2026",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true",
+    variant: "blue" as const,
+  },
+  {
     slug: "non-planar-printing",
     title: "Non-Planar FDM Printing Research",
     type: "Digital Fabrication",
@@ -12,6 +20,14 @@ const PROJECTS = [
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/8.jpg?raw=true",
     variant: "green" as const,
   },
+  // {
+  //   slug: "from-forest-to-home",
+  //   title: "From Forest to Home",
+  //   type: "Board Game Design",
+  //   year: "2026",
+  //   cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/From%20Forest%20to%20Home/1.jpg?raw=true",
+  //   variant: "yellow" as const,
+  // },
   {
     slug: "sediment-ring",
     title: "Sediment Ring",
@@ -37,8 +53,8 @@ const PROJECTS = [
     variant: "pink" as const,
   },
   {
-    slug: "cy-phy-workshop",
-    title: "Cy-Phy Workshop",
+    slug: "cy-phy-workshop-i",
+    title: "Cy-Phy Workshop I",
     type: "XR Installation",
     year: "2025",
     cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true",
@@ -62,16 +78,16 @@ const PROJECTS = [
   },
 ];
 
-export default function CyberPhysicalPage() {
+export default function CreativePage() {
   return (
     <main className="min-h-dvh w-full bg-black text-white">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 pt-12 md:pt-14">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-thin tracking-wide py-10">
-          Cyber-Physical Projects
+          Creative Design Projects
         </h1>
       </div>
 
-      <CyberProjectCards projects={PROJECTS} />
+      <CreativeProjectCards projects={PROJECTS} />
     </main>
   );
 }

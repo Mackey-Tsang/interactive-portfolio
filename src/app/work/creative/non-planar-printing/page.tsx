@@ -48,7 +48,7 @@ export default function NonPlanarFdmPrintingPage() {
   return (
     <>
       <main className="min-h-dvh w-full bg-black text-white">
-        <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14 space-y-16 md:space-y-20">
+        <div className="mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8 py-10 md:py-14 space-y-16 md:space-y-12">
 
           {/* 1. INTRO */}
           <SectionFadeOnScroll>
@@ -70,6 +70,8 @@ export default function NonPlanarFdmPrintingPage() {
               </p>
             </section>
           </SectionFadeOnScroll>
+          {/* ---------------- DIVIDER ---------------- */}
+        <hr className="my-15 border-neutral-800" />
 
           {/* 2. LARGE RESULT IMAGE */}
           <SectionFadeOnScroll imageUrls={[IMG_COVER_HERO]}>
@@ -91,6 +93,8 @@ export default function NonPlanarFdmPrintingPage() {
             </section>
           </SectionFadeOnScroll>
 
+{/* ---------------- DIVIDER ---------------- */}
+        <hr className="my-15 border-neutral-800" />
           {/* 3. Two Rhino views side by side */}
 
               
@@ -197,7 +201,8 @@ export default function NonPlanarFdmPrintingPage() {
               </div>
             </section>
           </SectionFadeOnScroll>
-
+{/* ---------------- DIVIDER ---------------- */}
+        <hr className="my-15 border-neutral-800" />
           {/* 6. YouTube embed */}
           <SectionFadeOnScroll>
             <section className="space-y-3 w-full">
@@ -215,7 +220,8 @@ export default function NonPlanarFdmPrintingPage() {
               </div>
             </section>
           </SectionFadeOnScroll>
-
+{/* ---------------- DIVIDER ---------------- */}
+        <hr className="my-15 border-neutral-800" />
           {/* 7. Full research PDF */}
           <SectionFadeOnScroll>
             <section className="space-y-4 w-full">

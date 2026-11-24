@@ -21,7 +21,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     year: 2025,
     description: "Interactive architectural installation that explores how space can emotionally respond to the presence of a user. It blends physical materials, sensors, and digital visuals to create a quiet retreat. This is a protective threshold between self and the public realm.",
     software: ["Award-Winning", "Unity", "Arduino"],
-    href: "/work/cyber-physical/soft-thresholds-veilspace",
+    href: "/work/creative/soft-thresholds-veilspace",
     image: "./cyber-physical/p1.jpg",
   },
   {
@@ -30,7 +30,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     year: 2025,
     description: "An Extended Reality installation developed by arc/sec Lab, translating engineering research into spatial 3D animation for the Engineering Tomorrow Showcase 2025 at the Faculty of Engineering & Design, University of Auckland.",
     software: ["Unity", "Blender", "Rhino"],
-    href: "/work/cyber-physical/cy-phy-workshop",
+    href: "/work/creative/cy-phy-workshop",
     image: "./cyber-physical/p2.jpg",
   },
   {
@@ -39,7 +39,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     year: 2025,
     description: "Explores the fusion of mechanical design, spatial transformation, and interactive technology through a dynamic shelter system that responds to both physical movement and digital input.",
     software: ["Unity", "Arduino", "Rhino"],
-    href: "/work/cyber-physical/reactive-material-pavilion",
+    href: "/work/creative/reactive-material-pavilion",
     image: "./cyber-physical/p3.jpg",
   },
   {
@@ -48,12 +48,12 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     year: 2026,
     description: "A light-reactive kinetic sculpture that merges digital fabrication with embedded electronics.",
     software: ["Arduino", "3D Printing"],
-    href: "/work/cyber-physical/lumibloom",
+    href: "/work/creative/lumibloom",
     image: "./cyber-physical/p4.jpg",
   },
 ];
 
-export default function CyberPhysicalScene() {
+export default function CreativeScene() {
   const [viewport, setViewport] = useState({
     vw: DESIGN_WIDTH,
     vh: DESIGN_HEIGHT,

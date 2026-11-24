@@ -5,7 +5,7 @@ import Lightbox from "@/components/Lightbox";
 import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
 
 /* ──────────────────────────────────────────────────────────────
-   IMAGE LINKS — one per line, edit .jpg ↔ .png as needed
+   IMAGE LINKS - one per line, edit .jpg ↔ .png as needed
    ────────────────────────────────────────────────────────────── */
 const SITUATIONIST_MAP =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/1.jpg?raw=true";
@@ -34,29 +34,29 @@ const PERSPECTIVE_WATER_FEATURE =
 const PERSPECTIVE_ATRIUM =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/12.jpg?raw=true";
 
-// Physical models — 13 is the group shot showing all four side by side
+// Physical models - 13 is the group shot showing all four side by side
 const MODELS_GROUP =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/13.jpg?raw=true";
 
-// Program Model 1:200 — two photos
+// Program Model 1:200 - two photos
 const PROGRAM_MODEL_1 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/14.jpg?raw=true";
 const PROGRAM_MODEL_2 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/15.jpg?raw=true";
 
-// Structural Model 1:200 — two photos
+// Structural Model 1:200 - two photos
 const STRUCTURAL_MODEL_1 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/16.jpg?raw=true";
 const STRUCTURAL_MODEL_2 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/17.jpg?raw=true";
 
-// Circulation Model 1:200 — two photos
+// Circulation Model 1:200 - two photos
 const CIRCULATION_MODEL_1 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/18.jpg?raw=true";
 const CIRCULATION_MODEL_2 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/19.jpg?raw=true";
 
-// Physical Model 1:100 — four photos
+// Physical Model 1:100 - four photos
 const FINAL_MODEL_1 =
   "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/20.jpg?raw=true";
 const FINAL_MODEL_2 =
@@ -78,23 +78,23 @@ const EMOTION_LEGEND = [
 ];
 
 const PROGRAM_MODEL_LEGEND = [
-  { color: "#D6B98C", label: "Light Wood (Middle) — Circulation" },
-  { color: "#FFFFFF", label: "White — Outdoor Space", border: true },
-  { color: "#A8C5DC", label: "Transparent Blue (Bottom) — Water Feature" },
-  { color: "#B5B5B5", label: "Grey — Service / Bathroom" },
-  { color: "#9BC49B", label: "Green (East) — Flexible Zone with movable furniture" },
-  { color: "#4A6E9E", label: "Blue (West) — Fixed Zone with permanent space layout" },
+  { color: "#EBE7B5", label: "Light Wood (Middle) - Circulation" },
+  { color: "#FFFFFF", label: "White - Outdoor Space", border: true },
+  { color: "#82D0F5", label: "Transparent Blue (Bottom) - Water Feature" },
+  { color: "#B5B5B5", label: "Grey - Service / Bathroom" },
+  { color: "#42D46B", label: "Green (East) - Flexible Zone with movable furniture" },
+  { color: "#278BF5", label: "Blue (West) - Fixed Zone with permanent space layout" },
 ];
 
 /* ──────────────────────────────────────────────────────────────
-   MAGNIFIER IMAGE — hover anywhere on the image to see a zoomed
+   MAGNIFIER IMAGE - hover anywhere on the image to see a zoomed
    rectangular lens following the cursor.
 
    Performance design:
    - The lens is a clipping window (overflow:hidden) containing a
      nested <img> rendered ONCE at natural × zoom dimensions.
    - Mouse movement only mutates transform:translate3d on the lens
-     + nested img via refs. Both are GPU-composited — no layout,
+     + nested img via refs. Both are GPU-composited - no layout,
      no paint of the source image, no background-image scaling.
    - No setState on mousemove → no React reconciliation.
 
@@ -127,7 +127,7 @@ function MagnifierImage({
   const [ready, setReady] = useState(false);
   const [natural, setNatural] = useState({ w: 0, h: 0 });
 
-  // Capture natural dimensions once — handles both cached and fresh loads.
+  // Capture natural dimensions once - handles both cached and fresh loads.
   useEffect(() => {
     const img = imgRef.current;
     if (!img) return;
@@ -234,14 +234,14 @@ export default function ThirdGroundPage() {
     <>
       <main className="min-h-dvh w-full bg-neutral-100 text-neutral-900">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-6">
-          {/* 01 — Title + Intro */}
+          {/* 01 - Title + Intro */}
           <SectionFadeOnScroll>
             <div className="space-y-4 w-full">
               <p className="text-xs md:text-sm uppercase tracking-[0.18em] text-neutral-600">
-                Architecture / Vertical Play Laboratory
+                COURSE: ARCHDES 700 / Master of Architecture Year 1 Semester 1
               </p>
               <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-                The Third Ground — 33 High Street
+                The Third Ground - 33 High Street
               </h1>
               <p className="text-sm sm:text-base leading-relaxed">
                 The Third Ground is a seven-storey Vertical Play Laboratory
@@ -254,7 +254,7 @@ export default function ThirdGroundPage() {
               </p>
               <p className="text-sm sm:text-base leading-relaxed">
                 Originating from Italo Calvino&apos;s invisible city of Andria
-                — a city whose plan mirrors the fixed orbits of the stars — the
+                - a city whose plan mirrors the fixed orbits of the stars - the
                 building is structured around a Timber-Steel Composite diagrid
                 frame as the &ldquo;fixed orbit,&rdquo; within which programme,
                 furniture, and spatial configuration remain perpetually open to
@@ -268,12 +268,12 @@ export default function ThirdGroundPage() {
             <div className="w-full border-t border-neutral-500 my-6" />
           </SectionFadeOnScroll>
 
-          {/* 02 — Situationist Mapping + Emotion Legend */}
+          {/* 02 - Situationist Mapping + Emotion Legend */}
           <SectionFadeOnScroll imageUrls={[SITUATIONIST_MAP]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
                 <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-                  Situationist Mapping — A Psychogeographic Drift
+                  Situationist Mapping - A Psychogeographic Drift
                 </h2>
                 <p className="text-sm sm:text-base leading-relaxed">
                   A psychogeographic exploration of the Auckland CBD that
@@ -281,7 +281,7 @@ export default function ThirdGroundPage() {
                   traditional 2D cartography in favour of a multi-dimensional
                   recording of moments and places. Documenting the transition
                   from the architectural studio to the site, this map functions
-                  as a <em>dérive</em> — capturing the city as a labyrinth of
+                  as a <em>dérive</em> - capturing the city as a labyrinth of
                   experiences filled with hidden meanings rather than just
                   utilitarian transit paths. It weaves together a 4D narrative
                   of time and movement, layering spontaneous observations of a
@@ -331,15 +331,15 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 03 — Site Map */}
+          {/* 03 - Site Map */}
           <SectionFadeOnScroll imageUrls={[SITE_MAP]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
                 <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-                  Site — 33 High Street, Auckland CBD
+                  Site - 33 High Street, Auckland CBD
                 </h2>
                 <p className="text-sm sm:text-base leading-relaxed">
                   The 388sqm site sits within Auckland&apos;s Business City
@@ -371,10 +371,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 04 — Two Renders: Overview + Main Facade */}
+          {/* 04 - Two Renders: Overview + Main Facade */}
           <SectionFadeOnScroll imageUrls={[OVERVIEW_RENDER, FACADE_RENDER]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
@@ -421,10 +421,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 05 — Long Section */}
+          {/* 05 - Long Section */}
           <SectionFadeOnScroll imageUrls={[LONG_SECTION]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
@@ -459,10 +459,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 06 — Isometric Exploded Diagram */}
+          {/* 06 - Isometric Exploded Diagram */}
           <SectionFadeOnScroll imageUrls={[ISOMETRIC_DIAGRAM]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
@@ -501,10 +501,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 07 — Section Detail 01 */}
+          {/* 07 - Section Detail 01 */}
           <SectionFadeOnScroll imageUrls={[SECTION_DETAIL]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
@@ -538,15 +538,15 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 08 — Floor Plans (narrow, centred, no legend) */}
+          {/* 08 - Floor Plans (narrow, centred, no legend) */}
           <SectionFadeOnScroll imageUrls={[FLOOR_PLAN]}>
             <div className="space-y-6">
               <div className="space-y-3 w-full">
                 <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-                  Floor Plans — Ground Level to Level 7
+                  Floor Plans - Ground Level to Level 7
                 </h2>
                 <p className="text-sm sm:text-base leading-relaxed">
                   The plan is organised across a fixed West zone, a flexible
@@ -575,10 +575,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 09 — Interior Perspective Renders */}
+          {/* 09 - Interior Perspective Renders */}
           <SectionFadeOnScroll
             imageUrls={[
               PERSPECTIVE_OPEN_SPACE,
@@ -594,8 +594,8 @@ export default function ThirdGroundPage() {
                 </h2>
                 <p className="text-sm sm:text-base leading-relaxed">
                   The fixed diagrid framework hosts a programme that
-                  reconfigures over time — from open studio modes to divided
-                  workshop spaces — anchored by the ground-level water feature
+                  reconfigures over time - from open studio modes to divided
+                  workshop spaces - anchored by the ground-level water feature
                   and the daylit U-shaped atrium.
                 </p>
               </div>
@@ -632,10 +632,10 @@ export default function ThirdGroundPage() {
 
           {/* Divider */}
           <SectionFadeOnScroll>
-            <div className="w-[60%] mx-auto my-8 border-t border-neutral-700" />
+            <div className="w-full mx-auto my-8 border-t border-neutral-700" />
           </SectionFadeOnScroll>
 
-          {/* 10 — Physical Models Section */}
+          {/* 10 - Physical Models Section */}
           <SectionFadeOnScroll
             imageUrls={[
               MODELS_GROUP,
@@ -665,7 +665,7 @@ export default function ThirdGroundPage() {
                 </p>
               </div>
 
-              {/* Group shot — all four models together */}
+              {/* Group shot - all four models together */}
               <div className="space-y-2">
                 <button
                   type="button"
@@ -689,10 +689,10 @@ export default function ThirdGroundPage() {
                 </p>
               </div>
 
-              {/* Program Model 1:200 — 2 photos + legend */}
+              {/* Program Model 1:200 - 2 photos + legend */}
               <div className="space-y-4">
                 <h3 className="text-base sm:text-lg font-semibold tracking-tight">
-                  Program Model — 1:200
+                  Program Model - 1:200
                 </h3>
                 <p className="text-sm sm:text-base leading-relaxed">
                   Block massing model expressing the zoning logic: a fixed West
@@ -745,10 +745,10 @@ export default function ThirdGroundPage() {
                 </div>
               </div>
 
-              {/* Structural Model 1:200 — 2 photos */}
+              {/* Structural Model 1:200 - 2 photos */}
               <div className="space-y-4">
                 <h3 className="text-base sm:text-lg font-semibold tracking-tight">
-                  Structural Model — 1:200
+                  Structural Model - 1:200
                 </h3>
                 <p className="text-sm sm:text-base leading-relaxed">
                   Studying the Timber-Steel Composite diagrid frame at full
@@ -778,10 +778,10 @@ export default function ThirdGroundPage() {
                 </div>
               </div>
 
-              {/* Circulation Model 1:200 — 2 photos */}
+              {/* Circulation Model 1:200 - 2 photos */}
               <div className="space-y-4">
                 <h3 className="text-base sm:text-lg font-semibold tracking-tight">
-                  Circulation Model — 1:200
+                  Circulation Model - 1:200
                 </h3>
                 <p className="text-sm sm:text-base leading-relaxed">
                   Tracing vertical and horizontal movement through the
@@ -812,10 +812,10 @@ export default function ThirdGroundPage() {
                 </div>
               </div>
 
-              {/* Physical Model 1:100 — 4 photos */}
+              {/* Physical Model 1:100 - 4 photos */}
               <div className="space-y-4">
                 <h3 className="text-base sm:text-lg font-semibold tracking-tight">
-                  Physical Model — 1:100
+                  Physical Model - 1:100
                 </h3>
                 <p className="text-sm sm:text-base leading-relaxed">
                   The resolved building at a finer scale, used to test the
@@ -852,7 +852,7 @@ export default function ThirdGroundPage() {
             </div>
           </SectionFadeOnScroll>
 
-          {/* 11 — Back to top */}
+          {/* 11 - Back to top */}
           <SectionFadeOnScroll>
             <div className="flex justify-center pt-6 pb-24">
               <button
