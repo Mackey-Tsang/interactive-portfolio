@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Tū Rākau - Stand as Timber",
     slug: "/work/architecture/stand-as-timber",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/3.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p5.jpg?raw=true",
     year: "Studio Project 2026 Jul - Oct",
     caption: "Papakāinga / Apartment Tower/ Mass Timber",
   },

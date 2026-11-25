@@ -55,17 +55,17 @@ export default function SoftThresholdsVeilspacePage() {
           <div className="space-y-4">
            <div className="relative w-full h-[700px]">
   <img
-    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p6.JPG?raw=true"
+    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p6.JPG?raw=true"
     className="absolute top-0 left-[10%] w-[400px] rounded-2xl shadow-xl"
   />
 
   <img
-    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p5.jpeg?raw=true"
+    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p5.jpeg?raw=true"
     className="absolute top-[400px] w-[300px] rounded-2xl shadow-xl z-20"
   />
 
   <img
-    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p7.jpg?raw=true"
+    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p7.jpg?raw=true"
     className="absolute top-[450px] left-[60%] w-[200px] rounded-2xl shadow-lg z-30"
   />
 </div>
@@ -108,7 +108,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="basis-1/4">
         <div className="aspect-4/5-full overflow-hidden rounded-lg bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p17.jpg?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p17.jpg?raw=true"
             alt="Interactive State 1 — Left"
             className="h-full w-full object-cover"
           />
@@ -146,7 +146,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="basis-1/4">
         <div className="aspect-4/5-full overflow-hidden rounded-lg bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p3.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p3.png?raw=true"
             alt="Interactive State 1 — Right"
             className="h-full w-full object-cover"
           />
@@ -159,7 +159,7 @@ export default function SoftThresholdsVeilspacePage() {
       
       <div className="basis-1/4">
         <div className="aspect-4/5-full overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p1.jpg?raw=true" 
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p1.jpg?raw=true" 
           alt="State 2 — Left" 
           className="h-full w-full object-cover" />
         </div>
@@ -187,7 +187,7 @@ export default function SoftThresholdsVeilspacePage() {
 
       <div className="basis-1/4">
         <div className="aspect-4/5 w-full overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p18.png?raw=true" 
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p18.png?raw=true" 
           alt="State 2 — Right" 
           className="h-full w-full object-cover" />
         </div>
@@ -198,7 +198,7 @@ export default function SoftThresholdsVeilspacePage() {
     <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 border border-neutral-800/70 rounded-xl p-4 md:p-5">
       <div className="basis-1/4">
         <div className="aspect-4/5-full overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p16.jpg?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p16.jpg?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
 
@@ -217,7 +217,7 @@ export default function SoftThresholdsVeilspacePage() {
 
       <div className="basis-1/4">
         <div className="aspect-4/5 overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p19.png?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p19.png?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
     </div>
@@ -226,7 +226,7 @@ export default function SoftThresholdsVeilspacePage() {
     <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 border border-neutral-800/70 rounded-xl p-4 md:p-5">
       <div className="basis-1/4">
         <div className="aspect-4/5 w-full overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p15.jpg?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p15.jpg?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
 
@@ -241,7 +241,7 @@ export default function SoftThresholdsVeilspacePage() {
 
       <div className="basis-1/4">
         <div className="aspect-4/5 overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p18.png?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p18.png?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@ export default function SoftThresholdsVeilspacePage() {
     <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 border border-neutral-800/70 rounded-xl p-4 md:p-5">
       <div className="basis-1/4">
         <div className="aspect-4/5 w-full overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p17.jpg?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p17.jpg?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
 
@@ -265,7 +265,7 @@ export default function SoftThresholdsVeilspacePage() {
 
       <div className="basis-1/4">
         <div className="aspect-4/5 overflow-hidden rounded-lg bg-neutral-900">
-          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p2.png?raw=true" className="h-full w-full object-cover" />
+          <img src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p2.png?raw=true" className="h-full w-full object-cover" />
         </div>
       </div>
     </div>
@@ -297,7 +297,7 @@ export default function SoftThresholdsVeilspacePage() {
           {/* Image right */}
           <div className="aspect-4/3 w-full overflow-hidden rounded-xl bg-neutral-900">
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p20.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p20.jpg?raw=true"
               alt="Digital twin / control interface"
               className="h-full w-full object-cover"
             />
@@ -324,7 +324,7 @@ export default function SoftThresholdsVeilspacePage() {
     <div className="w-full">
       <div className="aspect-video w-full overflow-hidden rounded-xl bg-neutral-900">
         <img
-          src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true"
+          src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true"
           alt="Showcase 1"
           className="h-full w-full object-cover"
         />
@@ -336,7 +336,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="w-full">
         <div className="aspect-4/5 w-full overflow-hidden rounded-xl bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p10.jpg?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p10.jpg?raw=true"
             alt="Showcase 2"
             className="h-full w-full object-cover"
           />
@@ -345,7 +345,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="w-full">
         <div className="aspect-4/5 w-full overflow-hidden rounded-xl bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p9.jpg?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p9.jpg?raw=true"
             alt="Showcase 3"
             className="h-full w-full object-cover"
           />
@@ -357,7 +357,7 @@ export default function SoftThresholdsVeilspacePage() {
     <div className="w-full">
       <div className="aspect-video w-full overflow-hidden rounded-xl bg-neutral-900">
         <img
-          src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p14.jpg?raw=true"
+          src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p14.jpg?raw=true"
           alt="Showcase 4"
           className="h-full w-full object-cover"
         />
@@ -369,7 +369,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="w-full">
         <div className="aspect-4/5 w-full overflow-hidden rounded-xl bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p12.jpg?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p12.jpg?raw=true"
             alt="Showcase 5"
             className="h-full w-full object-cover"
           />
@@ -378,7 +378,7 @@ export default function SoftThresholdsVeilspacePage() {
       <div className="w-full">
         <div className="aspect-4/5 w-full overflow-hidden rounded-xl bg-neutral-900">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p13.jpg?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p13.jpg?raw=true"
             alt="Showcase 6"
             className="h-full w-full object-cover"
           />
@@ -430,7 +430,7 @@ export default function SoftThresholdsVeilspacePage() {
         <section className="space-y-6 md:space-y-8 pb-8 md:pb-12">
       
             <img
-              src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p4.jpg?raw=true"
+              src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p4.jpg?raw=true"
               alt="Soft Thresholds hero image"
               className="h-full w-full object-cover"
             />

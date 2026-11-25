@@ -69,7 +69,7 @@ export default function CyPhyWorkshopPage() {
               <div className="relative">
                 <div className="relative h-auto overflow-hidden bg-neutral-900 ring-1 ring-white/5">
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p1.jpg?raw=true"
                     alt="Engineering Tomorrow XR installation - portrait view of the 4.5 m fabric tower."
                     className="object-cover w-full"
                   />
@@ -146,7 +146,7 @@ export default function CyPhyWorkshopPage() {
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
                         className="h-full w-full object-cover"
-                        src="/media/cy-phy/showcase-fsae-portrait.mp4"
+                        src="/media/cy-phy-workshop-i/showcase-fsae-portrait.mp4"
                         autoPlay
                         loop
                         muted
@@ -162,7 +162,7 @@ export default function CyPhyWorkshopPage() {
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
                         className="h-full w-full object-cover"
-                        src="/media/cy-phy/showcase-uarc-portrait.mp4"
+                        src="/media/cy-phy-workshop-i/showcase-uarc-portrait.mp4"
                         autoPlay
                         loop
                         muted
@@ -172,13 +172,13 @@ export default function CyPhyWorkshopPage() {
                   </LightboxVideo>
 
                   <LightboxVideo
-                    src="/media/cy-phy/showcase-cdam-prosthetics-portrait.mp4"
+                    src="/media/cy-phy-workshop-i/showcase-cdam-prosthetics-portrait.mp4"
                     label="CDAM + Prosthetics - assembly and lattice patterns"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
                         className="h-full w-full object-cover"
-                        src="/media/cy-phy/showcase-cdam-prosthetics-portrait.mp4"
+                        src="/media/cy-phy-workshop-i/showcase-cdam-prosthetics-portrait.mp4"
                         autoPlay
                         loop
                         muted
@@ -188,13 +188,13 @@ export default function CyPhyWorkshopPage() {
                   </LightboxVideo>
 
                   <LightboxVideo
-                    src="/media/cy-phy/showcase-dtrg-portrait.mp4"
+                    src="/media/cy-phy-workshop-i/showcase-dtrg-portrait.mp4"
                     label="DTRG - drone paths and swarm behaviour"
                   >
                     <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
                       <video
                         className="h-full w-full object-cover"
-                        src="/media/cy-phy/showcase-dtrg-portrait.mp4"
+                        src="/media/cy-phy-workshop-i/showcase-dtrg-portrait.mp4"
                         autoPlay
                         loop
                         muted
@@ -264,28 +264,28 @@ export default function CyPhyWorkshopPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-auto overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10">
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p2.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p2.jpg?raw=true"
                     alt="F:SAE 47 aerodynamic animation on tower."
                     className="object-cover w-full"
                   />
                 </div>
                 <div className="relative h-auto overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10">
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p3.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p3.jpg?raw=true"
                     alt="Side view of FSAE sequence projected onto fabric."
                     className="object-cover w-full"
                   />
                 </div>
                 <div className="relative h-auto overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10">
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p4.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p4.jpg?raw=true"
                     alt="CDAM + Prosthetics animation from below the tower."
                     className="object-cover w-full"
                   />
                 </div>
                 <div className="relative h-auto overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10">
                   <img
-                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p5.jpg?raw=true"
+                    src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p5.jpg?raw=true"
                     alt="Close-up of lattice and particle assembly on the tower surface."
                     className="object-cover w-full"
                   />
@@ -415,14 +415,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20aerodynamic.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20aerodynamic.png?raw=true",
             "VFX graph - aerodynamic flow field for FSAE."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20aerodynamic.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20aerodynamic.png?raw=true"
             alt="VFX graph - aerodynamic flow field for FSAE."
             className="object-cover w-full h-full"
           />
@@ -440,14 +440,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20particles%20gather.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20particles%20gather.png?raw=true",
             "Particles gather VFX for CDAM + prosthetics."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20particles%20gather.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20particles%20gather.png?raw=true"
             alt="Particles gather VFX for CDAM + prosthetics."
             className="object-cover w-full h-full"
           />
@@ -465,14 +465,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20smoke.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20smoke.png?raw=true",
             "Rocket exhaust smoke VFX for UARC."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20smoke.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20smoke.png?raw=true"
             alt="Rocket exhaust smoke VFX for UARC."
             className="object-cover w-full h-full"
           />
@@ -490,14 +490,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20aero.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20aero.png?raw=true",
             "Surfboard aerodynamic VFX for CAMMD."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20aero.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20aero.png?raw=true"
             alt="Surfboard aerodynamic VFX for CAMMD."
             className="object-cover w-full h-full"
           />
@@ -515,14 +515,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20bubble.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20bubble.png?raw=true",
             "Bubble simulation VFX for CAMMD."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20bubble.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20bubble.png?raw=true"
             alt="Bubble simulation VFX for CAMMD."
             className="object-cover w-full h-full"
           />
@@ -540,14 +540,14 @@ export default function CyPhyWorkshopPage() {
         className="block w-full"
         onClick={() =>
           openLightbox(
-            "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20trails.png?raw=true",
+            "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20trails.png?raw=true",
             "Trail-based material test VFX for CAMMD."
           )
         }
       >
         <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-neutral-900 ring-1 ring-white/10">
           <img
-            src="https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/vfx/%20surf%20trails.png?raw=true"
+            src="https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/vfx/%20surf%20trails.png?raw=true"
             alt="Trail-based material test VFX for CAMMD."
             className="object-cover w-full h-full"
           />

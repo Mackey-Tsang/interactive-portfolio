@@ -9,7 +9,7 @@ const PROJECTS = [
     title: "Cy-Phy Workshop II",
     type: "XR Installation",
     year: "2026",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20II/p9.jpg?raw=true",
     variant: "blue" as const,
   },
   {
@@ -17,23 +17,23 @@ const PROJECTS = [
     title: "Non-Planar FDM Printing Research",
     type: "Digital Fabrication",
     year: "2026",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/8.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/8.jpg?raw=true",
     variant: "green" as const,
   },
-  // {
-  //   slug: "from-forest-to-home",
-  //   title: "From Forest to Home",
-  //   type: "Board Game Design",
-  //   year: "2026",
-  //   cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/From%20Forest%20to%20Home/1.jpg?raw=true",
-  //   variant: "yellow" as const,
-  // },
+  {
+    slug: "from-forest-to-home",
+    title: "From Forest to Home",
+    type: "Boardgame Design",
+    year: "2026",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Boardgame_FromForestToHome/p12.jpg?raw=true",
+    variant: "yellow" as const,
+  },
   {
     slug: "sediment-ring",
     title: "Sediment Ring",
     type: "Digital Fabrication",
     year: "2026",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
     variant: "green" as const,
   },
   // {
@@ -41,7 +41,7 @@ const PROJECTS = [
   //   title: "3D Printed Surface Treatment",
   //   type: "Digital Fabrication",
   //   year: "2026",
-  //   cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Surface%20Treatment/p7.jpg?raw=true",
+  //   cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Surface%20Treatment/p7.jpg?raw=true",
   //   variant: "green" as const,
   // },
   {
@@ -49,7 +49,7 @@ const PROJECTS = [
     title: "LumiBloom",
     type: "Cyber-Physical Device",
     year: "2026",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/4.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/4.jpg?raw=true",
     variant: "pink" as const,
   },
   {
@@ -57,7 +57,7 @@ const PROJECTS = [
     title: "Cy-Phy Workshop I",
     type: "XR Installation",
     year: "2025",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p1.jpg?raw=true",
     variant: "blue" as const,
   },
   {
@@ -65,7 +65,7 @@ const PROJECTS = [
     title: "Soft Thresholds - Veilspace",
     type: "Interactive Installation",
     year: "2025",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
     variant: "pink" as const,
   },
   {
@@ -73,7 +73,7 @@ const PROJECTS = [
     title: "Reactive Material Pavilion",
     type: "Digital Twins",
     year: "2025",
-    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Reactive%20Material%20Pavilion/0.jpg?raw=true",
+    cover: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Reactive%20Material%20Pavilion/0.jpg?raw=true",
     variant: "pink" as const,
   },
 ];

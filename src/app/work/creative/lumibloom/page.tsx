@@ -8,13 +8,13 @@ import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
    IMAGE URLs
 ---------------------------------------------- */
 const IMG_STEP_1 =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/1.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/1.jpg?raw=true";
 const IMG_STEP_2 =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/2.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/2.jpg?raw=true";
 const IMG_STEP_3 =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/3.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/3.jpg?raw=true";
 const IMG_STEP_4 =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/4.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/4.jpg?raw=true";
 
 /* YouTube */
 const YOUTUBE_EMBED = "https://www.youtube.com/embed/ZbGYLuy7pvY";
@@ -52,10 +52,13 @@ export default function LumiBloomPage() {
           <SectionFadeOnScroll>
             <section className="space-y-4 md:space-y-6 w-full">
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
-                Cyber Physical Fabrication | Autumn 2026
+                ARCHDRC 700: Advanced Digital Fabrication	 | Spring 2026
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 LumiBloom
+                <p className="text-sm tracking-[0.25em] text-neutral-400">
+                Cyber Physical Device
+              </p>
               </h1>
               <p className="text-sm text-neutral-300">
                 Collaborator: Lukas Milicic

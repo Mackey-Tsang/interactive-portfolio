@@ -7,23 +7,23 @@ import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
 /* ---------------------------------------------
    IMAGE URLs
 ---------------------------------------------- */
-const IMG_LANDSCAPE_1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true";
-const IMG_LANDSCAPE_2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/2.JPG?raw=true";
+const IMG_LANDSCAPE_1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true";
+const IMG_LANDSCAPE_2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/2.JPG?raw=true";
 
-const IMG_ROW_1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/4.jpg?raw=true";
-const IMG_ROW_2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/13.png?raw=true";
+const IMG_ROW_1 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/4.jpg?raw=true";
+const IMG_ROW_2 = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/13.png?raw=true";
 
-const IMG_PRECISION = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/3.jpg?raw=true";
+const IMG_PRECISION = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/3.jpg?raw=true";
 
 // Grid Images (from your screenshot)
-const GRID_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/5.JPG?raw=true";
-const GRID_C1_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/6.JPG?raw=true";
-const GRID_C1_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/7.JPG?raw=true";
-const GRID_C2_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/8.JPG?raw=true";
-const GRID_C2_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/9.JPG?raw=true";
-const GRID_C3_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/10.JPG?raw=true";
-const GRID_C3_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/11.JPG?raw=true";
-const GRID_C4_PORTRAIT = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/12.JPG?raw=true";
+const GRID_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/5.JPG?raw=true";
+const GRID_C1_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/6.JPG?raw=true";
+const GRID_C1_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/7.JPG?raw=true";
+const GRID_C2_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/8.JPG?raw=true";
+const GRID_C2_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/9.JPG?raw=true";
+const GRID_C3_TOP = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/10.JPG?raw=true";
+const GRID_C3_BOT = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/11.JPG?raw=true";
+const GRID_C4_PORTRAIT = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/12.JPG?raw=true";
 
 
 export default function SedimentRingsPage() {
@@ -72,10 +72,13 @@ export default function SedimentRingsPage() {
           <SectionFadeOnScroll>
             <section className="space-y-4 md:space-y-6 w-full">
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
-                Digital Fabrication Report | Spring 2026
+                ARCHDRC 700: Advanced Digital Fabrication	 | Spring 2026
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 Sediment Rings
+                <p className="text-sm tracking-[0.25em] text-neutral-400">
+                Digitally Fabricated object with Interlocking Mechanism
+              </p>
               </h1>
               <p className="w-full text-sm md:text-base text-neutral-300 leading-relaxed">
                 This fabrication report outlines the development of a hybrid mechanical object inspired by the biological geometry of the Nautilus and the sleek aesthetic of a spacecraft grounded on the tides of an unknown planet. The project explores the intersection of three digital fabrication workflows—3D printing (FDM and Resin), laser cutting, and CNC milling—to create a high-precision, “no-wobble” interlocking system.

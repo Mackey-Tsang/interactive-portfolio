@@ -13,14 +13,14 @@ const PdfViewer = dynamic(() => import("@/components/PdfViewer"), { ssr: false }
    Folder: photo-host/CyberPhysical Project/Digital Fabrication/Non-Planar FDM Printing/
    Upload the extracted figures there as 1.jpg – 7.jpg (see chat for the downloads).
 ---------------------------------------------- */
-const IMG_COVER_HERO = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/0.jpg?raw=true";
-const IMG_RESULT_HERO = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/1.jpg?raw=true";
-const IMG_RHINO_POLYSURFACE = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/2.jpg?raw=true";
-const IMG_RHINO_HEIGHT = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/3.jpg?raw=true";
-const IMG_GRASSHOPPER_CANVAS = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/4.jpg?raw=true";
-const IMG_CONTROL_PRINTED = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/5.jpg?raw=true";
-const IMG_CONTROL_SLICING = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/6.jpg?raw=true";
-const IMG_NONPLANAR_SLICING = "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/7.jpg?raw=true";
+const IMG_COVER_HERO = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/0.jpg?raw=true";
+const IMG_RESULT_HERO = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/1.jpg?raw=true";
+const IMG_RHINO_POLYSURFACE = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/2.jpg?raw=true";
+const IMG_RHINO_HEIGHT = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/3.jpg?raw=true";
+const IMG_GRASSHOPPER_CANVAS = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/4.jpg?raw=true";
+const IMG_CONTROL_PRINTED = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/5.jpg?raw=true";
+const IMG_CONTROL_SLICING = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/6.jpg?raw=true";
+const IMG_NONPLANAR_SLICING = "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/7.jpg?raw=true";
 
 // PDF served from /public — fastest, same-origin, no external hosting needed
 const PDF_URL = "/documents/non-planar-fdm-printing.pdf";
@@ -54,10 +54,13 @@ export default function NonPlanarFdmPrintingPage() {
           <SectionFadeOnScroll>
             <section className="space-y-4 md:space-y-6 w-full">
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
-                Digital Fabrication Research | Spring 2026
+                ARCHDRC 700: Advanced Digital Fabrication	 | Spring 2026
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 Non-Planar FDM Printing
+                <p className="text-sm tracking-[0.25em] text-neutral-400">
+                Digital Fabrication Technology Research Project
+              </p>
               </h1>
               <p className="w-full text-sm md:text-base text-neutral-300 leading-relaxed">
                 Non-planar slicing has been studied for over a decade, but real-world FDM application has stayed limited,

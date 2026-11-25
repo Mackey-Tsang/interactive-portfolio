@@ -18,48 +18,55 @@ import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
       9  Section 1:250
      10  Detail 1:20 (Section A-A left, Section B-B right)
      11  Render - Interior Level 6 Unit D
-     12  Design Development Diagram
-     13+ Physical Model Photos (add more as needed)
+     12  Design Development Diagram (PNG)
+     13  Render - South Corridor
+     14-17  Physical Model Photos (portrait)
+     18-21  Physical Model Photos (landscape)
    ────────────────────────────────────────────────────────────── */
 const HERO_EXTERIOR =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/1.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p1.jpg?raw=true";
 const MASTERPLAN =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/2.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p2.jpg?raw=true";
 const ISOMETRIC_MASTERPLAN =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/3.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p3.jpg?raw=true";
 const RENDER_BIKE_TRACK =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/4.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p4.jpg?raw=true";
 const RENDER_DECK =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/5.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p5.jpg?raw=true";
 const RENDER_GREENHOUSE =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/6.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p6.jpg?raw=true";
 const UNIT_TYPE_PLAN =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/7.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p7.jpg?raw=true";
 const APARTMENT_PLAN =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/8.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p8.jpg?raw=true";
 const SECTION =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/9.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p9.jpg?raw=true";
 const DETAIL_SECTION =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/10.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p10.jpg?raw=true";
 const RENDER_INTERIOR_L6 =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/11.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p11.jpg?raw=true";
 const DESIGN_DEVELOPMENT =
-  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/12.jpg?raw=true";
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p12.png?raw=true";
+const RENDER_SOUTH_CORRIDOR =
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p13.jpg?raw=true";
 
-// Physical model photos — add or remove entries as needed
-const PHYSICAL_MODEL_PHOTOS = [
-  {
-    src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/13.jpg?raw=true",
-    alt: "1:100 physical model, view 1",
-  },
-  {
-    src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/14.jpg?raw=true",
-    alt: "1:100 physical model, view 2",
-  },
-  {
-    src: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Tu%20Rakau/15.jpg?raw=true",
-    alt: "1:100 physical model, view 3",
-  },
+const BASE_TR =
+  "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p";
+const tr = (n: number, ext = "jpg") => `${BASE_TR}${n}.${ext}?raw=true`;
+
+// Physical model — 4 portrait (p14–17) in one row, 4 landscape (p18–21) in two rows
+const PORTRAIT_MODEL_PHOTOS = [
+  { src: tr(14), alt: "1:100 physical model, portrait view 1" },
+  { src: tr(15), alt: "1:100 physical model, portrait view 2" },
+  { src: tr(16), alt: "1:100 physical model, portrait view 3" },
+  { src: tr(17), alt: "1:100 physical model, portrait view 4" },
+];
+
+const LANDSCAPE_MODEL_PHOTOS = [
+  { src: tr(18), alt: "1:100 physical model, landscape view 1" },
+  { src: tr(19), alt: "1:100 physical model, landscape view 2" },
+  { src: tr(20), alt: "1:100 physical model, landscape view 3" },
+  { src: tr(21), alt: "1:100 physical model, landscape view 4" },
 ];
 
 /* ──────────────────────────────────────────────────────────────
@@ -373,6 +380,7 @@ export default function TuRakauPage() {
               RENDER_BIKE_TRACK,
               RENDER_DECK,
               RENDER_GREENHOUSE,
+              RENDER_SOUTH_CORRIDOR,
             ]}
           >
             <div className="space-y-6">
@@ -476,12 +484,13 @@ export default function TuRakauPage() {
                 </button>
               </div>
 
-              {/* Three renders */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Four renders — Bike Track / Deck View / Greenhouse / South Corridor */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { src: RENDER_BIKE_TRACK, label: "Bike Track" },
-                  { src: RENDER_DECK, label: "Deck View" },
-                  { src: RENDER_GREENHOUSE, label: "Greenhouse" },
+                  { src: RENDER_BIKE_TRACK,       label: "Bike Track" },
+                  { src: RENDER_DECK,             label: "Deck View" },
+                  { src: RENDER_GREENHOUSE,        label: "Greenhouse" },
+                  { src: RENDER_SOUTH_CORRIDOR,    label: "South Corridor" },
                 ].map(({ src, label }) => (
                   <div key={src} className="space-y-2">
                     <button
@@ -489,7 +498,7 @@ export default function TuRakauPage() {
                       onClick={() => openLightbox(src, label)}
                       className="block w-full"
                     >
-                      <div className="aspect-video w-full overflow-hidden">
+                      <div className="aspect-[3/2] w-full overflow-hidden">
                         <img
                           src={src}
                           alt={label}
@@ -917,7 +926,7 @@ export default function TuRakauPage() {
                   <MagnifierImage
                     src={APARTMENT_PLAN}
                     alt="Apartment plan 1:250."
-                    zoom={0.2}
+                    zoom={0.6}
                     lensWidth={650}
                     lensHeight={550}
                     className="w-full max-w-sm"
@@ -1057,15 +1066,40 @@ export default function TuRakauPage() {
           </SectionFadeOnScroll>
 
           {/* 10 — Physical Model 1:100 */}
-          <SectionFadeOnScroll imageUrls={PHYSICAL_MODEL_PHOTOS.map((p) => p.src)}>
+          <SectionFadeOnScroll
+            imageUrls={[
+              ...PORTRAIT_MODEL_PHOTOS.map((p) => p.src),
+              ...LANDSCAPE_MODEL_PHOTOS.map((p) => p.src),
+            ]}
+          >
             <div className="space-y-6">
               <div className="space-y-3 w-full">
                 <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
                   Physical Model 1:100
                 </h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {PHYSICAL_MODEL_PHOTOS.map((photo) => (
+
+              {/* 4 portrait photos — one row */}
+              <div className="grid grid-cols-4 gap-3 ">
+                {PORTRAIT_MODEL_PHOTOS.map((photo) => (
+                  <button
+                    key={photo.src}
+                    type="button"
+                    onClick={() => openLightbox(photo.src, photo.alt)}
+                    className="block w-full "
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="block w-full h-auto object-cover aspect-[3/4]"
+                    />
+                  </button>
+                ))}
+              </div>
+
+              {/* 4 landscape photos — 2 columns, 2 rows */}
+              <div className="grid grid-cols-2 gap-3">
+                {LANDSCAPE_MODEL_PHOTOS.map((photo) => (
                   <button
                     key={photo.src}
                     type="button"

@@ -21,7 +21,7 @@ import SectionFadeOnScroll from "@/components/SectionFadeOnScroll";
    13 = Arduino setup diagram
 ---------------------------------------------- */
 const img = (n: number) =>
-  `https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Reactive%20Material%20Pavilion/${n}.jpg?raw=true`;
+  `https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Reactive%20Material%20Pavilion/${n}.jpg?raw=true`;
 
 const IMG_SECTION_A = img(1);
 const IMG_SECTION_B = img(2);
@@ -88,13 +88,16 @@ export default function ReactiveMaterialPavilionPage() {
           <SectionFadeOnScroll>
             <section className="space-y-4 md:space-y-6 w-full">
               <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">
-                Cyber Physical Architecture | Spring 2025
+                ARCHDES 300: Design 5 | Spring 2025
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
                 Reactive Material Pavilion
+                <p className="text-sm tracking-[0.25em] text-neutral-400">
+                Digital Twins | Interactive Device
+              </p>
               </h1>
               <p className="text-sm text-neutral-500">
-                Team: Mackey Tsang &amp; Henry Qiu
+                Collaborator: Henry Qiu
               </p>
               <p className="w-full text-sm md:text-base text-neutral-300 leading-relaxed">
                 This project explores the fusion of mechanical design, spatial

@@ -40,7 +40,7 @@ export default function Lightbox({ open, src, alt = "", onClose }: LightboxProps
 
           {/* Image card */}
           <motion.div
-            className="relative max-w-[92vw] max-h-[86vh] rounded-lg overflow-hidden shadow-[0_25px_120px_-20px_rgba(0,0,0,0.5)]"
+            className="relative max-w-[92vw] max-h-[86vh] overflow-hidden shadow-[0_25px_120px_-20px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, scale: 0.95, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 6 }}

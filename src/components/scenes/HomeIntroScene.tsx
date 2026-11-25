@@ -13,7 +13,7 @@ import type { ShowcaseProject } from "../ProjectShowcaseGrid";
 // public/showcase/sediment-ring.jpg → image: "/showcase/sediment-ring.jpg".
 // A project can be reused under more than one software (it's just the same
 // object referenced from multiple entries below) if it was built with
-// several tools. "href" is where "View Project" links to — the ones below
+// several tools. "href" is where "View Project" links to - the ones below
 // are my best guess from the image folder names (e.g. "The Third Ground",
 // "Sediment Ring"); double-check they match your actual app/work/... routes.
 const PROJECT_POOL: Record<string, ShowcaseProject> = {
@@ -32,8 +32,8 @@ const PROJECT_POOL: Record<string, ShowcaseProject> = {
   "rhino-three": {
     id: "rhino-three",
     name: "Digtal Fabrication Model",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/3.jpg?raw=true",
-    href: "./work/cyber-physical/sediment-ring",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/3.jpg?raw=true",
+    href: "./work/creative/sediment-ring",
   },
   "revit-one": {
     id: "revit-one",
@@ -43,9 +43,9 @@ const PROJECT_POOL: Record<string, ShowcaseProject> = {
   },
     "revit-two": {
     id: "revit-two",
-    name: "Dynamic Roof Design",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Awa%20Market%20Hall/p23.jpg?raw=true",
-    href: "./work/architecture/awa-market-hall",
+    name: "Stand as Timber (Apartment Tower)",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p1.jpg?raw=true",
+    href: "./work/architecture/stand-as-timber",
   },
     "revit-three": {
     id: "revit-three",
@@ -56,56 +56,56 @@ const PROJECT_POOL: Record<string, ShowcaseProject> = {
     "unity-one": {
     id: "unity-one",
     name: "Award-Winning Project",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
-    href: "./work/cyber-physical/soft-thresholds-veilspace",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
+    href: "./work/creative/soft-thresholds-veilspace",
   },
     "unity-two": {
     id: "unity-two",
-    name: "Cy-Phy Workshop",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Cy-Phy%20Workshop/p1.jpg?raw=true",
-    href: "./work/cyber-physical/cy-phy-workshop",
+    name: "Cy-Phy Workshop II",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20II/p1.jpg?raw=true",
+    href: "./work/creative/cy-phy-workshop-ii",
   },
     "unity-three": {
     id: "unity-three",
-    name: "Reactive Material Pavilion",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Reactive%20Material%20Pavilion/0.jpg?raw=true",
-    href: "./work/cyber-physical/reactive-material-pavilion",
+    name: "Cy-Phy Workshop I",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Cy-Phy%20Workshop%20I/p1.jpg?raw=true",
+    href: "./work/creative/cy-phy-workshop-i",
   },
   "arduino-one": {
     id: "arduino-one",
     name: "Award-Winning Project",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
-    href: "./work/cyber-physical/soft-thresholds-veilspace",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Soft%20Thresholds%20%E2%80%93%20Veilspace/p11.jpg?raw=true",
+    href: "./work/creative/soft-thresholds-veilspace",
   },
     "arduino-two": {
     id: "arduino-two",
     name: "LumiBloom",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/4.jpg?raw=true",
-    href: "./work/cyber-physical/lumibloom",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/4.jpg?raw=true",
+    href: "./work/creative/lumibloom",
   },
     "arduino-three": {
     id: "arduino-three",
     name: "Reactive Material Pavilion",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Reactive%20Material%20Pavilion/0.jpg?raw=true",
-    href: "./work/cyber-physical/reactive-material-pavilion",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Reactive%20Material%20Pavilion/0.jpg?raw=true",
+    href: "./work/creative/reactive-material-pavilion",
   },
     "3d-print-one": {
     id: "3d-print-one",
     name: "Non-Planar Printing Research",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Non-Planar%20FDM%20Printing/0.jpg?raw=true",
-    href: "./work/cyber-physical/non-planar-printing",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Non-Planar%20FDM%20Printing/0.jpg?raw=true",
+    href: "./work/creative/non-planar-printing",
   },
     "3d-print-two": {
     id: "3d-print-two",
     name: "LumiBloom",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/LumiBloom/4.jpg?raw=true",
-    href: "./work/cyber-physical/lumibloom",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/LumiBloom/4.jpg?raw=true",
+    href: "./work/creative/lumibloom",
   },
     "3d-print-three": {
     id: "3d-print-three",
     name: "Sediment Ring",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
-    href: "./work/cyber-physical/sediment-ring",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
+    href: "./work/creative/sediment-ring",
   },
     "d5-render-one": {
     id: "d5-render-one",
@@ -121,36 +121,37 @@ const PROJECT_POOL: Record<string, ShowcaseProject> = {
   },
     "d5-render-three": {
     id: "d5-render-three",
-    name: "The Overlapping Intersection",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Overlapping%20Intersection/p3.jpg?raw=true",
-    href: "./work/architecture/the-overlapping-intersection",
+    name: "Stand as Timber (Interior)",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p11.jpg?raw=true",
+    href: "./work/architecture/stand-as-timber",
   },
-    "model-making-one": {
-    id: "model-making-one",
-    name: "The Third Ground 2026",
+  "crafting-one": {
+    id: "crafting-one",
+    name: "Stand as Timber",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/Stand%20as%20Timber/p18.jpg?raw=true",
+    href: "./work/architecture/stand-as-timber",
+  },
+    "crafting-two": {
+    id: "crafting-two",
+    name: "The Third Ground",
     image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Third%20Ground/13.jpg?raw=true",
     href: "./work/architecture/third-place",
   },
-    "model-making-two": {
-    id: "model-making-two",
-    name: "Forge Hub 2024",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Architecture%20Project/The%20Forge%20Hub%20Forum%20of%20Voices/p22.jpg?raw=true",
-    href: "./work/architecture/forge-hub",
-  },
-    "model-making-three": {
-    id: "model-making-three",
+
+    "crafting-three": {
+    id: "crafting-three",
     name: "Sediment Ring",
-    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/CyberPhysical%20Project/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
+    image: "https://github.com/Mackey-Tsang/photo-host/blob/main/Creative/Digital%20Fabrication/Sediment%20Ring/1.jpg?raw=true",
     href: "./work/architecture/sediment-ring",
   },
 };
 
 // Fill in real logo vectors under your Next.js "public" folder, e.g.
 // public/logos/rhino.svg → logo: "/logos/rhino.svg". "projects" lists which
-// of the projects above used that software — add/remove/reorder freely,
+// of the projects above used that software - add/remove/reorder freely,
 // and leave "projects" as [] for a tool with nothing tagged yet.
 // "invertLogo: true" assumes these ship as black artwork on a transparent
-// background (the usual case for these vendors' icons) — flip any specific
+// background (the usual case for these vendors' icons) - flip any specific
 // one to false if its actual file turns out to already be white/colored.
 const SOFTWARE_LIST: SoftwareEntry[] = [
   {
@@ -197,11 +198,11 @@ const SOFTWARE_LIST: SoftwareEntry[] = [
     projects: [PROJECT_POOL["d5-render-one"], PROJECT_POOL["d5-render-two"], PROJECT_POOL["d5-render-three"]],
   },
     {
-    id: "model-making",
-    name: "Model Making",
+    id: "crafting",
+    name: "Crafting",
     logo: "/logos/model.svg",
     invertLogo: true,
-    projects: [PROJECT_POOL["model-making-one"], PROJECT_POOL["model-making-two"], PROJECT_POOL["model-making-three"]],
+    projects: [PROJECT_POOL["crafting-one"], PROJECT_POOL["crafting-two"], PROJECT_POOL["crafting-three"]],
   },
 ];
 
@@ -251,7 +252,7 @@ export default function HomeIntroScene() {
         </div>
       </section>
 
-      {/* ===== SOFTWARE — logo loop; click a logo to reveal the projects that used it ===== */}
+      {/* ===== SOFTWARE - logo loop; click a logo to reveal the projects that used it ===== */}
       <section className="relative w-full bg-black px-6 md:px-10 lg:px-14 py-14 border-b border-white/10">
         <div className="mx-auto max-w-6xl">
           <p className="mb-1 text-2xl md:text-3xl  text-white font-bold">
@@ -296,11 +297,11 @@ export default function HomeIntroScene() {
              <div>
               <h3 className="text-white font-bold text-[10px] tracking-[0.3em] uppercase mb-3 opacity-50">Experience</h3>
               <div className="space-y-3 text-xs font-light text-white/80 leading-tight">
-
-                <div className="group"><p className="font-medium text-white mb-0.5">Digital Research Hub - UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Research & Teaching Assistant — 2025-Now</p></div>
-                <div className="group"><p className="font-medium text-white mb-0.5">Mechanical & Mechatronics Engineering - UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Research Assistant — 2025</p></div>
-                <div className="group"><p className="font-medium text-white mb-0.5">PhotoSoc UoA</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Head of Marketing — 2024</p></div>
-                <div className="group"><p className="font-medium text-white mb-0.5">Pictureworks (Hong Kong)</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Photography & Sales Service Associate — 2023</p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Research Assistant - 2025-Now</p><p className="text-white/50 text-[10px] uppercase tracking-wider">arc/sec Lab (University of Auckland)</p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Teaching Assistant - 2025-Now</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Digital Research Hub (University of Auckland) </p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Opendesk Intern - 2026</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Peddlethorp, Auckland</p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Head of Marketing - 2024</p><p className="text-white/50 text-[10px] uppercase tracking-wider">PhotoSoc (University of Auckland)</p></div>
+                <div className="group"><p className="font-medium text-white mb-0.5">Photography & Sales Service Associate - 2023</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Pictureworks (Hong Kong Ocean Park)</p></div>
               </div>
             </div>
             <div>
@@ -308,8 +309,8 @@ export default function HomeIntroScene() {
               <div className="space-y-3 text-xs font-light text-white/80 leading-tight">
               <div><p className="font-medium text-white mb-0.5">Shortlisted - Architecture Competition</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Buildner Kinderspace #3</p></div>
               <div><p className="font-medium text-white mb-0.5">Summer Research Scholarship</p><p className="text-white/50 text-[10px] uppercase tracking-wider">University of Auckland 2025</p></div>
-              <div><p className="font-medium text-white mb-0.5">Second Prize - National Finals</p><p className="text-white/50 text-[10px] uppercase tracking-wider">10th Cross-Strait Design Competition • Huacan Award 2025</p></div>
-                <div><p className="font-medium text-white mb-0.5">NCEA Design Scholarship</p><p className="text-white/50 text-[10px] uppercase tracking-wider">New Zealand 2022</p></div>
+              <div><p className="font-medium text-white mb-0.5">Second Prize - National Finals</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Huacan Award 2025</p></div>
+                <div><p className="font-medium text-white mb-0.5">NCEA Art Design Scholarship</p><p className="text-white/50 text-[10px] uppercase tracking-wider">New Zealand 2022</p></div>
                 <div><p className="font-medium text-white mb-0.5">First Place in Art Design</p><p className="text-white/50 text-[10px] uppercase tracking-wider">Sacred Heart College 2022</p></div>
               </div>
             </div>
