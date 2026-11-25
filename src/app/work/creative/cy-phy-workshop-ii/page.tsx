@@ -217,7 +217,7 @@ export default function CyPhyWorkshopIIPage() {
                   key={item.src}
                   type="button"
                   onClick={() => openLightbox(item.src, item.alt, item.isVideo)}
-                  className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="relative aspect-3/4 overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   <MediaItem item={item} />
                 </button>
@@ -231,7 +231,7 @@ export default function CyPhyWorkshopIIPage() {
                   key={item.src}
                   type="button"
                   onClick={() => openLightbox(item.src, item.alt, item.isVideo)}
-                  className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="relative aspect-4/3 overflow-hidden rounded-2xl bg-neutral-900 ring-1 ring-white/10 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   <MediaItem item={item} />
                 </button>

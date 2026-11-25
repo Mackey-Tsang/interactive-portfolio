@@ -498,7 +498,7 @@ export default function TuRakauPage() {
                       onClick={() => openLightbox(src, label)}
                       className="block w-full"
                     >
-                      <div className="aspect-[3/2] w-full overflow-hidden">
+                      <div className="aspect-3/2 w-full overflow-hidden">
                         <img
                           src={src}
                           alt={label}
@@ -1091,7 +1091,7 @@ export default function TuRakauPage() {
                     <img
                       src={photo.src}
                       alt={photo.alt}
-                      className="block w-full h-auto object-cover aspect-[3/4]"
+                      className="block w-full h-auto object-cover aspect-3/4"
                     />
                   </button>
                 ))}

@@ -18,14 +18,14 @@ export default function ReturnButton() {
   const { basePath, categoryName, isCategoryRoot, isProjectPage, color } = useMemo(() => {
     const isPhoto = pathname.startsWith("/work/photography");
     const isArch = pathname.startsWith("/work/architecture");
-    const isCyber = pathname.startsWith("/work/cyber-physical");
+    const isCyber = pathname.startsWith("/work/Creative");
 
     const categoryName = isPhoto
       ? "Photography"
       : isArch
       ? "Architecture"
       : isCyber
-      ? "Cyber-Physical"
+      ? "Creative"
       : null;
 
     const basePath = isPhoto
@@ -33,12 +33,12 @@ export default function ReturnButton() {
       : isArch
       ? "/work/architecture"
       : isCyber
-      ? "/work/cyber-physical"
+      ? "/work/Creative"
       : "/work";
 
     const isRoot =
       pathname === "/work/architecture" ||
-      pathname === "/work/cyber-physical" ||
+      pathname === "/work/Creative" ||
       pathname === "/work/photography";
 
     const isProjectPage =
@@ -74,7 +74,7 @@ export default function ReturnButton() {
     }
 
     if (isCategoryRoot && categoryName) {
-      setCategory(categoryName as "Photography" | "Architecture" | "Cyber-Physical");
+      setCategory(categoryName as "Photography" | "Architecture" | "Creative");
       setHome(false);
       router.push("/");
       return;

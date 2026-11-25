@@ -358,7 +358,7 @@ class MorphEngine {
         console.error(
           `[MorphSlider] Failed to load image at index ${index}: "${item.image}". ` +
             `Check that the path is correct and the file actually exists under your Next.js "public" folder ` +
-            `(e.g. "public/cyber-physical/project-1.jpg" for image="/cyber-physical/project-1.jpg"), ` +
+            `(e.g. "public/Creative/project-1.jpg" for image="/Creative/project-1.jpg"), ` +
             `and that the filename case matches exactly.`
         );
       };
